@@ -40,27 +40,27 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
-		/// Affiche le menu complet avec le titre du jeu. L'utilisateur devra choisir une option dans ce menu
+		/// Affiche à l'utilisateur comment le menu fonctionne
+		/// </summary>
+		static private void FonctionnementMenu()
+		{
+			Console.ForegroundColor = ConsoleColor.Red;
+			Console.WriteLine("\n\tTapez le nombre correspondant à l'option que vous désirez choisir\n");
+			Console.ResetColor();
+		}
+
+		/// <summary>
+		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
 		/// </summary>
 		/// <param name="menu"></param>
-		static public void SelectionDansLeMenu(Menu menu)
+		static private void NombreTiretsAdaptable(Menu menu)
 		{
-			int optionChoisie;
-			bool choixValide;
-
-			do
+			Console.Write("\t\t\t ");
+			for (int i = 0; i < menu.LongueurChaineMax() + 5; i++)
 			{
-
-				Affichage.TitreDuJeu();
-				Affichage.AffichageMenu(menu);
-				
-				choixValide = int.TryParse(Convert.ToString(Console.ReadKey(true).KeyChar), out optionChoisie);
-
-				if (choixValide) choixValide = (optionChoisie < 1 || optionChoisie > menu.OptionsDuMenu.Length) ? false : true;
-				
-
-			} while (!choixValide);
-
+				Console.Write("-");
+			}
+			Console.WriteLine();
 		}
 
 		/// <summary>
@@ -77,17 +77,30 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
-		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
+		/// Affiche le menu complet avec le titre du jeu. L'utilisateur devra choisir une option dans ce menu
 		/// </summary>
 		/// <param name="menu"></param>
-		static private void NombreTiretsAdaptable(Menu menu)
+		static public int JoueurChoisitUneOptionDansLeMenu(Menu menu)
 		{
-			Console.Write("\t\t\t ");
-			for (int i = 0; i < menu.LongueurChaineMax() + 5; i++)
+			int optionChoisie;
+			bool choixValide;
+
+			do
 			{
-				Console.Write("-");
-			}
-			Console.WriteLine();
+
+				Affichage.TitreDuJeu();
+				Affichage.AffichageMenu(menu);
+				Affichage.FonctionnementMenu();
+
+
+				choixValide = int.TryParse(Convert.ToString(Console.ReadKey(true).KeyChar), out optionChoisie);
+
+				if (choixValide) choixValide = (optionChoisie < 1 || optionChoisie > menu.OptionsDuMenu.Length) ? false : true;
+
+
+			} while (!choixValide);
+
+			return optionChoisie;
 		}
 
 		/// <summary>

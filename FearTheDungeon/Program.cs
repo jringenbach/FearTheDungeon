@@ -16,10 +16,12 @@ namespace FearTheDungeon
 
 			Menu menuPrincipal = new Menu(DonnéesMenu.MenuPrincipal);
 
+
 							// ***************************************************
 							//				DEROULEMENT DU PROGRAMME
 							// ***************************************************
-			Affichage.SelectionDansLeMenu(menuPrincipal);		
+
+			DonnéesMenu.ChoixMenuPrincipal = Affichage.JoueurChoisitUneOptionDansLeMenu(menuPrincipal);		
 
 		}
 	}
