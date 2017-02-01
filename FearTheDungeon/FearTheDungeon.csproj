@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Affichage.cs" />
     <Compile Include="DonnéesMenu.cs" />
+    <Compile Include="DonnéesPubliques.cs" />
     <Compile Include="Fonctions.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />

@@ -23,7 +23,7 @@ namespace FearTheDungeon
 		static private Menu _menuPrincipal = new Menu(MenuPrincipalOptions);
 
 		/// <summary>
-		/// Menu affiché lorsque le joueur a sélectionné "Lancer le jeu" dans le menu principal.
+		/// Options du menu des niveaux
 		/// </summary>
 		static private string[] _menuNiveauOptions = {"Nouvelle Partie", "Mot de Passe", "Retour"};
 
@@ -33,7 +33,7 @@ namespace FearTheDungeon
 		static private Menu menuNiveau = new Menu(MenuNiveauOptions);
 
 		/// <summary>
-		/// Menu des options du jeu
+		/// Options du menu des options
 		/// </summary>
 		static private string[] _menuOptionsOptions = {"Difficulté","Retour"};
 
@@ -41,6 +41,16 @@ namespace FearTheDungeon
 		/// Menu des options du jeu
 		/// </summary>
 		static private Menu _menuOptions = new Menu(_menuOptionsOptions);
+
+		/// <summary>
+		/// Options du menu de difficultés
+		/// </summary>
+		static private string[] _menuDifficulteOptions = {"Normal", "Difficile", "Retour" };
+
+		/// <summary>
+		/// Menu des difficultés
+		/// </summary>
+		static private Menu _menuDifficulte = new Menu(MenuDifficulteOptions);
 
 		/// <summary>
 		/// Variable qui contient le numéro de l'option choisie par le joueur dans le menu principal
@@ -60,7 +70,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Tableau contenant tous les menus
 		/// </summary>
-		static private Menu[] _tableauDesMenus = { MenuPrincipal, MenuNiveau, MenuOptions };
+		static private Menu[] _tableauDesMenus = { MenuPrincipal, MenuNiveau, MenuOptions, MenuDifficulte};
 
 
 									// ***************************************************
@@ -225,6 +235,32 @@ namespace FearTheDungeon
 			set
 			{
 				_tableauDesMenus = value;
+			}
+		}
+
+		public static string[] MenuDifficulteOptions
+		{
+			get
+			{
+				return _menuDifficulteOptions;
+			}
+
+			set
+			{
+				_menuDifficulteOptions = value;
+			}
+		}
+
+		public static Menu MenuDifficulte
+		{
+			get
+			{
+				return _menuDifficulte;
+			}
+
+			set
+			{
+				_menuDifficulte = value;
 			}
 		}
 
