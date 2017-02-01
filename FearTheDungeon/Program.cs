@@ -21,7 +21,8 @@ namespace FearTheDungeon
 							//				DEROULEMENT DU PROGRAMME
 							// ***************************************************
 
-			DonnéesMenu.ChoixMenuPrincipal = Affichage.JoueurChoisitUneOptionDansLeMenu(menuPrincipal);		
+			DonnéesMenu.ChoixMenuPrincipal = Affichage.JoueurChoisitUneOptionDansLeMenu(menuPrincipal);
+			Fonctions.AppelOptionChoisieMenuPrincipal(DonnéesMenu.ChoixMenuPrincipal);		
 
 		}
 	}

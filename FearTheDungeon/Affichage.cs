@@ -100,6 +100,7 @@ namespace FearTheDungeon
 
 			} while (!choixValide);
 
+			Console.Clear();
 			return optionChoisie;
 		}
 

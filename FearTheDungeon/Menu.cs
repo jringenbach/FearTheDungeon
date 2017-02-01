@@ -68,5 +68,6 @@ namespace FearTheDungeon
 			return longueurMax;
 		}
 
+
 	}
 }

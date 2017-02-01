@@ -23,6 +23,11 @@ namespace FearTheDungeon
 		static private string[] _menuNiveau = {"Nouvelle Partie", "Mot de Passe", "Retour"};
 
 		/// <summary>
+		/// Menu des options du jeu
+		/// </summary>
+		static private string[] _menuOptions = {"Difficulté","Retour"};
+
+		/// <summary>
 		/// Variable qui contient le numéro de l'option choisie par le joueur dans le menu principal
 		/// </summary>
 		static private int choixMenuPrincipal;
@@ -70,6 +75,22 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
+		/// Permet d'obtenir le menu des options
+		/// </summary>
+		public static string[] MenuOptions
+		{
+			get
+			{
+				return _menuOptions;
+			}
+
+			set
+			{
+				_menuOptions = value;
+			}
+		}
+
+		/// <summary>
 		/// Stocke l'option choisie dans le menu principal
 		/// </summary>
 		public static int ChoixMenuPrincipal
@@ -100,5 +121,6 @@ namespace FearTheDungeon
 				fonctionnementMenu = value;
 			}
 		}
+
 	}
 }
