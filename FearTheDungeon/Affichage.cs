@@ -87,7 +87,7 @@ namespace FearTheDungeon
 
 			do
 			{
-
+				Console.Clear();
 				Affichage.TitreDuJeu();
 				Affichage.AffichageMenu(menu);
 				Affichage.FonctionnementMenu();
@@ -97,7 +97,7 @@ namespace FearTheDungeon
 				if (choixValide) choixValide = (optionChoisie < 1 || optionChoisie > menu.OptionsDuMenu.Length) ? false : true;
 			} while (!choixValide);
 
-			Console.Clear();
+			
 			menu.OptionChoisie = optionChoisie;
 
 			Fonctions.AppelOptionChoisie(menu);

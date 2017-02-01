@@ -38,6 +38,11 @@ namespace FearTheDungeon
 		static private string[] _menuOptionsOptions = {"Difficulté","Retour"};
 
 		/// <summary>
+		/// Menu des options du jeu
+		/// </summary>
+		static private Menu _menuOptions = new Menu(_menuOptionsOptions);
+
+		/// <summary>
 		/// Variable qui contient le numéro de l'option choisie par le joueur dans le menu principal
 		/// </summary>
 		static private int _choixOptionsMenuPrincipal;
@@ -52,7 +57,10 @@ namespace FearTheDungeon
  		/// </summary>
 		static private string[] fonctionnementMenu = {"Tapez le numéro correspondant à l'option désirée."};
 
-		static private Menu[] _tableauDesMenus = { MenuPrincipal, MenuNiveau };
+		/// <summary>
+		/// Tableau contenant tous les menus
+		/// </summary>
+		static private Menu[] _tableauDesMenus = { MenuPrincipal, MenuNiveau, MenuOptions };
 
 
 									// ***************************************************
@@ -77,22 +85,6 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
-		/// Menu principal
-		/// </summary>
-		public static Menu MenuPrincipal
-		{
-			get
-			{
-				return _menuPrincipal;
-			}
-
-			set
-			{
-				_menuPrincipal = value;
-			}
-		}
-
-		/// <summary>
 		/// Les différentes options affichées après le choix de l'option "Lancer le jeu" dans le Menu Principal
 		/// </summary>
 		public static string[] MenuNiveauOptions
@@ -105,6 +97,38 @@ namespace FearTheDungeon
 			set
 			{
 				_menuNiveauOptions = value;
+			}
+		}
+
+		/// <summary>
+		/// Permet d'obtenir le menu des options
+		/// </summary>
+		public static string[] MenuOptionsOptions
+		{
+			get
+			{
+				return _menuOptionsOptions;
+			}
+
+			set
+			{
+				_menuOptionsOptions = value;
+			}
+		}
+
+		/// <summary>
+		/// Menu principal
+		/// </summary>
+		public static Menu MenuPrincipal
+		{
+			get
+			{
+				return _menuPrincipal;
+			}
+
+			set
+			{
+				_menuPrincipal = value;
 			}
 		}
 
@@ -125,18 +149,18 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
-		/// Permet d'obtenir le menu des options
+		/// Menu des options
 		/// </summary>
-		public static string[] MenuOptionsOptions
+		public static Menu MenuOptions
 		{
 			get
 			{
-				return _menuOptionsOptions;
+				return _menuOptions;
 			}
 
 			set
 			{
-				_menuOptionsOptions = value;
+				_menuOptions = value;
 			}
 		}
 
@@ -188,6 +212,9 @@ namespace FearTheDungeon
 			}
 		}
 
+		/// <summary>
+		/// Tableau contenant tous les menus du jeu
+		/// </summary>
 		public static Menu[] TableauDesMenus
 		{
 			get
@@ -200,6 +227,8 @@ namespace FearTheDungeon
 				_tableauDesMenus = value;
 			}
 		}
+
+
 
 
 

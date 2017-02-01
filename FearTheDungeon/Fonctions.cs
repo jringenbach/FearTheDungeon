@@ -16,6 +16,7 @@ namespace FearTheDungeon
 		{
 			bool menuAppelantEstLeMenuPrincipal = false;
 			bool menuAppelantEstLeMenuDesNiveaux = false;
+			bool menuAppelantEstLeMenuDesOptions = false;
 			int i = 0;
 
 			for(i=0; i < DonnéesMenu.TableauDesMenus.Length; i++)
@@ -28,9 +29,11 @@ namespace FearTheDungeon
 
 			if (i == 0) menuAppelantEstLeMenuPrincipal = true;
 			else if (i == 1) menuAppelantEstLeMenuDesNiveaux = true;
+			else if (i == 2) menuAppelantEstLeMenuDesOptions = true;
 
 			if (menuAppelantEstLeMenuPrincipal) AppelOptionChoisieMenuPrincipal(menu);
 			else if (menuAppelantEstLeMenuDesNiveaux) AppelOptionChoisieMenuDesNiveaux(menu);
+			else if (menuAppelantEstLeMenuDesOptions) AppelOptionChoisieMenuDesOptions(menu);
 
 
 		}
@@ -50,7 +53,7 @@ namespace FearTheDungeon
 
 				//Option "Options" choisie
 				case 2:
-
+					Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuOptions);
 					break;
 
 				//Option "Quitter" choisie
@@ -90,6 +93,28 @@ namespace FearTheDungeon
 					break;
 			}
 
+		}
+
+		/// <summary>
+		/// On regarde ce que le joueur a choisi dans le menu des options
+		/// </summary>
+		/// <param name="menu"></param>
+		static public void AppelOptionChoisieMenuDesOptions(Menu menu)
+		{
+			switch (menu.OptionChoisie)
+			{
+				//Le joueur accède au menu des difficultés
+				case 1:
+					break;
+
+					//Le joueur retourne au menu principal
+				case 2:
+					Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuPrincipal);
+					break;
+
+				default:
+					break;
+			}
 		}
 
 	}
