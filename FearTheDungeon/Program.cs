@@ -10,11 +10,17 @@ namespace FearTheDungeon
 	{
 		static void Main(string[] args)
 		{
+							// ***************************************************
+							//        DECLARATION DES VARIABLES DU PROGRAMME
+							// ***************************************************
+
 			Menu menuPrincipal = new Menu(DonnéesMenu.MenuPrincipal);
-			Menu choixDuNiveau = new Menu(DonnéesMenu.MenuPrincipal);
-			
-			Affichage.TitreDuJeu();
-			Affichage.AffichageMenu(menuPrincipal);
+
+							// ***************************************************
+							//				DEROULEMENT DU PROGRAMME
+							// ***************************************************
+			Affichage.SelectionDansLeMenu(menuPrincipal);		
+
 		}
 	}
 }

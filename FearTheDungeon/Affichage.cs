@@ -15,7 +15,7 @@ namespace FearTheDungeon
 		/// Permet d'afficher proprement un objet de la classe Menu
 		/// </summary>
 		/// <param name="menu"></param>
-		static public void AffichageMenu(Menu menu)
+		static private void AffichageMenu(Menu menu)
 		{
 			int longueurMax = menu.LongueurChaineMax(), nombreDEspaces = 0 ;
 
@@ -36,6 +36,30 @@ namespace FearTheDungeon
 			}
 
 			NombreTiretsAdaptable(menu);
+
+		}
+
+		/// <summary>
+		/// Affiche le menu complet avec le titre du jeu. L'utilisateur devra choisir une option dans ce menu
+		/// </summary>
+		/// <param name="menu"></param>
+		static public void SelectionDansLeMenu(Menu menu)
+		{
+			int optionChoisie;
+			bool choixValide;
+
+			do
+			{
+
+				Affichage.TitreDuJeu();
+				Affichage.AffichageMenu(menu);
+				
+				choixValide = int.TryParse(Convert.ToString(Console.ReadKey(true).KeyChar), out optionChoisie);
+
+				if (choixValide) choixValide = (optionChoisie < 1 || optionChoisie > menu.OptionsDuMenu.Length) ? false : true;
+				
+
+			} while (!choixValide);
 
 		}
 
@@ -69,7 +93,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Permet d'afficher le titre du jeu
 		/// </summary>
-		static public void TitreDuJeu()
+		static private void TitreDuJeu()
 		{
 			Console.ForegroundColor = ConsoleColor.Yellow;
 			Console.WriteLine("\t\t\t ------ ----- ---------");
