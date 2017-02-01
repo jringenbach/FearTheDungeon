@@ -45,7 +45,12 @@ namespace FearTheDungeon
 		static private void FonctionnementMenu()
 		{
 			Console.ForegroundColor = ConsoleColor.Red;
-			Console.WriteLine("\n\tTapez le nombre correspondant à l'option que vous désirez choisir\n");
+
+            //Gestion des tabulations en fonction de la langue sélectionnée
+            if (DonneesPubliques.langue == "Français") Console.Write("\n\t\t");
+            else if (DonneesPubliques.langue == "Anglais") Console.Write("\n\t");
+
+            Console.WriteLine(DonnéesMenu.FonctionnementMenu[0]+"\n");
 			Console.ResetColor();
 		}
 

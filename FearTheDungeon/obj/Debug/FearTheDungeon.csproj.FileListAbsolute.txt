@@ -5,3 +5,9 @@ C:\Users\34011-14-08\Projet_GIT\FearTheDungeon\FearTheDungeon\bin\Debug\FearTheD
 C:\Users\34011-14-08\Projet_GIT\FearTheDungeon\FearTheDungeon\obj\Debug\FearTheDungeon.csprojResolveAssemblyReference.cache
 C:\Users\34011-14-08\Projet_GIT\FearTheDungeon\FearTheDungeon\obj\Debug\FearTheDungeon.exe
 C:\Users\34011-14-08\Projet_GIT\FearTheDungeon\FearTheDungeon\obj\Debug\FearTheDungeon.pdb
+C:\Users\Julien\Projet_GIT\FearTheDungeon\FearTheDungeon\bin\Debug\FearTheDungeon.exe.config
+C:\Users\Julien\Projet_GIT\FearTheDungeon\FearTheDungeon\obj\Debug\FearTheDungeon.exe
+C:\Users\Julien\Projet_GIT\FearTheDungeon\FearTheDungeon\obj\Debug\FearTheDungeon.pdb
+C:\Users\Julien\Projet_GIT\FearTheDungeon\FearTheDungeon\obj\Debug\FearTheDungeon.csprojResolveAssemblyReference.cache
+C:\Users\Julien\Projet_GIT\FearTheDungeon\FearTheDungeon\bin\Debug\FearTheDungeon.exe
+C:\Users\Julien\Projet_GIT\FearTheDungeon\FearTheDungeon\bin\Debug\FearTheDungeon.pdb

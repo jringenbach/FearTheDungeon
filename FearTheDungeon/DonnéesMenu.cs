@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace FearTheDungeon
 {
+    /// <summary>
+    /// Classe contenant toutes les données relatives aux menus
+    /// </summary>
 	abstract class DonnéesMenu
 	{
 							// ***************************************************
@@ -35,7 +38,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Options du menu des options
 		/// </summary>
-		static private string[] _menuOptionsOptions = {"Difficulté","Retour"};
+		static private string[] _menuOptionsOptions = {"Difficulté", "Choix de la langue", "Retour"};
 
 		/// <summary>
 		/// Menu des options du jeu
@@ -51,6 +54,16 @@ namespace FearTheDungeon
 		/// Menu des difficultés
 		/// </summary>
 		static private Menu _menuDifficulte = new Menu(MenuDifficulteOptions);
+
+        /// <summary>
+        /// Langues sélectionnables dans le menu du jeu
+        /// </summary>
+        static private string[] _menuLanguesOptions = { "Français", "Anglais", "Retour" };
+
+        /// <summary>
+        /// Menu des langues
+        /// </summary>
+        static private Menu _menuDesLangues = new Menu(MenuLanguesOptions);
 
 		/// <summary>
 		/// Variable qui contient le numéro de l'option choisie par le joueur dans le menu principal
@@ -70,7 +83,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Tableau contenant tous les menus
 		/// </summary>
-		static private Menu[] _tableauDesMenus = { MenuPrincipal, MenuNiveau, MenuOptions, MenuDifficulte};
+		static private Menu[] _tableauDesMenus = { MenuPrincipal, MenuNiveau, MenuOptions, MenuDifficulte, MenuDesLangues};
 
 
 									// ***************************************************
@@ -238,6 +251,9 @@ namespace FearTheDungeon
 			}
 		}
 
+        /// <summary>
+        /// Tableau des options du menu de difficulté
+        /// </summary>
 		public static string[] MenuDifficulteOptions
 		{
 			get
@@ -251,6 +267,9 @@ namespace FearTheDungeon
 			}
 		}
 
+        /// <summary>
+        /// Menu des options de difficulté
+        /// </summary>
 		public static Menu MenuDifficulte
 		{
 			get
@@ -264,15 +283,47 @@ namespace FearTheDungeon
 			}
 		}
 
+        /// <summary>
+        /// Options du menu des langues
+        /// </summary>
+        public static string[] MenuLanguesOptions
+        {
+            get
+            {
+                return _menuLanguesOptions;
+            }
+
+            set
+            {
+                _menuLanguesOptions = value;
+            }
+        }
+
+        /// <summary>
+        /// Menu des langues
+        /// </summary>
+        public static Menu MenuDesLangues
+        {
+            get
+            {
+                return _menuDesLangues;
+            }
+
+            set
+            {
+                _menuDesLangues = value;
+            }
+        }
 
 
 
 
-		// ***************************************************
-		//						METHODES
-		// ***************************************************
 
-		static public void InitialisationDonnéesMenu()
+        // ***************************************************
+        //						METHODES
+        // ***************************************************
+
+        static public void InitialisationDonnéesMenu()
 		{
 			DonnéesMenu.ChoixOptionsMenuPrincipal = 0;
 			DonnéesMenu.ChoixOptionsMenuDesNiveaux = 0;

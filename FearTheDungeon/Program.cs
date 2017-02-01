@@ -14,7 +14,7 @@ namespace FearTheDungeon
 							//        DECLARATION DES VARIABLES DU PROGRAMME
 							// ***************************************************
 
-
+                        
 							// ***************************************************
 							//				DEROULEMENT DU PROGRAMME
 							// ***************************************************
