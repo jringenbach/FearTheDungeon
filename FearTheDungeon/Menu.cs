@@ -14,7 +14,12 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Tableau des différentes options du menu
 		/// </summary>
-		string[] optionsDuMenu;
+		private string[] optionsDuMenu;
+
+		/// <summary>
+		/// Option qui est choisie par le joueur
+		/// </summary>
+		private int optionChoisie;
 
 												// *****************************
 												//        CONSTRUCTEURS
@@ -49,10 +54,27 @@ namespace FearTheDungeon
 			}
 		}
 
+		/// <summary>
+		/// Option qui est choisie par le joueur pour ce menu
+		/// </summary>
+		public int OptionChoisie
+		{
+			get
+			{
+				return optionChoisie;
+			}
+
+			set
+			{
+				optionChoisie = value;
+			}
+		}
+
+
 												// **************************************
 												//               METHODES
 												// **************************************
-		
+
 		/// <summary>
 		/// Renvoie la taille de la chaîne de caractère la plus longue dans un tableau
 		/// </summary>

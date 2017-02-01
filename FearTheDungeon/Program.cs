@@ -14,15 +14,16 @@ namespace FearTheDungeon
 							//        DECLARATION DES VARIABLES DU PROGRAMME
 							// ***************************************************
 
-			Menu menuPrincipal = new Menu(DonnéesMenu.MenuPrincipal);
-
 
 							// ***************************************************
 							//				DEROULEMENT DU PROGRAMME
 							// ***************************************************
 
-			DonnéesMenu.ChoixMenuPrincipal = Affichage.JoueurChoisitUneOptionDansLeMenu(menuPrincipal);
-			Fonctions.AppelOptionChoisieMenuPrincipal(DonnéesMenu.ChoixMenuPrincipal);		
+
+			Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuPrincipal);
+			
+
+			
 
 		}
 	}

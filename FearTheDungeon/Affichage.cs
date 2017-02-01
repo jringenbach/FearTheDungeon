@@ -80,7 +80,7 @@ namespace FearTheDungeon
 		/// Affiche le menu complet avec le titre du jeu. L'utilisateur devra choisir une option dans ce menu
 		/// </summary>
 		/// <param name="menu"></param>
-		static public int JoueurChoisitUneOptionDansLeMenu(Menu menu)
+		static public void JoueurChoisitUneOptionDansLeMenu(Menu menu)
 		{
 			int optionChoisie;
 			bool choixValide;
@@ -92,16 +92,16 @@ namespace FearTheDungeon
 				Affichage.AffichageMenu(menu);
 				Affichage.FonctionnementMenu();
 
-
 				choixValide = int.TryParse(Convert.ToString(Console.ReadKey(true).KeyChar), out optionChoisie);
 
 				if (choixValide) choixValide = (optionChoisie < 1 || optionChoisie > menu.OptionsDuMenu.Length) ? false : true;
-
-
 			} while (!choixValide);
 
 			Console.Clear();
-			return optionChoisie;
+			menu.OptionChoisie = optionChoisie;
+
+			Fonctions.AppelOptionChoisie(menu);
+
 		}
 
 		/// <summary>
