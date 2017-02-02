@@ -19,18 +19,23 @@ namespace FearTheDungeon
         /// <summary>
         /// Nombre de lignes composant la carte d'un niveau
         /// </summary>
-        private int nombreLignes;
+        private int _nombreLignes;
 
         /// <summary>
         /// Nombre de colonnes composant la carte d'un niveau
         /// </summary>
-        private int nombreColonnes;
+        private int _nombreColonnes;
 
-        // *******************************
-        //          CONSTRUCTEURS
-        // *******************************
+		/// <summary>
+		/// Carte composée de lignes et de colonnes
+		/// </summary>
+		private MapElement[,] _carte;
 
-        public Map()
+		// *******************************
+		//          CONSTRUCTEURS
+		// *******************************
+
+		public Map()
         {
 
         }
@@ -42,11 +47,46 @@ namespace FearTheDungeon
         /// <param name="colonnes"></param>
         public Map(int lignes, int colonnes)
         {
-
+			this._nombreLignes = lignes;
+			this._nombreColonnes = colonnes;
+			_carte = new MapElement[_nombreLignes, _nombreColonnes];
         }
 
-        // ***************************************
-        //          ACCESSEURS ET MUTATEURS
-        // ***************************************
-    }
+		// ***************************************
+		//          ACCESSEURS ET MUTATEURS
+		// ***************************************
+
+		/// <summary>
+		/// Le nombre de lignes qui composent la carte du niveau
+		/// </summary>
+		public int NombreLignes
+		{
+			get
+			{
+				return _nombreLignes;
+			}
+
+			set
+			{
+				_nombreLignes = value;
+			}
+		}
+
+		/// <summary>
+		/// Le nombre de colonnes qui composent la carte du niveau
+		/// </summary>
+		public int NombreColonnes
+		{
+			get
+			{
+				return _nombreColonnes;
+			}
+
+			set
+			{
+				_nombreColonnes = value;
+			}
+		}
+
+	}
 }
