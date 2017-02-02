@@ -82,8 +82,24 @@ namespace FearTheDungeon
 		/// <param name="niveauChoisie"></param>
 		static public void OptionChoisieMenuDesNiveaux(int niveauChoisie)
 		{
+			char appuiTouche;
 
+			//Si le niveau que le joueur a choisi a bien été débloqué
+			if(DonneesNiveau.tableauNiveaux[niveauChoisie-1].Debloque == true)
+			{
 				Affichage.AffichageNiveau(DonneesNiveau.tableauNiveaux[niveauChoisie - 1]);
+			}
+
+			else
+			{
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine("\t\tVous n'avez pas débloqué ce niveau !");
+				Console.WriteLine("\t\tAppuyez sur une touche pour continuer");
+				Console.ResetColor();
+				appuiTouche = Console.ReadKey(true).KeyChar;
+				Affichage.AffichageMenuDesNiveaux(DonneesNiveau.tableauNiveaux);
+			}
+
 
 		}
 

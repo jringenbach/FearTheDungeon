@@ -94,6 +94,7 @@ namespace FearTheDungeon
 				if (choixValide) choixValide = (niveauChoisie < 0 || niveauChoisie > niveau.Length) ? false : true;
 			} while (!choixValide);
 
+			//Si le joueur tape 0, il retourne au menu des options des niveaux
 			if (niveauChoisie == 0) Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuNiveau);
 			else Fonctions.OptionChoisieMenuDesNiveaux(niveauChoisie);
 		}
@@ -215,6 +216,9 @@ namespace FearTheDungeon
 		/// <param name="nomDuNiveau"></param>
 		static private void NomDuNiveau(string nomDuNiveau)
 		{
+			//Les contours du tableau du nom du niveau sont affichés en jaune
+			//Le nom du niveau est affiché en rouge
+
 			Console.ForegroundColor = ConsoleColor.Yellow;
 			NombreTiretsAdaptable(nomDuNiveau);
 			Console.Write("\t\t\t| ");
