@@ -76,6 +76,10 @@ namespace FearTheDungeon
 			}
 		}
 
+		/// <summary>
+		/// Affiche le niveau sélectionné dans le menu des niveaux
+		/// </summary>
+		/// <param name="niveauChoisie"></param>
 		static public void OptionChoisieMenuDesNiveaux(int niveauChoisie)
 		{
 
@@ -241,6 +245,10 @@ namespace FearTheDungeon
             DonnéesMenu.FonctionnementMenu[0] = "Select the number corresponding to the desired option";
 			DonnéesMenu.FonctionnementMenu[1] = "Select the number corresponding to the desired level";
 
+			//Nom des niveaux
+			DonneesNiveau.tableauNiveaux[0].Nom = "Greatness from small beginnings";
+			DonneesNiveau.tableauNiveaux[1].Nom = "No pain, no gain";
+
         }
 
         /// <summary>
@@ -276,6 +284,10 @@ namespace FearTheDungeon
             //Langue de la consigne des menus
             DonnéesMenu.FonctionnementMenu[0] = "Tapez le numéro correspondant à l'option désirée.";
 			DonnéesMenu.FonctionnementMenu[1] = "Tapez le numéro du niveau désiré.";
+
+			//Nom des niveaux
+			DonneesNiveau.tableauNiveaux[0].Nom = "La grandeur des petits débuts";
+			DonneesNiveau.tableauNiveaux[1].Nom = "Sans effort, pas de gloire";
 
 		}
 	}

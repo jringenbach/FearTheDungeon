@@ -44,14 +44,17 @@ namespace FearTheDungeon
 		/// </summary>
 		static public void AffichageMenuDesNiveaux(Niveau[] niveau)
 		{
-			for(int i=0; i<niveau.Length; i++)
+			int niveauChoisie;
+			bool choixValide = false;
+
+
+			Console.Clear();
+			Affichage.TitreDuJeu();
+
+			//Boucle qui permet d'afficher les différents niveaux du jeu
+			for (int i=0; i<niveau.Length; i++)
 			{
-				int niveauChoisie;
-				bool choixValide = false;
 
-				Console.Clear();
-
-				Affichage.TitreDuJeu();
 
 				//Bordure supérieure du tableau
 				Console.WriteLine("\t\t\t     ---------------");
@@ -69,30 +72,30 @@ namespace FearTheDungeon
 				if (i < 10) Console.WriteLine("    |");
 				else if (i < 100) Console.WriteLine("  |");
 
-				//Bordure inférieure du tableau
-				Console.WriteLine("\t\t\t     ---------------");
-
-				//Case Retour
-				Console.Write("\t\t\t    |");
-				Console.ForegroundColor = ConsoleColor.Yellow;
-				Console.Write("   0. Retour  ");
-				Console.ResetColor();
-				Console.WriteLine(" |");
-				Console.WriteLine("\t\t\t     ---------------");
-
-				FonctionnementMenu(1);
-
-				//Le joueur choisit le niveau qu'il désire
-				do
-				{
-					choixValide = int.TryParse(Convert.ToString(Console.ReadKey(true).KeyChar), out niveauChoisie);
-					if (choixValide) choixValide = (niveauChoisie < 0 || niveauChoisie > niveau.Length) ? false : true;
-				} while (!choixValide);
-
-				if (niveauChoisie == 0) Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuNiveau);
-				else Fonctions.OptionChoisieMenuDesNiveaux(niveauChoisie);
-
 			}
+
+			//Bordure inférieure du tableau
+			Console.WriteLine("\t\t\t     ---------------");
+
+			//Case Retour
+			Console.Write("\t\t\t    |");
+			Console.ForegroundColor = ConsoleColor.Yellow;
+			Console.Write("   0. Retour  ");
+			Console.ResetColor();
+			Console.WriteLine(" |");
+			Console.WriteLine("\t\t\t     ---------------");
+
+			FonctionnementMenu(1);
+
+			//Le joueur choisit le niveau qu'il désire
+			do
+			{
+				choixValide = int.TryParse(Convert.ToString(Console.ReadKey(true).KeyChar), out niveauChoisie);
+				if (choixValide) choixValide = (niveauChoisie < 0 || niveauChoisie > niveau.Length) ? false : true;
+			} while (!choixValide);
+
+			if (niveauChoisie == 0) Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuNiveau);
+			else Fonctions.OptionChoisieMenuDesNiveaux(niveauChoisie);
 		}
 
 		/// <summary>
@@ -104,14 +107,17 @@ namespace FearTheDungeon
 			Console.Clear();
 
 			//todo : améliorer l'affichage des niveaux
-
+			NomDuNiveau(niveau.Nom);
+			
 			for(int i=0; i<niveau.CarteDuNiveau.NombreLignes; i++)
 			{
 				NombreTiretsAdaptable(niveau);
-				for(int j=0; j < niveau.CarteDuNiveau.NombreColonnes; j++)
+				Console.Write("\t\t\t|   ");
+				for (int j=0; j < niveau.CarteDuNiveau.NombreColonnes; j++)
 				{
-					Console.WriteLine("\t\t\t| ");
+					Console.Write("|   ");
 				}
+				Console.WriteLine();
 			}
 			NombreTiretsAdaptable(niveau);
 		}
@@ -180,11 +186,44 @@ namespace FearTheDungeon
 		static private void NombreTiretsAdaptable(Niveau niveau)
 		{
 			Console.Write("\t\t\t ");
-			for (int i = 0; i < niveau.CarteDuNiveau.NombreColonnes + 5; i++)
+			for (int i = 0; i < niveau.CarteDuNiveau.NombreColonnes + 14; i++)
 			{
 				Console.Write("-");
 			}
 			Console.WriteLine();
+		}
+
+		/// <summary>
+		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
+		/// </summary>
+		/// <param name="chaine"></param>
+		static private void NombreTiretsAdaptable(string chaine)
+		{
+			Console.Write("\t\t\t");
+			Console.Write(" ");
+
+			for(int i = 1; i < chaine.Length+3; i++)
+			{
+				Console.Write("-");
+			}
+			Console.WriteLine();
+		}
+
+		/// <summary>
+		/// Affichage du nom du niveau
+		/// </summary>
+		/// <param name="nomDuNiveau"></param>
+		static private void NomDuNiveau(string nomDuNiveau)
+		{
+			Console.ForegroundColor = ConsoleColor.Yellow;
+			NombreTiretsAdaptable(nomDuNiveau);
+			Console.Write("\t\t\t| ");
+			Console.ForegroundColor = ConsoleColor.Red;
+			Console.Write(nomDuNiveau);
+			Console.ForegroundColor = ConsoleColor.Yellow;
+			Console.WriteLine(" |");
+			NombreTiretsAdaptable(nomDuNiveau);
+			Console.ResetColor();
 		}
 
 		/// <summary>
