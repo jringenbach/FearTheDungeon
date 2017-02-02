@@ -198,7 +198,7 @@ namespace FearTheDungeon
 		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
 		/// </summary>
 		/// <param name="chaine"></param>
-		static private void NombreTiretsAdaptable(string chaine)
+		static public void NombreTiretsAdaptable(string chaine)
 		{
 			Console.Write("\t\t\t");
 			Console.Write(" ");
@@ -214,7 +214,7 @@ namespace FearTheDungeon
 		/// Affichage du nom du niveau
 		/// </summary>
 		/// <param name="nomDuNiveau"></param>
-		static private void NomDuNiveau(string nomDuNiveau)
+		static public void NomDuNiveau(string nomDuNiveau)
 		{
 			//Les contours du tableau du nom du niveau sont affichés en jaune
 			//Le nom du niveau est affiché en rouge

@@ -93,10 +93,14 @@ namespace FearTheDungeon
 			else
 			{
 				Console.ForegroundColor = ConsoleColor.Red;
-				Console.WriteLine("\t\tVous n'avez pas débloqué ce niveau !");
-				Console.WriteLine("\t\tAppuyez sur une touche pour continuer");
+				Console.Write("\t\t");
+				Console.WriteLine(DonnéesMenu.FonctionnementMenu[2]);
+				Console.Write("\t\t");
+				Console.WriteLine(DonnéesMenu.FonctionnementMenu[3]);
 				Console.ResetColor();
 				appuiTouche = Console.ReadKey(true).KeyChar;
+
+				//Une fois que le joueur a appuyé sur une touche, on le ramène au menu de choix des niveaux
 				Affichage.AffichageMenuDesNiveaux(DonneesNiveau.tableauNiveaux);
 			}
 
@@ -118,6 +122,38 @@ namespace FearTheDungeon
 				
 				//L'utilisateur va entrer un mot de passe pour arriver au niveau désiré
 				case 2:
+					string chaineSaisiePourLeMotDePasse;
+					int niveauDebloque;
+					char toucheSaisie;
+
+					Affichage.NomDuNiveau(DonnéesMenu.MenuNiveauOptions[1]);
+					Console.WriteLine("Le mot de passe comporte 6 caractères");
+					chaineSaisiePourLeMotDePasse = SaisieDuMotDePasse();
+					niveauDebloque = VerificationMotDePasse(chaineSaisiePourLeMotDePasse, DonneesNiveau.tableauNiveaux);
+
+					//Si la variable niveau débloqué égal 0, c'est que le mot de passe saisie était incorrecte
+					if(niveauDebloque == 0)
+					{
+						Console.ForegroundColor = ConsoleColor.Red;
+						//On indique que le mot de passe est erroné et qu'il doit appuyer sur une touche pour continuer
+						Console.WriteLine();
+						Console.WriteLine(DonnéesMenu.FonctionnementMenu[4]);
+						Console.WriteLine(DonnéesMenu.FonctionnementMenu[3]);
+						Console.ResetColor();
+
+						//L'utilisateur doit appuyer sur une touche pour avancer
+						toucheSaisie = Console.ReadKey(true).KeyChar;
+						Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuNiveau);
+					}
+
+					//Si le mot de passe entré était bon
+					else
+					{
+						DebloquageDesNiveaux(niveauDebloque);
+						Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuNiveau);
+
+					}
+					
 					break;
 
 				//Permet de retourner au menu précédent : ici, le menu principal.
@@ -227,6 +263,70 @@ namespace FearTheDungeon
             Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuOptions);
         }
 
+		/// <summary>
+		/// Fonction de saisie du mot de passe
+		/// </summary>
+		/// <param name="niveau"></param>
+		static string SaisieDuMotDePasse()
+		{
+			Console.WriteLine();
+
+			char[] chaineMdp = new char[6];
+			string mdp = "";
+
+
+			//On initialise la chaine du mot de passe par des étoiles
+			for (int i = 0; i < chaineMdp.Length; i++) chaineMdp[i] = '*';
+			Console.Write("Mot de Passe : ");
+
+			//Boucle qui permet à l'utilisateur de saisir chaque caractère
+			for(int i = 0; i<chaineMdp.Length; i++)
+			{
+				chaineMdp[i] = Console.ReadKey(false).KeyChar;
+			}
+
+			//On insère les caractères saisis dans une chaine de caractères
+			for(int i=0; i<chaineMdp.Length; i++)
+			{
+				mdp += chaineMdp[i];
+			}
+
+			//On retourne la chaine saisie par l'utilisateur
+			return mdp;
+		}
+
+		/// <summary>
+		/// On vérifie si le mot de passe débloque un niveau ou non
+		/// </summary>
+		/// <param name="mdpSaisie"></param>
+		/// <param name="niveau"></param>
+		/// <returns></returns>
+		static private int VerificationMotDePasse(string mdpSaisie, Niveau[] niveau)
+		{
+			int niveauDebloque = 0;
+
+			//On parcourt les mots de passe de chaque niveau pour voir si y'en a un qui est égal à la saisie du niveau
+			for(int i = 0; i<niveau.Length; i++)
+			{
+				if(mdpSaisie == niveau[i].Password) niveauDebloque = i + 1;
+			}
+
+			return niveauDebloque;
+		}
+
+		/// <summary>
+		/// On débloque tous les niveaux jusqu'au niveau qui possède le mot de passe entré par le joueur
+		/// </summary>
+		/// <param name="niveauDebloque"></param>
+		static public void DebloquageDesNiveaux(int niveauDebloque)
+		{
+			for(int i=0; i< niveauDebloque; i++)
+			{
+				DonneesNiveau.tableauNiveaux[i].Debloque = true;
+			}
+			DonneesPubliques.niveauDebloque = niveauDebloque;
+		}
+
         /// <summary>
         /// Fonction qui permet de passer le jeu en anglais
         /// </summary>
@@ -260,6 +360,10 @@ namespace FearTheDungeon
             //Langue de la consigne des menus
             DonnéesMenu.FonctionnementMenu[0] = "Select the number corresponding to the desired option";
 			DonnéesMenu.FonctionnementMenu[1] = "Select the number corresponding to the desired level";
+			DonnéesMenu.FonctionnementMenu[2] = "You haven't unlocked this level yet";
+			DonnéesMenu.FonctionnementMenu[3] = "Press a key to continue";
+			DonnéesMenu.FonctionnementMenu[4] = "Wrong Password";
+			DonnéesMenu.FonctionnementMenu[5] = "The Password is 6 characters long";
 
 			//Nom des niveaux
 			DonneesNiveau.tableauNiveaux[0].Nom = "Greatness from small beginnings";
@@ -300,10 +404,15 @@ namespace FearTheDungeon
             //Langue de la consigne des menus
             DonnéesMenu.FonctionnementMenu[0] = "Tapez le numéro correspondant à l'option désirée.";
 			DonnéesMenu.FonctionnementMenu[1] = "Tapez le numéro du niveau désiré.";
+			DonnéesMenu.FonctionnementMenu[2] = "Vous n'avez pas débloqué ce niveau !";
+			DonnéesMenu.FonctionnementMenu[3] = "Appuyez sur une touche pour continuer";
+			DonnéesMenu.FonctionnementMenu[4] = "Mot de passe erroné";
+			DonnéesMenu.FonctionnementMenu[5] = "Le mot de passe contient 6 caractères";
 
 			//Nom des niveaux
 			DonneesNiveau.tableauNiveaux[0].Nom = "La grandeur des petits débuts";
 			DonneesNiveau.tableauNiveaux[1].Nom = "Sans effort, pas de gloire";
+
 
 		}
 	}
