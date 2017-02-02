@@ -39,6 +39,18 @@ namespace FearTheDungeon
 
 		}
 
+		static public void AffichageNiveau(Niveau niveau)
+		{
+			for(int i=0; i<niveau.CarteDuNiveau.NombreLignes; i++)
+			{
+				NombreTiretsAdaptable(niveau);
+				for(int j=0; j < niveau.CarteDuNiveau.NombreColonnes; j++)
+				{
+					Console.WriteLine("| ");
+				}
+			}
+		}
+
 		/// <summary>
 		/// Affiche à l'utilisateur comment le menu fonctionne
 		/// </summary>
@@ -52,33 +64,6 @@ namespace FearTheDungeon
 
             Console.WriteLine(DonnéesMenu.FonctionnementMenu[0]+"\n");
 			Console.ResetColor();
-		}
-
-		/// <summary>
-		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
-		/// </summary>
-		/// <param name="menu"></param>
-		static private void NombreTiretsAdaptable(Menu menu)
-		{
-			Console.Write("\t\t\t ");
-			for (int i = 0; i < menu.LongueurChaineMax() + 5; i++)
-			{
-				Console.Write("-");
-			}
-			Console.WriteLine();
-		}
-
-		/// <summary>
-		/// Permet d'adapter la position de la console à la taille de l'écran
-		/// </summary>
-		static public void PositionConsole()
-		{
-			int largeur, hauteur;
-			largeur = Screen.PrimaryScreen.Bounds.Width;
-			largeur /= 3;
-			hauteur = Screen.PrimaryScreen.Bounds.Height;
-			hauteur /= 3;
-
 		}
 
 		/// <summary>
@@ -102,10 +87,51 @@ namespace FearTheDungeon
 				if (choixValide) choixValide = (optionChoisie < 1 || optionChoisie > menu.OptionsDuMenu.Length) ? false : true;
 			} while (!choixValide);
 
-			
+
 			menu.OptionChoisie = optionChoisie;
 
 			Fonctions.AppelOptionChoisie(menu);
+
+		}
+
+		/// <summary>
+		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
+		/// </summary>
+		/// <param name="menu"></param>
+		static private void NombreTiretsAdaptable(Menu menu)
+		{
+			Console.Write("\t\t\t ");
+			for (int i = 0; i < menu.LongueurChaineMax() + 5; i++)
+			{
+				Console.Write("-");
+			}
+			Console.WriteLine();
+		}
+
+		/// <summary>
+		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
+		/// </summary>
+		/// <param name="menu"></param>
+		static private void NombreTiretsAdaptable(Niveau niveau)
+		{
+			Console.Write("\t\t\t ");
+			for (int i = 0; i < niveau.CarteDuNiveau.NombreColonnes + 5; i++)
+			{
+				Console.Write("-");
+			}
+			Console.WriteLine();
+		}
+
+		/// <summary>
+		/// Permet d'adapter la position de la console à la taille de l'écran
+		/// </summary>
+		static public void PositionConsole()
+		{
+			int largeur, hauteur;
+			largeur = Screen.PrimaryScreen.Bounds.Width;
+			largeur /= 3;
+			hauteur = Screen.PrimaryScreen.Bounds.Height;
+			hauteur /= 3;
 
 		}
 
