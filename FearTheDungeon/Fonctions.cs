@@ -15,10 +15,11 @@ namespace FearTheDungeon
 		static public void AppelOptionChoisie(Menu menu)
 		{
 			bool menuAppelantEstLeMenuPrincipal = false;
-			bool menuAppelantEstLeMenuDesNiveaux = false;
+			bool menuAppelantEstLeMenuDesOptionsDesNiveaux = false;
 			bool menuAppelantEstLeMenuDesOptions = false;
 			bool menuAppelantEstLeMenuDesDifficultes = false;
             bool menuAppelantEstLeMenuDesLangues = false;
+
 			int i = 0;
 
 			for(i=0; i < DonnéesMenu.TableauDesMenus.Length; i++)
@@ -31,14 +32,14 @@ namespace FearTheDungeon
 
             //On regarde quel menu est appelé
             if (i == 0) menuAppelantEstLeMenuPrincipal = true;
-            else if (i == 1) menuAppelantEstLeMenuDesNiveaux = true;
+            else if (i == 1) menuAppelantEstLeMenuDesOptionsDesNiveaux = true;
             else if (i == 2) menuAppelantEstLeMenuDesOptions = true;
             else if (i == 3) menuAppelantEstLeMenuDesDifficultes = true;
             else if (i == 4) menuAppelantEstLeMenuDesLangues = true;
 
             //On appelle ensuite le bon menu
             if (menuAppelantEstLeMenuPrincipal) AppelOptionChoisieMenuPrincipal(menu);
-            else if (menuAppelantEstLeMenuDesNiveaux) AppelOptionChoisieMenuDesNiveaux(menu);
+            else if (menuAppelantEstLeMenuDesOptionsDesNiveaux) AppelOptionChoisieMenuDesOptionsDesNiveaux(menu);
             else if (menuAppelantEstLeMenuDesOptions) AppelOptionChoisieMenuDesOptions(menu);
             else if (menuAppelantEstLeMenuDesDifficultes) AppelOptionChoisieMenuDifficultes(menu);
             else if (menuAppelantEstLeMenuDesLangues) AppelOptionChoisieMenuDesLangues(menu);
@@ -75,16 +76,24 @@ namespace FearTheDungeon
 			}
 		}
 
+		static public void OptionChoisieMenuDesNiveaux(int niveauChoisie)
+		{
+
+				Affichage.AffichageNiveau(DonneesNiveau.tableauNiveaux[niveauChoisie - 1]);
+
+		}
+
 		/// <summary>
 		/// On regarde l'option choisie dans le menu des niveaux pour afficher les fonctionnalités qui lui sont associées
 		/// </summary>
 		/// <param name="optionChoisie"></param>
-		static public void AppelOptionChoisieMenuDesNiveaux(Menu menu)
+		static public void AppelOptionChoisieMenuDesOptionsDesNiveaux(Menu menu)
 		{
 			switch (menu.OptionChoisie)
 			{
 				//On lance le jeu à partir du premier niveau
 				case 1:
+					Affichage.AffichageMenuDesNiveaux(DonneesNiveau.tableauNiveaux);
 					break;
 				
 				//L'utilisateur va entrer un mot de passe pour arriver au niveau désiré
@@ -230,6 +239,7 @@ namespace FearTheDungeon
 
             //Langue de la consigne des menus
             DonnéesMenu.FonctionnementMenu[0] = "Select the number corresponding to the desired option";
+			DonnéesMenu.FonctionnementMenu[1] = "Select the number corresponding to the desired level";
 
         }
 
@@ -265,6 +275,8 @@ namespace FearTheDungeon
 
             //Langue de la consigne des menus
             DonnéesMenu.FonctionnementMenu[0] = "Tapez le numéro correspondant à l'option désirée.";
-        }
+			DonnéesMenu.FonctionnementMenu[1] = "Tapez le numéro du niveau désiré.";
+
+		}
 	}
 }

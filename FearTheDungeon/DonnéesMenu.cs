@@ -75,10 +75,13 @@ namespace FearTheDungeon
 		/// </summary>
 		static private int _choixOptionsMenuDesNiveaux;
 
+
 		/// <summary>
-		/// Consigne(s) du fonctionnement du menu
+		/// Consignes du fonctionnement des différents menus
  		/// </summary>
-		static private string[] fonctionnementMenu = {"Tapez le numéro correspondant à l'option désirée."};
+		static private string[] fonctionnementMenu = {"Tapez le numéro correspondant à l'option désirée.",
+													  "Tapez le numéro du niveau désiré." };
+
 
 		/// <summary>
 		/// Tableau contenant tous les menus

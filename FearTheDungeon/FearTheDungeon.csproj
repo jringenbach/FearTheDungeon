@@ -46,10 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Affichage.cs" />
+    <Compile Include="DonneesNiveau.cs" />
     <Compile Include="DonneesPubliques.cs" />
     <Compile Include="DonnéesMenu.cs" />
     <Compile Include="Fonctions.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="MapElement.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Niveau.cs" />
     <Compile Include="Program.cs" />

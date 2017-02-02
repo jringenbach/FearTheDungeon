@@ -10,5 +10,6 @@ namespace FearTheDungeon
     {
         public static string difficulte = "normal";
         public static string langue = "Français";
+		public static int niveauDebloque = 0;
     }
 }

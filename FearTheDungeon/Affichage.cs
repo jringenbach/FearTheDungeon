@@ -39,22 +39,87 @@ namespace FearTheDungeon
 
 		}
 
+		/// <summary>
+		/// Permet d'afficher tous les niveaux du jeu
+		/// </summary>
+		static public void AffichageMenuDesNiveaux(Niveau[] niveau)
+		{
+			for(int i=0; i<niveau.Length; i++)
+			{
+				int niveauChoisie;
+				bool choixValide = false;
+
+				Console.Clear();
+
+				Affichage.TitreDuJeu();
+
+				//Bordure supérieure du tableau
+				Console.WriteLine("\t\t\t     ---------------");
+
+				//Bordure gauche du tableau
+				Console.Write("\t\t\t    |");
+
+				//Si le niveau est débloqué on l'affiche en blanc, sinon en gris
+				if (i <= DonneesPubliques.niveauDebloque) Console.ForegroundColor = ConsoleColor.White;
+				else Console.ForegroundColor = ConsoleColor.Gray;
+				Console.Write("   Niveau " + (i + 1));
+				Console.ResetColor();
+
+				//Bordure droite du tableau
+				if (i < 10) Console.WriteLine("    |");
+				else if (i < 100) Console.WriteLine("  |");
+
+				//Bordure inférieure du tableau
+				Console.WriteLine("\t\t\t     ---------------");
+
+				//Case Retour
+				Console.Write("\t\t\t    |");
+				Console.ForegroundColor = ConsoleColor.Yellow;
+				Console.Write("   0. Retour  ");
+				Console.ResetColor();
+				Console.WriteLine(" |");
+				Console.WriteLine("\t\t\t     ---------------");
+
+				FonctionnementMenu(1);
+
+				//Le joueur choisit le niveau qu'il désire
+				do
+				{
+					choixValide = int.TryParse(Convert.ToString(Console.ReadKey(true).KeyChar), out niveauChoisie);
+					if (choixValide) choixValide = (niveauChoisie < 0 || niveauChoisie > niveau.Length) ? false : true;
+				} while (!choixValide);
+
+				if (niveauChoisie == 0) Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuNiveau);
+				else Fonctions.OptionChoisieMenuDesNiveaux(niveauChoisie);
+
+			}
+		}
+
+		/// <summary>
+		/// Affiche le niveau
+		/// </summary>
+		/// <param name="niveau"></param>
 		static public void AffichageNiveau(Niveau niveau)
 		{
+			Console.Clear();
+
+			//todo : améliorer l'affichage des niveaux
+
 			for(int i=0; i<niveau.CarteDuNiveau.NombreLignes; i++)
 			{
 				NombreTiretsAdaptable(niveau);
 				for(int j=0; j < niveau.CarteDuNiveau.NombreColonnes; j++)
 				{
-					Console.WriteLine("| ");
+					Console.WriteLine("\t\t\t| ");
 				}
 			}
+			NombreTiretsAdaptable(niveau);
 		}
 
 		/// <summary>
 		/// Affiche à l'utilisateur comment le menu fonctionne
 		/// </summary>
-		static private void FonctionnementMenu()
+		static private void FonctionnementMenu(int consigneChoisie)
 		{
 			Console.ForegroundColor = ConsoleColor.Red;
 
@@ -62,7 +127,7 @@ namespace FearTheDungeon
             if (DonneesPubliques.langue == "Français") Console.Write("\n\t\t");
             else if (DonneesPubliques.langue == "Anglais") Console.Write("\n\t");
 
-            Console.WriteLine(DonnéesMenu.FonctionnementMenu[0]+"\n");
+            Console.WriteLine(DonnéesMenu.FonctionnementMenu[consigneChoisie]+"\n");
 			Console.ResetColor();
 		}
 
@@ -80,7 +145,7 @@ namespace FearTheDungeon
 				Console.Clear();
 				Affichage.TitreDuJeu();
 				Affichage.AffichageMenu(menu);
-				Affichage.FonctionnementMenu();
+				Affichage.FonctionnementMenu(0);
 
 				choixValide = int.TryParse(Convert.ToString(Console.ReadKey(true).KeyChar), out optionChoisie);
 

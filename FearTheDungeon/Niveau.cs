@@ -28,6 +28,16 @@ namespace FearTheDungeon
 		/// </summary>
 		private short _numero;
 
+		/// <summary>
+		/// Mot de passe pour accéder au niveau
+		/// </summary>
+		private string _password;
+
+		/// <summary>
+		/// Permet de savoir si le niveau a été débloqué ou non
+		/// </summary>
+		private bool _debloque;
+
         // *******************************
         //          CONSTRUCTEURS
         // *******************************
@@ -40,11 +50,13 @@ namespace FearTheDungeon
 
         }
 
-		public Niveau(Map carte, string nom, short numero)
+		public Niveau(Map carte, string nom, short numero, string password, bool debloque)
 		{
 			this._carteDuNiveau = carte;
 			this._nom = nom;
 			this._numero = numero;
+			this._password = password;
+			this._debloque = debloque;
 
 		}
 
@@ -97,6 +109,38 @@ namespace FearTheDungeon
 			set
 			{
 				_numero = value;
+			}
+		}
+
+		/// <summary>
+		/// Mot de passe du niveau
+		/// </summary>
+		public string Password
+		{
+			get
+			{
+				return _password;
+			}
+
+			set
+			{
+				_password = value;
+			}
+		}
+
+		/// <summary>
+		/// Permet de savoir si le niveau a été débloque (true) ou non (false)
+		/// </summary>
+		public bool Debloque
+		{
+			get
+			{
+				return _debloque;
+			}
+
+			set
+			{
+				_debloque = value;
 			}
 		}
 	}
