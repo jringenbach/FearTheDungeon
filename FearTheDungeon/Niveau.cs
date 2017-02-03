@@ -38,6 +38,7 @@ namespace FearTheDungeon
 		/// </summary>
 		private bool _debloque;
 
+
         // *******************************
         //          CONSTRUCTEURS
         // *******************************

@@ -17,6 +17,16 @@ namespace FearTheDungeon
 		/// </summary>
 		private bool _seDeplace;
 
+		/// <summary>
+		/// Affiche le position de l'élément sur la carte du niveau
+		/// </summary>
+		private int[] _positionElement;
+
+		/// <summary>
+		/// Symbole qui sera affiché sur la map pour cet élément
+		/// </summary>
+		private char _symbole;
+
 		// *******************************
 		//          CONSTRUCTEURS
 		// *******************************
@@ -26,9 +36,11 @@ namespace FearTheDungeon
 
 		}
 
-		public MapElement(bool seDeplace)
+		public MapElement(bool seDeplace, int[] positionElement, char symbole)
 		{
 			this._seDeplace = seDeplace;
+			this.PositionElement = positionElement;
+			this.Symbole = symbole;
 		}
 
 
@@ -51,5 +63,38 @@ namespace FearTheDungeon
 				_seDeplace = value;
 			}
 		}
+
+		/// <summary>
+		/// Indique les coordonnées en x et y de l'élément 
+		/// </summary>
+		public int[] PositionElement
+		{
+			get
+			{
+				return _positionElement;
+			}
+
+			set
+			{
+				_positionElement = value;
+			}
+		}
+
+		/// <summary>
+		/// Symbole qui sera affiché sur la map pour cet élément
+		/// </summary>
+		public char Symbole
+		{
+			get
+			{
+				return _symbole;
+			}
+
+			set
+			{
+				_symbole = value;
+			}
+		}
+
 	}
 }
