@@ -127,7 +127,7 @@ namespace FearTheDungeon
 		{
 			bool symbolePresent = false;
 			bool leJoueurEstSurLaCaseDeLaSortie = false;
-			int positionSymbole = 0;
+
 
 			//La boucle du niveau continue tant que le joueur n'est pas sur la case de la sortie
 			do
@@ -137,54 +137,8 @@ namespace FearTheDungeon
 				//On affiche le nom du niveau tout en haut de l'écran
 				AffichageTexte(niveau.Nom);
 
-
-				//Début de l'affichage du tableau
-				for (int i = 0; i < niveau.CarteDuNiveau.NombreLignes; i++) //Boucle des lignes
-				{
-					NombreTiretsAdaptable(niveau);
-
-					///Bord gauche de la première case tout à gauche
-					Console.Write("\t\t\t|");
-					for (int j = 0; j < niveau.CarteDuNiveau.NombreColonnes; j++) //Boucle des colonnes
-					{
-						symbolePresent = false;
-						//On parcourt la boucle des éléments du niveau
-						//On la parcourt à Length-1 car on a ajouté une case vide en ajoutant le dernier élément
-						for (int k = 0; k < niveau.ElementsDuNiveau.Length - 1; k++)
-						{
-							//Si dans le tableau des éléments, un élément à la même position que celle sur laquelle on est en construisant
-							//le tableau, on passe symbolePresent à true
-							if (niveau.ElementsDuNiveau[k].PositionElement[0] == i && //PositionElement[0] : position de l'élément en X
-							   niveau.ElementsDuNiveau[k].PositionElement[1] == j) //PositionElement[1] : position de l'élément en Y
-							{
-								symbolePresent = true;
-								positionSymbole = k;
-								break;
-							}
-
-							else
-							{
-
-							}
-						}
-
-						//Si un symbole est présent sur la case en train d'être dessinée, on le dessine
-						if (symbolePresent == true)
-						{
-							Console.Write(" " + niveau.elementsDuNiveau[positionSymbole].Symbole + " ");
-						}
-
-						//Sinon on affiche des espaces
-						else
-						{
-							Console.Write("   ");
-						}
-						Console.Write("|");
-					}
-					Console.WriteLine();
-				}
-
-				NombreTiretsAdaptable(niveau); //Tirets tout en bas du tableau
+				//On affiche la carte du niveau
+				MapDuNiveau(niveau);
 
 				//Si le joueur est sur une case message, on lui affiche un message en dessous de la carte du niveau
 				for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
@@ -331,6 +285,60 @@ namespace FearTheDungeon
 
 			Console.ResetColor();
 
+		}
+		
+		static void MapDuNiveau(Niveau niveau)
+		{
+
+			bool symbolePresent;
+			int positionSymbole = 0;
+
+			//Début de l'affichage du tableau
+			for (int i = 0; i < niveau.CarteDuNiveau.NombreLignes; i++) //Boucle des lignes
+			{
+				NombreTiretsAdaptable(niveau);
+
+				//Bord gauche de la première case tout à gauche
+				Console.Write("\t\t\t|");
+				for (int j = 0; j < niveau.CarteDuNiveau.NombreColonnes; j++) //Boucle des colonnes
+				{
+					symbolePresent = false;
+					//On parcourt la boucle des éléments du niveau
+					//On la parcourt à Length-1 car on a ajouté une case vide en ajoutant le dernier élément
+					for (int k = 0; k < niveau.ElementsDuNiveau.Length - 1; k++)
+					{
+						//Si dans le tableau des éléments, un élément à la même position que celle sur laquelle on est en construisant
+						//le tableau, on passe symbolePresent à true
+						if (niveau.ElementsDuNiveau[k].PositionElement[0] == i && //PositionElement[0] : position de l'élément en X
+						    niveau.ElementsDuNiveau[k].PositionElement[1] == j)   //PositionElement[1] : position de l'élément en Y
+						{
+							symbolePresent = true;
+							positionSymbole = k;
+							break;
+						}
+
+						else
+						{
+
+						}
+					}
+
+					//Si un symbole est présent sur la case en train d'être dessinée, on le dessine
+					if (symbolePresent == true)
+					{
+						Console.Write(" " + niveau.elementsDuNiveau[positionSymbole].Symbole + " ");
+					}
+
+					//Sinon on affiche des espaces
+					else
+					{
+						Console.Write("   ");
+					}
+					Console.Write("|");
+				}
+				Console.WriteLine();
+			}
+			NombreTiretsAdaptable(niveau); //Tirets tout en bas du tableau
 		}
 
 	}
