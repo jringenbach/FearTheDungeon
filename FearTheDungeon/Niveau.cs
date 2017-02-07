@@ -19,6 +19,11 @@ namespace FearTheDungeon
         private Map _carteDuNiveau = new Map();
 
 		/// <summary>
+		/// Permet de savoir si le niveau a été débloqué ou non
+		/// </summary>
+		private bool _debloque;
+
+		/// <summary>
 		/// Affiche le nom du niveau
 		/// </summary>
 		private string _nom;
@@ -33,10 +38,9 @@ namespace FearTheDungeon
 		/// </summary>
 		private string _password;
 
-		/// <summary>
-		/// Permet de savoir si le niveau a été débloqué ou non
-		/// </summary>
-		private bool _debloque;
+
+
+		MapElement[] elementsDuNiveau;
 
 
         // *******************************
@@ -80,6 +84,15 @@ namespace FearTheDungeon
                 _carteDuNiveau = value;
             }
         }
+
+		/// <summary>
+		/// Permet d'ajouter des éléments dans le niveau lors de sa création
+		/// </summary>
+		public void ajoutMapElement(MapElement element)
+		{
+
+			Array.Resize(ref elementsDuNiveau, elementsDuNiveau.Length + 1);
+		}
 
 		/// <summary>
 		/// Permet de récupérer le nom du niveau
