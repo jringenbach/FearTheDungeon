@@ -53,6 +53,7 @@
     <Compile Include="Map.cs" />
     <Compile Include="MapElement.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="MessageElement.cs" />
     <Compile Include="Niveau.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

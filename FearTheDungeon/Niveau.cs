@@ -38,9 +38,10 @@ namespace FearTheDungeon
 		/// </summary>
 		private string _password;
 
-
-
-		MapElement[] elementsDuNiveau;
+		/// <summary>
+		/// Stocke tous les éléments présents dans le niveau
+		/// </summary>
+		public MapElement[] elementsDuNiveau;
 
 
         // *******************************
@@ -84,15 +85,6 @@ namespace FearTheDungeon
                 _carteDuNiveau = value;
             }
         }
-
-		/// <summary>
-		/// Permet d'ajouter des éléments dans le niveau lors de sa création
-		/// </summary>
-		public void ajoutMapElement(MapElement element)
-		{
-
-			Array.Resize(ref elementsDuNiveau, elementsDuNiveau.Length + 1);
-		}
 
 		/// <summary>
 		/// Permet de récupérer le nom du niveau
@@ -156,6 +148,35 @@ namespace FearTheDungeon
 			{
 				_debloque = value;
 			}
+		}
+
+		/// <summary>
+		/// Permet d'accéder à tous les éléments du niveau
+		/// </summary>
+		public MapElement[] ElementsDuNiveau
+		{
+			get
+			{
+				return elementsDuNiveau;
+			}
+
+			set
+			{
+				elementsDuNiveau = value;
+			}
+		}
+
+		// ***************************************
+		//				METHODES
+		// ***************************************
+
+		/// <summary>
+		/// Permet d'ajouter des éléments dans le niveau lors de sa création
+		/// </summary>
+		public void AjoutMapElement(MapElement element)
+		{
+
+			Array.Resize(ref elementsDuNiveau, ElementsDuNiveau.Length + 1);
 		}
 	}
 }
