@@ -18,9 +18,9 @@ namespace FearTheDungeon
 		private bool _seDeplace;
 
 		/// <summary>
-		/// Affiche le position de l'élément sur la carte du niveau
+		/// Affiche l'élément à cette position dans le niveau
 		/// </summary>
-		private int[] _positionElement;
+		private int[] _positionElement = new int[2];
 
 		/// <summary>
 		/// Symbole qui sera affiché sur la map pour cet élément
@@ -34,6 +34,12 @@ namespace FearTheDungeon
 		public MapElement()
 		{
 
+		}
+
+		public MapElement(bool seDeplace, int[] positionElement)
+		{
+			this._seDeplace = seDeplace;
+			this.PositionElement = positionElement;
 		}
 
 		public MapElement(bool seDeplace, int[] positionElement, char symbole)

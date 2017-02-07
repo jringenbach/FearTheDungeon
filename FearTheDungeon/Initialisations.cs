@@ -15,6 +15,12 @@ namespace FearTheDungeon
 		{
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.message1Niveau1);
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.message2Niveau1);
+			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.sortieNiveau1);
+
+			//On définit la position du personnage principal au début du niveau
+			DonneesNiveau.personnagePrincipal.PositionElement[0] = 4; //En X
+			DonneesNiveau.personnagePrincipal.PositionElement[1] = 2; //En Y
+			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.personnagePrincipal);
 		}
 
 		/// <summary>
