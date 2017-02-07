@@ -100,11 +100,13 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
-		/// Affiche le niveau
+		/// Affiche le titre du niveau et sa carte contenant tous ses éléments
 		/// </summary>
 		/// <param name="niveau"></param>
 		static public void AffichageNiveau(Niveau niveau)
 		{
+			bool symbolePresent = false;
+			int positionSymbole = 0;
 			Console.Clear();
 
 			//On affiche le nom du niveau tout en haut de l'écran
@@ -112,15 +114,45 @@ namespace FearTheDungeon
 			
 
 			//Début de l'affichage du tableau
-			for(int i=0; i<niveau.CarteDuNiveau.NombreLignes; i++)
+			for(int i=0; i<niveau.CarteDuNiveau.NombreLignes; i++) //Boucle des lignes
 			{
 				NombreTiretsAdaptable(niveau);
 
 				///Bord gauche de la première case tout à gauche
-				Console.Write("\t\t\t|   ");
-				for (int j=0; j < niveau.CarteDuNiveau.NombreColonnes; j++)
+				Console.Write("\t\t\t|");
+				for (int j=0; j < niveau.CarteDuNiveau.NombreColonnes; j++) //Boucle des colonnes
 				{
-					Console.Write("|   ");
+					symbolePresent = false;
+					//On parcourt la boucle des éléments du niveau
+					//On la parcourt à Length-1 car on a ajouté une case vide en ajoutant le dernier élément
+					for(int k=0; k < niveau.ElementsDuNiveau.Length-1; k++)
+					{
+						//Si dans le tableau des éléments, un élément à la même position que celle sur laquelle on est en construisant
+						//le tableau, on affiche son symbole.
+						if(niveau.ElementsDuNiveau[k].PositionElement[0] == i &&
+						   niveau.ElementsDuNiveau[k].PositionElement[1] == j)
+						{
+							symbolePresent = true;
+							positionSymbole = k;
+							break;
+						}
+
+						else
+						{
+							
+						}
+					}
+
+					if (symbolePresent == true)
+					{
+						Console.Write(" " + niveau.elementsDuNiveau[positionSymbole].Symbole+" ");
+					}
+
+					else
+					{
+						Console.Write("   ");
+					}
+					Console.Write("|");
 				}
 				Console.WriteLine();
 			}
@@ -128,7 +160,7 @@ namespace FearTheDungeon
 			NombreTiretsAdaptable(niveau); //Tirets tout en bas du tableau
 
 			//Si le joueur est sur une case message, on lui affiche un message en dessous de la carte du niveau
-			for(int i=0; i<niveau.ElementsDuNiveau.Length; i++)
+			for(int i=0; i<niveau.ElementsDuNiveau.Length-1; i++)
 			{
 				//On regarde si la position du joueur est égal à la position d'une case Message
 				if(niveau.ElementsDuNiveau[i].Symbole == 'M' &&
@@ -190,8 +222,9 @@ namespace FearTheDungeon
 		/// <param name="menu"></param>
 		static private void NombreTiretsAdaptable(Menu menu)
 		{
+			int longueurChaineMax = menu.LongueurChaineMax();
 			Console.Write("\t\t\t ");
-			for (int i = 0; i < menu.LongueurChaineMax() + 5; i++)
+			for (int i = 0; i < longueurChaineMax + 5; i++)
 			{
 				Console.Write("-");
 			}

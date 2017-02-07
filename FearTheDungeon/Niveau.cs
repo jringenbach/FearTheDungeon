@@ -63,7 +63,7 @@ namespace FearTheDungeon
 			this._numero = numero;
 			this._password = password;
 			this._debloque = debloque;
-			elementsDuNiveau = new MapElement[0];
+			elementsDuNiveau = new MapElement[1];
 
 		}
 
@@ -179,12 +179,13 @@ namespace FearTheDungeon
 			if(elementsDuNiveau.Length == 1)
 			{
 				elementsDuNiveau[0] = element;
+				Array.Resize(ref this.elementsDuNiveau, this.elementsDuNiveau.Length + 1);
 			}
 
 			else
 			{
-				Array.Resize(ref this.elementsDuNiveau, this.elementsDuNiveau.Length + 1);
 				this.elementsDuNiveau[this.elementsDuNiveau.Length - 1] = element;
+				Array.Resize(ref this.elementsDuNiveau, this.elementsDuNiveau.Length + 1);
 			}
 
 		}
