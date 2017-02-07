@@ -131,6 +131,7 @@ namespace FearTheDungeon
 			{
 
 			} while ();
+
 			Console.Clear();
 
 			//On affiche le nom du niveau tout en haut de l'écran
