@@ -90,13 +90,14 @@ namespace FearTheDungeon
 				Affichage.AffichageNiveau(DonneesNiveau.tableauNiveaux[niveauChoisie - 1]);
 			}
 
+			//Sinon on lui affiche le message d'erreur correspondant contenu dans le tableau FonctionnementMenu
 			else
 			{
 				Console.ForegroundColor = ConsoleColor.Red;
 				Console.Write("\t\t");
-				Console.WriteLine(DonnéesMenu.FonctionnementMenu[2]);
+				Console.WriteLine(DonnéesMenu.FonctionnementMenu[2]); //"Vous n'avez pas débloqué ce niveau"
 				Console.Write("\t\t");
-				Console.WriteLine(DonnéesMenu.FonctionnementMenu[3]);
+				Console.WriteLine(DonnéesMenu.FonctionnementMenu[3]);//"Appuyez sur une touche pour continuer"
 				Console.ResetColor();
 				appuiTouche = Console.ReadKey(true).KeyChar;
 

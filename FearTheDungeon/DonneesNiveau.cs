@@ -9,7 +9,7 @@ namespace FearTheDungeon
 	abstract class DonneesNiveau
 	{
 
-		public static MapElement personnagePrincipal = new MapElement();
+		public static MapElement personnagePrincipal = new MapElement(true, '*');
 
 		//*************************************************
 		//					LES NIVEAUX
@@ -18,9 +18,10 @@ namespace FearTheDungeon
 		//***********************************
 		//				NIVEAU 1             ****************************************************************************************
 		//***********************************
-		public static Niveau niveau1 = new Niveau(carteNiveau1, "La grandeur des petits débuts", 1, "AEX171", true);
 
 		private static Map carteNiveau1 = new Map(5, 5);
+
+		public static Niveau niveau1 = new Niveau(carteNiveau1, "La grandeur des petits débuts", 1, "AEX171", true);
 
 		static int[] positionMessage1Niveau1 = { 3, 2 };
 		static int[] positionMessage2Niveau1 = { 4, 4 };
@@ -33,16 +34,18 @@ namespace FearTheDungeon
 		//***********************************
 		//				NIVEAU 2             ****************************************************************************************
 		//***********************************
-		public static Niveau niveau2 = new Niveau(carteNiveau2, "Sans effort, pas de gloire", 2, "BGF211", false);
 
 		private static Map carteNiveau2 = new Map(5, 5);
+
+		public static Niveau niveau2 = new Niveau(carteNiveau2, "Sans effort, pas de gloire", 2, "BGF211", false);
 
 		//***********************************
 		//				NIVEAU 3             ****************************************************************************************
 		//***********************************
-		public static Niveau niveau3 = new Niveau(carteNiveau3, "Le prince des chips", 3, "HDE841", false);
 
 		private static Map carteNiveau3 = new Map(5, 5);
+
+		public static Niveau niveau3 = new Niveau(carteNiveau3, "Le prince des chips", 3, "HDE841", false);
 
 		//***************************************************************************************************************************
 

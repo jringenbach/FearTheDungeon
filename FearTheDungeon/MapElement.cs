@@ -49,6 +49,12 @@ namespace FearTheDungeon
 			this.Symbole = symbole;
 		}
 
+		public MapElement(bool seDeplace, char symbole)
+		{
+			this._seDeplace = seDeplace;
+			this.Symbole = symbole;
+		}
+
 
 		// ***************************************
 		//          ACCESSEURS ET MUTATEURS
