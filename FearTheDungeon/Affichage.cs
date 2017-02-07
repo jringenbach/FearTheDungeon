@@ -107,12 +107,16 @@ namespace FearTheDungeon
 		{
 			Console.Clear();
 
-			//todo : améliorer l'affichage des niveaux
-			NomDuNiveau(niveau.Nom);
+			//On affiche le nom du niveau tout en haut de l'écran
+			AffichageTexte(niveau.Nom);
 			
+
+			//Début de l'affichage du tableau
 			for(int i=0; i<niveau.CarteDuNiveau.NombreLignes; i++)
 			{
 				NombreTiretsAdaptable(niveau);
+
+				///Bord gauche de la première case tout à gauche
 				Console.Write("\t\t\t|   ");
 				for (int j=0; j < niveau.CarteDuNiveau.NombreColonnes; j++)
 				{
@@ -120,7 +124,21 @@ namespace FearTheDungeon
 				}
 				Console.WriteLine();
 			}
-			NombreTiretsAdaptable(niveau);
+
+			NombreTiretsAdaptable(niveau); //Tirets tout en bas du tableau
+
+			//Si le joueur est sur une case message, on lui affiche un message en dessous de la carte du niveau
+			for(int i=0; i<niveau.ElementsDuNiveau.Length; i++)
+			{
+				//On regarde si la position du joueur est égal à la position d'une case Message
+				if(niveau.ElementsDuNiveau[i].Symbole == 'M' &&
+				   DonneesNiveau.personnagePrincipal.PositionElement[0] == niveau.ElementsDuNiveau[i].PositionElement[0] &&
+				   DonneesNiveau.personnagePrincipal.PositionElement[1] == niveau.ElementsDuNiveau[i].PositionElement[1])
+				{
+					//AffichageTexte(); //Affiche le message contenu dans la case message
+				}
+			}
+
 		}
 
 		/// <summary>
@@ -211,10 +229,10 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
-		/// Affichage du nom du niveau
+		/// Affichage d'un texte entouré d'un tableau
 		/// </summary>
 		/// <param name="nomDuNiveau"></param>
-		static public void NomDuNiveau(string nomDuNiveau)
+		static public void AffichageTexte(string nomDuNiveau)
 		{
 			//Les contours du tableau du nom du niveau sont affichés en jaune
 			//Le nom du niveau est affiché en rouge
