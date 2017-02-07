@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace FearTheDungeon
 {
+
+	/// <summary>
+	/// Contient toutes les fonctions relatives aux menus : choix de l'utilisateur dans un menu
+	/// </summary>
 	abstract class Fonctions
 	{
+
 		/// <summary>
 		/// On regarde dans quel menu le joueur vient d'effectuer un choix
 		/// </summary>
@@ -416,5 +421,7 @@ namespace FearTheDungeon
 
 
 		}
+
 	}
+	
 }

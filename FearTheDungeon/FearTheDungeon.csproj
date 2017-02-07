@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Affichage.cs" />
+    <Compile Include="Deplacement.cs" />
     <Compile Include="DonneesNiveau.cs" />
     <Compile Include="DonneesPubliques.cs" />
     <Compile Include="DonnéesMenu.cs" />

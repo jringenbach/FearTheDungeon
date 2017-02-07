@@ -100,6 +100,26 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
+		/// Affichage d'un texte entouré d'un tableau
+		/// </summary>
+		/// <param name="nomDuNiveau"></param>
+		static public void AffichageTexte(string nomDuNiveau)
+		{
+			//Les contours du tableau du nom du niveau sont affichés en jaune
+			//Le nom du niveau est affiché en rouge
+
+			Console.ForegroundColor = ConsoleColor.Yellow;
+			NombreTiretsAdaptable(nomDuNiveau);
+			Console.Write("\t\t\t| ");
+			Console.ForegroundColor = ConsoleColor.Red;
+			Console.Write(nomDuNiveau);
+			Console.ForegroundColor = ConsoleColor.Yellow;
+			Console.WriteLine(" |");
+			NombreTiretsAdaptable(nomDuNiveau);
+			Console.ResetColor();
+		}
+
+		/// <summary>
 		/// Affiche le titre du niveau et sa carte contenant tous ses éléments
 		/// </summary>
 		/// <param name="niveau"></param>
@@ -128,9 +148,9 @@ namespace FearTheDungeon
 					for(int k=0; k < niveau.ElementsDuNiveau.Length-1; k++)
 					{
 						//Si dans le tableau des éléments, un élément à la même position que celle sur laquelle on est en construisant
-						//le tableau, on affiche son symbole.
-						if(niveau.ElementsDuNiveau[k].PositionElement[0] == i &&
-						   niveau.ElementsDuNiveau[k].PositionElement[1] == j)
+						//le tableau, on passe symbolePresent à true
+						if(niveau.ElementsDuNiveau[k].PositionElement[0] == i && //PositionElement[0] : position de l'élément en X
+						   niveau.ElementsDuNiveau[k].PositionElement[1] == j) //PositionElement[1] : position de l'élément en Y
 						{
 							symbolePresent = true;
 							positionSymbole = k;
@@ -143,11 +163,13 @@ namespace FearTheDungeon
 						}
 					}
 
+					//Si un symbole est présent sur la case en train d'être dessinée, on le dessine
 					if (symbolePresent == true)
 					{
 						Console.Write(" " + niveau.elementsDuNiveau[positionSymbole].Symbole+" ");
 					}
 
+					//Sinon on affiche des espaces
 					else
 					{
 						Console.Write("   ");
@@ -170,6 +192,9 @@ namespace FearTheDungeon
 					//AffichageTexte(); //Affiche le message contenu dans la case message
 				}
 			}
+
+			//Le joueur choisit son déplacement
+			Deplacement.MouvementJoueur(niveau);
 
 		}
 
@@ -259,26 +284,6 @@ namespace FearTheDungeon
 				Console.Write("-");
 			}
 			Console.WriteLine();
-		}
-
-		/// <summary>
-		/// Affichage d'un texte entouré d'un tableau
-		/// </summary>
-		/// <param name="nomDuNiveau"></param>
-		static public void AffichageTexte(string nomDuNiveau)
-		{
-			//Les contours du tableau du nom du niveau sont affichés en jaune
-			//Le nom du niveau est affiché en rouge
-
-			Console.ForegroundColor = ConsoleColor.Yellow;
-			NombreTiretsAdaptable(nomDuNiveau);
-			Console.Write("\t\t\t| ");
-			Console.ForegroundColor = ConsoleColor.Red;
-			Console.Write(nomDuNiveau);
-			Console.ForegroundColor = ConsoleColor.Yellow;
-			Console.WriteLine(" |");
-			NombreTiretsAdaptable(nomDuNiveau);
-			Console.ResetColor();
 		}
 
 		/// <summary>
