@@ -17,6 +17,14 @@ namespace FearTheDungeon
 
 		}
 
+		public SortieElement(int positionX, int positionY) : base()
+		{
+			Symbole = 'S';
+			SeDeplace = false;
+			PositionElement[0] = positionX;
+			PositionElement[1] = positionY;
+		}
+
 		/// <summary>
 		/// CONSTRUCTEUR de la classe SortieElement
 		/// </summary>

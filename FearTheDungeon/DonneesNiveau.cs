@@ -23,13 +23,20 @@ namespace FearTheDungeon
 
 		public static Niveau niveau1 = new Niveau(carteNiveau1, "La grandeur des petits débuts", 1, "AEX171", true);
 
-		static int[] positionMessage1Niveau1 = { 3, 2 };
-		static int[] positionMessage2Niveau1 = { 4, 4 };
-		static int[] positionSortieNiveau1 = { 0, 0 };
+		//CREATION DES ELEMENTS DU NIVEAU 1
+		public static MessageElement message1Niveau1 = new MessageElement(3, 2, "Les cases M vous donnent une information.");
+		public static MessageElement message2Niveau1 = new MessageElement(4, 4, "Les cases S indiquent la sortie");
 
-		public static MessageElement message1Niveau1 = new MessageElement(false, positionMessage1Niveau1, "Les cases M vous donnent une information.");
-		public static MessageElement message2Niveau1 = new MessageElement(false, positionMessage2Niveau1, "Les cases S indiquent la sortie");
-		public static SortieElement sortieNiveau1 = new SortieElement(false, positionSortieNiveau1);
+		public static Mur murligne1colonne0 = new Mur(1,0);
+		public static Mur murligne1colonne1 = new Mur(1,1);
+		public static Mur murligne1colonne2 = new Mur(1,2);
+		public static Mur murligne1colonne3 = new Mur(1,3);
+		public static Mur murligne3colonne1 = new Mur(3,1);
+		public static Mur murligne4colonne1 = new Mur(4,1);
+		public static Mur murligne3colonne3 = new Mur(3,3);
+		public static Mur murligne3colonne4 = new Mur(3,4);
+
+		public static SortieElement sortieNiveau1 = new SortieElement(0,0);
 
 		//***********************************
 		//				NIVEAU 2             ****************************************************************************************

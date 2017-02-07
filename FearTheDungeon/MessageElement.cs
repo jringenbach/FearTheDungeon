@@ -26,7 +26,22 @@ namespace FearTheDungeon
 		/// </summary>
 		public MessageElement() : base()
 		{
+			Symbole = 'M';
+		}
 
+		/// <summary>
+		/// Constructeur de la classe MessageElement
+		/// </summary>
+		/// <param name="positionX"></param>
+		/// <param name="positionY"></param>
+		/// <param name="message"></param>
+		public MessageElement(int positionX, int positionY, string message) : base()
+		{
+			SeDeplace = false;
+			PositionElement[0] = positionX;
+			PositionElement[1] = positionY;
+			Message = message;
+			Symbole = 'M';
 		}
 
 		/// <summary>

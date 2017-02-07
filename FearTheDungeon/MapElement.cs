@@ -36,6 +36,11 @@ namespace FearTheDungeon
 
 		}
 
+		public MapElement(int[] positionElement)
+		{
+			PositionElement = positionElement;
+		}
+
 		public MapElement(bool seDeplace, int[] positionElement)
 		{
 			this._seDeplace = seDeplace;
