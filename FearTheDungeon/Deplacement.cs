@@ -26,7 +26,47 @@ namespace FearTheDungeon
 				if (mouvementValide) mouvementValide = TestValiditeDuMouvement(deplacementInt, niveau);
 			} while (!mouvementValide);
 
+			ModificationPositionJoueur(deplacementInt);
+
 		}
+
+		/// <summary>
+		/// Modifie la position du joueur dans le fichier DonneesNiveau
+		/// </summary>
+		/// <param name="deplacement"></param>
+		static public void ModificationPositionJoueur(int deplacement)
+		{
+			switch (deplacement)
+			{
+				//Si le joueur est allé en bas
+				case 2:
+					DonneesNiveau.personnagePrincipal.PositionElement[0]++;
+					break;
+
+				//Si le joueur est allé à gauche
+				case 4:
+					DonneesNiveau.personnagePrincipal.PositionElement[1]--;
+					break;
+
+				//Si le joueur est allé à droite
+				case 6:
+					DonneesNiveau.personnagePrincipal.PositionElement[1]++;
+					break;
+
+				//Si le joueur est allé en haut
+				case 8:
+					DonneesNiveau.personnagePrincipal.PositionElement[0]--;
+					break;
+
+				default:
+					break;
+			}
+		}
+
+		//**********************************************************************
+		//			LES DIFFERENTS TESTS DE VALIDITE DE MOUVEMENT
+		//**********************************************************************
+
 
 		/// <summary>
 		/// On va regarder si le joueur désire progresser sur une case valide ou non.
