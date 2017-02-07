@@ -145,16 +145,11 @@ namespace FearTheDungeon
 		static bool LeJoueurSortDeLaMap(Niveau niveau, int positionX, int positionY)
 		{
 			bool sortDuTableau = false;
-
-			for (int i = 0; i < niveau.ElementsDuNiveau.Length; i++)
+			//Si cela sort de la carte
+			if (positionX >= niveau.CarteDuNiveau.NombreLignes ||
+				positionY >= niveau.CarteDuNiveau.NombreColonnes)
 			{
-				//Si cela sort de la carte
-				if (DonneesNiveau.personnagePrincipal.PositionElement[0] + 1 >= niveau.CarteDuNiveau.NombreLignes ||
-					DonneesNiveau.personnagePrincipal.PositionElement[1] + 1 >= niveau.CarteDuNiveau.NombreColonnes)
-				{
-					sortDuTableau = true;
-				}
-				if (sortDuTableau == true) break;
+				sortDuTableau = true;
 			}
 
 			return sortDuTableau;
@@ -177,7 +172,7 @@ namespace FearTheDungeon
 			{
 				//Si il existe un élément à la position de la case sur laquelle veut aller le joueur
 				if (niveau.ElementsDuNiveau[i].PositionElement[0] == DonneesNiveau.personnagePrincipal.PositionElement[0] + 1 &&
-				    niveau.ElementsDuNiveau[i].PositionElement[1] == DonneesNiveau.personnagePrincipal.PositionElement[1] + 1)
+					niveau.ElementsDuNiveau[i].PositionElement[1] == DonneesNiveau.personnagePrincipal.PositionElement[1] + 1)
 				{
 					//Si cet élément est un mur
 					if (niveau.ElementsDuNiveau[i].Symbole == 'X')

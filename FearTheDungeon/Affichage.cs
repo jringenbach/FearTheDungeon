@@ -126,80 +126,89 @@ namespace FearTheDungeon
 		static public void AffichageNiveau(Niveau niveau)
 		{
 			bool symbolePresent = false;
+			bool leJoueurEstSurLaCaseDeLaSortie = false;
 			int positionSymbole = 0;
+
+			//La boucle du niveau continue tant que le joueur n'est pas sur la case de la sortie
 			do
 			{
+				Console.Clear();
 
-			} while ();
+				//On affiche le nom du niveau tout en haut de l'écran
+				AffichageTexte(niveau.Nom);
 
-			Console.Clear();
 
-			//On affiche le nom du niveau tout en haut de l'écran
-			AffichageTexte(niveau.Nom);
-			
-
-			//Début de l'affichage du tableau
-			for(int i=0; i<niveau.CarteDuNiveau.NombreLignes; i++) //Boucle des lignes
-			{
-				NombreTiretsAdaptable(niveau);
-
-				///Bord gauche de la première case tout à gauche
-				Console.Write("\t\t\t|");
-				for (int j=0; j < niveau.CarteDuNiveau.NombreColonnes; j++) //Boucle des colonnes
+				//Début de l'affichage du tableau
+				for (int i = 0; i < niveau.CarteDuNiveau.NombreLignes; i++) //Boucle des lignes
 				{
-					symbolePresent = false;
-					//On parcourt la boucle des éléments du niveau
-					//On la parcourt à Length-1 car on a ajouté une case vide en ajoutant le dernier élément
-					for(int k=0; k < niveau.ElementsDuNiveau.Length-1; k++)
+					NombreTiretsAdaptable(niveau);
+
+					///Bord gauche de la première case tout à gauche
+					Console.Write("\t\t\t|");
+					for (int j = 0; j < niveau.CarteDuNiveau.NombreColonnes; j++) //Boucle des colonnes
 					{
-						//Si dans le tableau des éléments, un élément à la même position que celle sur laquelle on est en construisant
-						//le tableau, on passe symbolePresent à true
-						if(niveau.ElementsDuNiveau[k].PositionElement[0] == i && //PositionElement[0] : position de l'élément en X
-						   niveau.ElementsDuNiveau[k].PositionElement[1] == j) //PositionElement[1] : position de l'élément en Y
+						symbolePresent = false;
+						//On parcourt la boucle des éléments du niveau
+						//On la parcourt à Length-1 car on a ajouté une case vide en ajoutant le dernier élément
+						for (int k = 0; k < niveau.ElementsDuNiveau.Length - 1; k++)
 						{
-							symbolePresent = true;
-							positionSymbole = k;
-							break;
+							//Si dans le tableau des éléments, un élément à la même position que celle sur laquelle on est en construisant
+							//le tableau, on passe symbolePresent à true
+							if (niveau.ElementsDuNiveau[k].PositionElement[0] == i && //PositionElement[0] : position de l'élément en X
+							   niveau.ElementsDuNiveau[k].PositionElement[1] == j) //PositionElement[1] : position de l'élément en Y
+							{
+								symbolePresent = true;
+								positionSymbole = k;
+								break;
+							}
+
+							else
+							{
+
+							}
 						}
 
+						//Si un symbole est présent sur la case en train d'être dessinée, on le dessine
+						if (symbolePresent == true)
+						{
+							Console.Write(" " + niveau.elementsDuNiveau[positionSymbole].Symbole + " ");
+						}
+
+						//Sinon on affiche des espaces
 						else
 						{
-							
+							Console.Write("   ");
 						}
+						Console.Write("|");
 					}
-
-					//Si un symbole est présent sur la case en train d'être dessinée, on le dessine
-					if (symbolePresent == true)
-					{
-						Console.Write(" " + niveau.elementsDuNiveau[positionSymbole].Symbole+" ");
-					}
-
-					//Sinon on affiche des espaces
-					else
-					{
-						Console.Write("   ");
-					}
-					Console.Write("|");
+					Console.WriteLine();
 				}
-				Console.WriteLine();
-			}
 
-			NombreTiretsAdaptable(niveau); //Tirets tout en bas du tableau
+				NombreTiretsAdaptable(niveau); //Tirets tout en bas du tableau
 
-			//Si le joueur est sur une case message, on lui affiche un message en dessous de la carte du niveau
-			for(int i=0; i<niveau.ElementsDuNiveau.Length-1; i++)
-			{
-				//On regarde si la position du joueur est égal à la position d'une case Message
-				if(niveau.ElementsDuNiveau[i].Symbole == 'M' &&
-				   DonneesNiveau.personnagePrincipal.PositionElement[0] == niveau.ElementsDuNiveau[i].PositionElement[0] &&
-				   DonneesNiveau.personnagePrincipal.PositionElement[1] == niveau.ElementsDuNiveau[i].PositionElement[1])
+				//Si le joueur est sur une case message, on lui affiche un message en dessous de la carte du niveau
+				for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
 				{
-					//AffichageTexte(); //Affiche le message contenu dans la case message
+					//On regarde si la position du joueur est égal à la position d'une case Message
+					if (niveau.ElementsDuNiveau[i].Symbole == 'M' &&
+					   DonneesNiveau.personnagePrincipal.PositionElement[0] == niveau.ElementsDuNiveau[i].PositionElement[0] &&
+					   DonneesNiveau.personnagePrincipal.PositionElement[1] == niveau.ElementsDuNiveau[i].PositionElement[1])
+					{
+						//AffichageTexte(); //Affiche le message contenu dans la case message
+					}
 				}
-			}
 
-			//Le joueur choisit son déplacement
-			Deplacement.MouvementJoueur(niveau);
+				//Le joueur choisit son déplacement
+				Deplacement.MouvementJoueur(niveau);
+
+				//Si le joueur est sur la case de la sortie alors on quitte la boucle
+				if (DonneesNiveau.personnagePrincipal.PositionElement[0] == DonneesNiveau.sortieNiveau1.PositionElement[0] &&
+					DonneesNiveau.personnagePrincipal.PositionElement[1] == DonneesNiveau.sortieNiveau1.PositionElement[1])
+					leJoueurEstSurLaCaseDeLaSortie = true;
+
+			}while (!leJoueurEstSurLaCaseDeLaSortie);
+
+			//TO DO : charger le niveau suivant
 
 		}
 
