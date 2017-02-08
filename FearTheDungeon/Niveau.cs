@@ -190,6 +190,9 @@ namespace FearTheDungeon
 
 		}
 
+		/// <summary>
+		/// Vide le tableau des éléments du niveau
+		/// </summary>
 		public void ResetNiveau()
 		{
 			Array.Resize(ref this.elementsDuNiveau, 1);
