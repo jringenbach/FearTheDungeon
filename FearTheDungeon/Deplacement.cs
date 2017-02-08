@@ -147,7 +147,8 @@ namespace FearTheDungeon
 			bool sortDuTableau = false;
 			//Si cela sort de la carte
 			if (positionX >= niveau.CarteDuNiveau.NombreLignes ||
-				positionY >= niveau.CarteDuNiveau.NombreColonnes)
+				positionY >= niveau.CarteDuNiveau.NombreColonnes ||
+				positionX < 0 || positionY < 0)
 			{
 				sortDuTableau = true;
 			}

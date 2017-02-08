@@ -125,8 +125,10 @@ namespace FearTheDungeon
 		/// <param name="niveau"></param>
 		static public void AffichageNiveau(Niveau niveau)
 		{
+			int [] positionSortie = new int[2];
 			bool leJoueurEstSurLaCaseDeLaSortie = false;
 
+			RecherchePositionSortie(niveau, positionSortie);
 
 			//La boucle du niveau continue tant que le joueur n'est pas sur la case de la sortie
 			do
@@ -155,15 +157,18 @@ namespace FearTheDungeon
 				Deplacement.MouvementJoueur(niveau);
 
 				//Si le joueur est sur la case de la sortie alors on quitte la boucle
-				if (DonneesNiveau.personnagePrincipal.PositionElement[0] == DonneesNiveau.sortieNiveau1.PositionElement[0] &&
-					DonneesNiveau.personnagePrincipal.PositionElement[1] == DonneesNiveau.sortieNiveau1.PositionElement[1])
+				if (DonneesNiveau.personnagePrincipal.PositionElement[0] == positionSortie[0] &&
+					DonneesNiveau.personnagePrincipal.PositionElement[1] == positionSortie[1])
 					leJoueurEstSurLaCaseDeLaSortie = true;
 
 			}while (!leJoueurEstSurLaCaseDeLaSortie);
 
+			//On charge les paramètres du niveau suivant et on indique dans données publiques que le niveau suivant est débloqué
 			Initialisations.InitialisationNiveauSuivant(niveau);
+			DonneesPubliques.niveauDebloque++;
 
-			//TO DO : charger le niveau suivant
+			AfficherLeNiveauSuivant(niveau);
+
 
 		}
 
@@ -359,5 +364,42 @@ namespace FearTheDungeon
 				Console.Write("   ");
 			}
 		}
+
+		/// <summary>
+		/// Permet d'afficher le niveau suivant celui dans lequel le joueur se trouve
+		/// </summary>
+		/// <param name="niveau"></param>
+		static public void AfficherLeNiveauSuivant(Niveau niveau)
+		{
+			int i = 0;
+			//On regarde dans quel niveau le joueur se trouve
+			for(i=0; i<DonneesNiveau.tableauNiveaux.Length; i++)
+			{
+				if (i == niveau.Numero-1) break;
+			}
+
+			//Pour ensuite afficher le niveau suivant
+			AffichageNiveau(DonneesNiveau.tableauNiveaux[i + 1]);
+
+		}
+
+		/// <summary>
+		/// Cette fonction permet de stocker la position de la sortie afin d'éviter de reparcourir le tableau plusieurs fois
+		/// </summary>
+		/// <param name="niveau"></param>
+		/// <param name="positionSortie"></param>
+		static private void RecherchePositionSortie(Niveau niveau, int[] positionSortie)
+		{
+			for(int i=0; i<niveau.ElementsDuNiveau.Length-1; i++)
+			{
+				if(niveau.ElementsDuNiveau[i].Symbole == 'S')
+				{
+					positionSortie[0] = niveau.ElementsDuNiveau[i].PositionElement[0];
+					positionSortie[1] = niveau.ElementsDuNiveau[i].PositionElement[1];
+					break;
+				}
+			}
+		}
+		
 	}
 }
