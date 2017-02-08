@@ -13,6 +13,10 @@ namespace FearTheDungeon
 	abstract class Fonctions
 	{
 
+		// ************************************************************************
+		//			FONCTIONS VERIFIANT LE CHOIX DU JOUEUR DANS LES MENUS
+		// ************************************************************************
+
 		/// <summary>
 		/// On regarde dans quel menu le joueur vient d'effectuer un choix
 		/// </summary>
@@ -269,6 +273,10 @@ namespace FearTheDungeon
             Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuOptions);
         }
 
+		// ************************************************************************
+		//						FONCTIONS DES MOTS DE PASSE
+		// ************************************************************************
+
 		/// <summary>
 		/// Fonction de saisie du mot de passe
 		/// </summary>
@@ -319,6 +327,11 @@ namespace FearTheDungeon
 
 			return niveauDebloque;
 		}
+
+		// ********************************************************************************************
+		//						FONCTIONS TRAVAILLANT SUR LES DONNEES PUBLIQUES
+		// ********************************************************************************************
+
 
 		/// <summary>
 		/// On débloque tous les niveaux jusqu'au niveau qui possède le mot de passe entré par le joueur
