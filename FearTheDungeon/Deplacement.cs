@@ -31,7 +31,7 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
-		/// Modifie la position du joueur dans le fichier DonneesNiveau
+		/// Modifie la position d'un élément dans le fichier DonneesNiveau (joueur, bloc...)
 		/// </summary>
 		/// <param name="deplacement"></param>
 		static public void ModificationPositionElement(int deplacement, MapElement element)

@@ -132,7 +132,7 @@ namespace FearTheDungeon
 					int niveauDebloque;
 					char toucheSaisie;
 
-					Affichage.AffichageTexte(DonnéesMenu.MenuNiveauOptions[1]);
+					Affichage.AffichageTexte(DonnéesMenu.MenuNiveauOptions[1], 1);
 					Console.WriteLine("Le mot de passe comporte 6 caractères");
 					chaineSaisiePourLeMotDePasse = SaisieDuMotDePasse();
 					niveauDebloque = VerificationMotDePasse(chaineSaisiePourLeMotDePasse, DonneesNiveau.tableauNiveaux);

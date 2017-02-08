@@ -18,30 +18,53 @@ namespace FearTheDungeon
 		/// Affichage d'un texte entouré d'un tableau
 		/// </summary>
 		/// <param name="nomDuNiveau"></param>
-		static public void AffichageTexte(string nomDuNiveau)
+		static public void AffichageTexte(string nomDuNiveau, int typeDeTexte)
 		{
 			//Les contours du tableau du nom du niveau sont affichés en jaune
 			//Le nom du niveau est affiché en rouge
+			//Si typeDeTexte vaut 1, alors on formate un titre
+			//Si typeDeTexte vaut 2, alors on formate un message issu de MessageElement
 
-			Console.ForegroundColor = ConsoleColor.Yellow;
-			NombreTiretsAdaptable(nomDuNiveau);
-			Console.Write("\t\t\t| ");
-			Console.ForegroundColor = ConsoleColor.Red;
-			Console.Write(nomDuNiveau);
-			Console.ForegroundColor = ConsoleColor.Yellow;
-			Console.WriteLine(" |");
-			NombreTiretsAdaptable(nomDuNiveau);
-			Console.ResetColor();
+			//Si c'est le titre d'un niveau
+			if(typeDeTexte == 1)
+			{
+				Console.ForegroundColor = ConsoleColor.Yellow;
+				NombreTiretsAdaptable(nomDuNiveau,1);
+				Console.Write("\t\t\t| ");
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.Write(nomDuNiveau);
+				Console.ForegroundColor = ConsoleColor.Yellow;
+				Console.WriteLine(" |");
+				NombreTiretsAdaptable(nomDuNiveau,1);
+				Console.ResetColor();
+			}
+
+			//Si c'est un message
+			else if(typeDeTexte == 2)
+			{
+				Console.ForegroundColor = ConsoleColor.Yellow;
+				NombreTiretsAdaptable(nomDuNiveau,2);
+				Console.Write("\t\t| ");
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.Write(nomDuNiveau);
+				Console.ForegroundColor = ConsoleColor.Yellow;
+				Console.WriteLine(" |");
+				NombreTiretsAdaptable(nomDuNiveau,2);
+				Console.ResetColor();
+			}
+
 		}
 
 		/// <summary>
 		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
 		/// </summary>
 		/// <param name="menu"></param>
-		static private void NombreTiretsAdaptable(Menu menu)
+		static private void NombreTiretsAdaptable(Menu menu, int typeDeTexte)
 		{
 			int longueurChaineMax = menu.LongueurChaineMax();
-			Console.Write("\t\t\t ");
+			if(typeDeTexte == 1) Console.Write("\t\t\t ");
+			else if(typeDeTexte == 2) Console.Write("\t\t ");
+
 			for (int i = 0; i < longueurChaineMax + 5; i++)
 			{
 				Console.Write("-");
@@ -53,9 +76,10 @@ namespace FearTheDungeon
 		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
 		/// </summary>
 		/// <param name="menu"></param>
-		static private void NombreTiretsAdaptable(Niveau niveau)
+		static private void NombreTiretsAdaptable(Niveau niveau, int typeDeTexte)
 		{
-			Console.Write("\t\t\t ");
+			if (typeDeTexte == 1) Console.Write("\t\t\t ");
+			else if (typeDeTexte == 2) Console.Write("\t\t ");
 			for (int i = 0; i < niveau.CarteDuNiveau.NombreColonnes + 14; i++)
 			{
 				Console.Write("-");
@@ -67,10 +91,10 @@ namespace FearTheDungeon
 		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
 		/// </summary>
 		/// <param name="chaine"></param>
-		static public void NombreTiretsAdaptable(string chaine)
+		static public void NombreTiretsAdaptable(string chaine, int typeDeTexte)
 		{
-			Console.Write("\t\t\t");
-			Console.Write(" ");
+			if (typeDeTexte == 1) Console.Write("\t\t\t ");
+			else if (typeDeTexte == 2) Console.Write("\t\t ");
 
 			for (int i = 1; i < chaine.Length + 3; i++)
 			{
@@ -104,6 +128,7 @@ namespace FearTheDungeon
 		{
 			int[] positionSortie = new int[2];
 			bool leJoueurEstSurLaCaseDeLaSortie = false;
+			MessageElement messageTemp;
 
 			RecherchePositionSortie(niveau, positionSortie);
 
@@ -113,11 +138,11 @@ namespace FearTheDungeon
 				Console.Clear();
 
 				//On affiche le nom du niveau tout en haut de l'écran
-				AffichageTexte(niveau.Nom);
+				AffichageTexte(niveau.Nom, 1);
 
 				//On affiche la carte du niveau
 				MapDuNiveau(niveau);
-
+				
 				//Si le joueur est sur une case message, on lui affiche un message en dessous de la carte du niveau
 				for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
 				{
@@ -126,7 +151,8 @@ namespace FearTheDungeon
 					   DonneesNiveau.personnagePrincipal.PositionElement[0] == niveau.ElementsDuNiveau[i].PositionElement[0] &&
 					   DonneesNiveau.personnagePrincipal.PositionElement[1] == niveau.ElementsDuNiveau[i].PositionElement[1])
 					{
-						//AffichageMessage(); //Affiche le message contenu dans la case message
+						messageTemp = (MessageElement)niveau.ElementsDuNiveau[i];
+						AffichageTexte(messageTemp.Message, 2); 
 					}
 				}
 
@@ -162,7 +188,7 @@ namespace FearTheDungeon
 			//Début de l'affichage du tableau
 			for (int i = 0; i < niveau.CarteDuNiveau.NombreLignes; i++) //Boucle des lignes
 			{
-				NombreTiretsAdaptable(niveau);
+				NombreTiretsAdaptable(niveau, 1);
 
 				//Bord gauche de la première case tout à gauche
 				Console.Write("\t\t\t|");
@@ -191,7 +217,7 @@ namespace FearTheDungeon
 				}
 				Console.WriteLine();
 			}
-			NombreTiretsAdaptable(niveau); //Tirets tout en bas du tableau
+			NombreTiretsAdaptable(niveau, 1); //Tirets tout en bas du tableau
 		}
 
 		/// <summary>
@@ -324,7 +350,7 @@ namespace FearTheDungeon
 
 			Console.ForegroundColor = ConsoleColor.Yellow;
 
-			NombreTiretsAdaptable(menu);
+			NombreTiretsAdaptable(menu,1);
 
 			for(int i=0; i < menu.OptionsDuMenu.Length; i++)
 			{
@@ -338,7 +364,7 @@ namespace FearTheDungeon
 				Console.WriteLine("|");
 			}
 
-			NombreTiretsAdaptable(menu);
+			NombreTiretsAdaptable(menu,1);
 
 		}
 

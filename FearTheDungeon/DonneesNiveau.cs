@@ -85,7 +85,7 @@ namespace FearTheDungeon
 
 		private static Map carteNiveau3 = new Map(5, 5);
 
-		public static Niveau niveau3 = new Niveau(carteNiveau3, "Le prince des chips", 3, "HDE841", false);
+		public static Niveau niveau3 = new Niveau(carteNiveau3, "On dirait un tutoriel", 3, "HDE841", false);
 		#endregion
 
 		//***************************************************************************************************************************
