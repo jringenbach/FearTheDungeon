@@ -128,7 +128,6 @@ namespace FearTheDungeon
 		{
 			int[] positionSortie = new int[2];
 			bool leJoueurEstSurLaCaseDeLaSortie = false;
-			MessageElement messageTemp;
 
 			RecherchePositionSortie(niveau, positionSortie);
 
@@ -151,8 +150,7 @@ namespace FearTheDungeon
 					   DonneesNiveau.personnagePrincipal.PositionElement[0] == niveau.ElementsDuNiveau[i].PositionElement[0] &&
 					   DonneesNiveau.personnagePrincipal.PositionElement[1] == niveau.ElementsDuNiveau[i].PositionElement[1])
 					{
-						messageTemp = (MessageElement)niveau.ElementsDuNiveau[i];
-						AffichageTexte(messageTemp.Message, 2); 
+						AffichageTexte(((MessageElement)niveau.ElementsDuNiveau[i]).Message, 2); 
 					}
 				}
 
