@@ -167,7 +167,7 @@ namespace FearTheDungeon
 			} while (!leJoueurEstSurLaCaseDeLaSortie);
 
 			//On charge les paramètres du niveau suivant et on indique dans données publiques que le niveau suivant est débloqué
-			Initialisations.InitialisationNiveau(niveau);
+			Initialisations.InitialisationNiveauSuivant(niveau);
 			DonneesPubliques.niveauDebloque++;
 
 			AfficherLeNiveauSuivant(niveau);

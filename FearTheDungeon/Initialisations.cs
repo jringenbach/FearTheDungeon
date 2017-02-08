@@ -142,7 +142,7 @@ namespace FearTheDungeon
 		/// Permet de charger le niveau suivant lorsque que le joueur a fini un niveau ou de charger le niveau en cours quand il appuie sur 5
 		/// </summary>
 		/// <param name="niveau"></param>
-		public static void InitialisationNiveau(Niveau niveau)
+		public static void InitialisationNiveauSuivant(Niveau niveau)
 		{
 			switch (niveau.Numero)
 			{
@@ -161,6 +161,32 @@ namespace FearTheDungeon
 
 				case 4:
 					InitialisationNiveau5();
+					break;
+
+				default:
+					break;
+			}
+		}
+
+		public static void InitialisationNiveau(Niveau niveau)
+		{
+			switch (niveau.Numero)
+			{
+				//On recharge le niveau 1
+				case 1:
+					InitialisationNiveau1();
+					break;
+
+				case 2:
+					InitialisationNiveau2();
+					break;
+
+				case 3:
+					InitialisationNiveau3();
+					break;
+
+				case 4:
+					InitialisationNiveau4();
 					break;
 
 				default:
