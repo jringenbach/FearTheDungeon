@@ -78,6 +78,8 @@ namespace FearTheDungeon
 			DonneesNiveau.personnagePrincipal.PositionElement[1] = 4; //En Y
 			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.personnagePrincipal);
 
+			InitialisationDesBlocs(DonneesNiveau.niveau2);
+
 		}
 
 		/// <summary>
@@ -85,6 +87,8 @@ namespace FearTheDungeon
 		/// </summary>
 		public static void InitialisationNiveau3()
 		{
+			DonneesNiveau.niveau3.ResetNiveau();
+
 			//La case Bloc
 			DonneesNiveau.niveau3.AjoutMapElement(DonneesNiveau.blocNiveau3);
 
@@ -120,6 +124,8 @@ namespace FearTheDungeon
 			DonneesNiveau.personnagePrincipal.PositionElement[0] = 0; //En X
 			DonneesNiveau.personnagePrincipal.PositionElement[1] = 3; //En Y
 			DonneesNiveau.niveau3.AjoutMapElement(DonneesNiveau.personnagePrincipal);
+
+			InitialisationDesBlocs(DonneesNiveau.niveau3);
 		}
 
 		/// <summary>
@@ -127,7 +133,7 @@ namespace FearTheDungeon
 		/// </summary>
 		public static void InitialisationNiveau4()
 		{
-
+			DonneesNiveau.niveau4.ResetNiveau();
 		}
 
 		/// <summary>
@@ -135,11 +141,11 @@ namespace FearTheDungeon
 		/// </summary>
 		public static void InitialisationNiveau5()
 		{
-
+			DonneesNiveau.niveau5.ResetNiveau();
 		}
 
 		/// <summary>
-		/// Permet de charger le niveau suivant lorsque que le joueur a fini un niveau ou de charger le niveau en cours quand il appuie sur 5
+		/// Permet de charger le niveau suivant lorsque que le joueur a fini un niveau
 		/// </summary>
 		/// <param name="niveau"></param>
 		public static void InitialisationNiveauSuivant(Niveau niveau)
@@ -168,6 +174,10 @@ namespace FearTheDungeon
 			}
 		}
 
+		/// <summary>
+		/// Permet de recharger le niveau lorsque le joueur appuie sur "5"
+		/// </summary>
+		/// <param name="niveau"></param>
 		public static void InitialisationNiveau(Niveau niveau)
 		{
 			switch (niveau.Numero)
@@ -177,10 +187,12 @@ namespace FearTheDungeon
 					InitialisationNiveau1();
 					break;
 
+				//On recharge le niveau 2
 				case 2:
 					InitialisationNiveau2();
 					break;
 
+				//On recharge le niveau 3
 				case 3:
 					InitialisationNiveau3();
 					break;
@@ -191,6 +203,25 @@ namespace FearTheDungeon
 
 				default:
 					break;
+			}
+		}
+
+		/// <summary>
+		/// Lors de la réinitialisation, cette fonction permet de replacer les blocs à leur position initiale
+		/// </summary>
+		/// <param name="niveau"></param>
+		public static void InitialisationDesBlocs(Niveau niveau)
+		{
+			for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
+			{
+				Bloc blocTemp = new Bloc();
+				if (niveau.ElementsDuNiveau[i].Symbole == 'B')
+				{
+					blocTemp = (Bloc)niveau.ElementsDuNiveau[i];
+					blocTemp.PositionElement[0] = blocTemp.PositionInitiale[0];
+					blocTemp.PositionElement[1] = blocTemp.PositionInitiale[1];
+					niveau.ElementsDuNiveau[i] = blocTemp;
+				}
 			}
 		}
 	}
