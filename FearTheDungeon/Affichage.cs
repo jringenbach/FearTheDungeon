@@ -126,7 +126,7 @@ namespace FearTheDungeon
 					   DonneesNiveau.personnagePrincipal.PositionElement[0] == niveau.ElementsDuNiveau[i].PositionElement[0] &&
 					   DonneesNiveau.personnagePrincipal.PositionElement[1] == niveau.ElementsDuNiveau[i].PositionElement[1])
 					{
-						//AffichageTexte(); //Affiche le message contenu dans la case message
+						//AffichageMessage(); //Affiche le message contenu dans la case message
 					}
 				}
 
@@ -255,6 +255,39 @@ namespace FearTheDungeon
 					break;
 				}
 			}
+		}
+
+		static private void AffichageMessage(Niveau niveau)
+		{
+			//Permet de savoir les messages de quel niveau on va charger
+			switch (niveau.Numero)
+			{
+				case 1:
+					break;
+
+				case 2:
+					break;
+
+				case 3:
+					break;
+
+				case 4:
+					break;
+
+				case 5:
+					break;
+
+				case 6:
+					break;
+
+				default:
+					break;
+			}
+		}
+
+		static private void RechercheTableauMessage(Niveau niveau, int numeroDuNiveau)
+		{
+
 		}
 
 		// *****************************************************

@@ -26,7 +26,7 @@ namespace FearTheDungeon
 				if (mouvementValide) mouvementValide = TestValiditeDuMouvement(deplacementInt, niveau);
 			} while (!mouvementValide);
 
-			ModificationPositionJoueur(deplacementInt);
+			ModificationPositionElement(deplacementInt, DonneesNiveau.personnagePrincipal);
 
 		}
 
@@ -34,28 +34,32 @@ namespace FearTheDungeon
 		/// Modifie la position du joueur dans le fichier DonneesNiveau
 		/// </summary>
 		/// <param name="deplacement"></param>
-		static public void ModificationPositionJoueur(int deplacement)
+		static public void ModificationPositionElement(int deplacement, MapElement element)
 		{
 			switch (deplacement)
 			{
 				//Si le joueur est allé en bas
 				case 2:
-					DonneesNiveau.personnagePrincipal.PositionElement[0]++;
+					if (element.Symbole == '*') DonneesNiveau.personnagePrincipal.PositionElement[0]++;
+					else if (element.Symbole == 'B') element.PositionElement[0]++;
 					break;
 
 				//Si le joueur est allé à gauche
 				case 4:
-					DonneesNiveau.personnagePrincipal.PositionElement[1]--;
+					if (element.Symbole == '*') DonneesNiveau.personnagePrincipal.PositionElement[1]--;
+					else if (element.Symbole == 'B') element.PositionElement[1]--;
 					break;
 
 				//Si le joueur est allé à droite
 				case 6:
-					DonneesNiveau.personnagePrincipal.PositionElement[1]++;
+					if (element.Symbole == '*') DonneesNiveau.personnagePrincipal.PositionElement[1]++;
+					else if (element.Symbole == 'B') element.PositionElement[1]++;
 					break;
 
 				//Si le joueur est allé en haut
 				case 8:
-					DonneesNiveau.personnagePrincipal.PositionElement[0]--;
+					if (element.Symbole == '*') DonneesNiveau.personnagePrincipal.PositionElement[0]--;
+					else if (element.Symbole == 'B') element.PositionElement[0]--;
 					break;
 
 				default:
@@ -88,7 +92,7 @@ namespace FearTheDungeon
 						positionX = DonneesNiveau.personnagePrincipal.PositionElement[0] + 1;
 						positionY = DonneesNiveau.personnagePrincipal.PositionElement[1];
 						sortDuTableau = LeJoueurSortDeLaMap(niveau, positionX, positionY);
-						objetInfranchissable = LaCaseEstPrise(niveau, positionX, positionY);
+						objetInfranchissable = LaCaseEstPrise(niveau, positionX, positionY, mouvement);
 						break;
 
 					//Si le joueur veut aller à gauche
@@ -96,7 +100,7 @@ namespace FearTheDungeon
 						positionX = DonneesNiveau.personnagePrincipal.PositionElement[0];
 						positionY = DonneesNiveau.personnagePrincipal.PositionElement[1] - 1;
 						sortDuTableau = LeJoueurSortDeLaMap(niveau, positionX, positionY);
-						objetInfranchissable = LaCaseEstPrise(niveau, positionX, positionY);
+						objetInfranchissable = LaCaseEstPrise(niveau, positionX, positionY, mouvement);
 						break;
 
 					//Si le joueur veut aller à droite
@@ -104,7 +108,7 @@ namespace FearTheDungeon
 						positionX = DonneesNiveau.personnagePrincipal.PositionElement[0];
 						positionY = DonneesNiveau.personnagePrincipal.PositionElement[1] + 1;
 						sortDuTableau = LeJoueurSortDeLaMap(niveau, positionX, positionY);
-						objetInfranchissable = LaCaseEstPrise(niveau, positionX, positionY);
+						objetInfranchissable = LaCaseEstPrise(niveau, positionX, positionY, mouvement);
 						break;
 
 					//Si le joueur veut monter
@@ -112,7 +116,7 @@ namespace FearTheDungeon
 						positionX = DonneesNiveau.personnagePrincipal.PositionElement[0] - 1;
 						positionY = DonneesNiveau.personnagePrincipal.PositionElement[1];
 						sortDuTableau = LeJoueurSortDeLaMap(niveau, positionX, positionY);
-						objetInfranchissable = LaCaseEstPrise(niveau, positionX, positionY);
+						objetInfranchissable = LaCaseEstPrise(niveau, positionX, positionY, mouvement);
 						break;
 
 					//Si le joueur appuie sur valider
@@ -133,6 +137,71 @@ namespace FearTheDungeon
 			else mouvementValide = true;
 
 			return mouvementValide;
+		}
+
+		/// <summary>
+		/// On regarde si le bloc peut bien se déplacer dans la direction dans laquelle le joueur le pousse
+		/// </summary>
+		/// <param name="mouvement"></param>
+		/// <param name="niveau"></param>
+		/// <param name="Bloc"></param>
+		/// <returns></returns>
+		static bool TestValiditeDuMouvementBloc(int mouvement, Niveau niveau, MapElement Bloc)
+		{
+			bool leBlocPeutBouger = true;
+			bool leBlocSortDeLaMap = false;
+			bool laCaseEstDejaPrise = false;
+			int positionBlocX = Bloc.PositionElement[0];
+			int positionBlocY = Bloc.PositionElement[1];
+
+			switch (mouvement)
+			{
+				//Si le joueur le pousse vers le bas
+				case 2:
+					positionBlocX++;
+					break;
+				
+				//Si le joueur le pousse vers la gauche
+				case 4:
+					positionBlocY--;
+					break;
+
+				//Si le joueur le pousse vers la droite
+				case 6:
+					positionBlocY++;
+					break;
+
+				//Si le joueur le pousse vers le haut
+				case 8:
+					positionBlocX--;
+					break;
+
+				default:
+					break;
+			}
+
+			//Si le bloc sort de la carte
+			if(positionBlocX<0 || positionBlocX>=niveau.CarteDuNiveau.NombreLignes ||
+			   positionBlocY<0 || positionBlocY >= niveau.CarteDuNiveau.NombreColonnes)
+			{
+				leBlocSortDeLaMap = true;
+			}
+
+			//On consulte le tableau d'éléments du niveau pour voir si on pousse pas le bloc sur un mur
+			for(int i=0; i<niveau.elementsDuNiveau.Length-1; i++)
+			{
+				//Si il y'a un mur
+				if(niveau.elementsDuNiveau[i].PositionElement[0] == positionBlocX &&
+				   niveau.elementsDuNiveau[i].PositionElement[1] == positionBlocY &&
+				   niveau.ElementsDuNiveau[i].Symbole=='X')
+				{
+					laCaseEstDejaPrise = true;
+				}
+			}
+
+			if (leBlocSortDeLaMap || laCaseEstDejaPrise) leBlocPeutBouger = false;
+
+			return leBlocPeutBouger;
 		}
 
 		/// <summary>
@@ -163,11 +232,12 @@ namespace FearTheDungeon
 		/// <param name="positionX"></param>
 		/// <param name="positionY"></param>
 		/// <returns></returns>
-		static bool LaCaseEstPrise(Niveau niveau, int positionX, int positionY)
+		static bool LaCaseEstPrise(Niveau niveau, int positionX, int positionY, int mouvement)
 		{
 			bool objetInfranchissable = false;
+			bool leBlocPeutBouger = true;
 
-			//On parcourt le tableau des éléments pouvoir si il y'en a pas déjà un sur la case sur laquelle on veut aller
+			//On parcourt le tableau des éléments pour voir si il y'en a pas déjà un sur la case sur laquelle on veut aller
 			//et que celui-ci n'autorise pas qu'on le survole
 			for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
 			{
@@ -179,6 +249,16 @@ namespace FearTheDungeon
 					if (niveau.ElementsDuNiveau[i].Symbole == 'X')
 					{
 						objetInfranchissable = true;
+					}
+
+					//Si cet élément est un bloc
+					else if (niveau.ElementsDuNiveau[i].Symbole == 'B')
+					{
+						leBlocPeutBouger = TestValiditeDuMouvementBloc(mouvement, niveau, niveau.ElementsDuNiveau[i]);
+
+						if (leBlocPeutBouger) ModificationPositionElement(mouvement, niveau.ElementsDuNiveau[i]);
+						else objetInfranchissable = true;
+
 					}
 				}
 			}

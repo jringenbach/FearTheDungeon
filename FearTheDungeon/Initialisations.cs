@@ -20,6 +20,7 @@ namespace FearTheDungeon
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.message1Niveau1);
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.message2Niveau1);
 
+
 						//Les murs
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne1colonne0niveau1);
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne1colonne1niveau1);
