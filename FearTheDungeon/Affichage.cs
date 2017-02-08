@@ -80,7 +80,7 @@ namespace FearTheDungeon
 		{
 			if (typeDeTexte == 1) Console.Write("\t\t\t ");
 			else if (typeDeTexte == 2) Console.Write("\t\t ");
-			for (int i = 0; i < niveau.CarteDuNiveau.NombreColonnes + 14; i++)
+			for (int i = 0; i < niveau.CarteDuNiveau.NombreColonnes*4 -1; i++)
 			{
 				Console.Write("-");
 			}

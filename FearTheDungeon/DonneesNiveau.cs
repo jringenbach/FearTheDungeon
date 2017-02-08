@@ -104,7 +104,6 @@ namespace FearTheDungeon
 		/// Contient tous les niveaux du jeu
 		/// </summary>
 		public static Niveau[] tableauNiveaux = { niveau1, niveau2, niveau3};
-		public static MessageElement[][] tousLesMessages = { messagesNiveau1 };
 
 		//***********************************
 		//				METHODES
