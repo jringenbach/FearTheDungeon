@@ -167,7 +167,7 @@ namespace FearTheDungeon
 			} while (!leJoueurEstSurLaCaseDeLaSortie);
 
 			//On charge les paramètres du niveau suivant et on indique dans données publiques que le niveau suivant est débloqué
-			Initialisations.InitialisationNiveauSuivant(niveau);
+			Initialisations.InitialisationNiveau(niveau);
 			DonneesPubliques.niveauDebloque++;
 
 			AfficherLeNiveauSuivant(niveau);
@@ -194,6 +194,7 @@ namespace FearTheDungeon
 				Console.Write("\t\t\t|");
 				for (int j = 0; j < niveau.CarteDuNiveau.NombreColonnes; j++) //Boucle des colonnes
 				{
+					positionSymbole = 0;
 					symbolePresent = false;
 					//On parcourt la boucle des éléments du niveau
 					//On la parcourt à Length-1 car on a ajouté une case vide en ajoutant le dernier élément

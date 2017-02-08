@@ -15,6 +15,7 @@ namespace FearTheDungeon
 		{
 			//Nombre d'éléments : 13
 			//ON AJOUTE LES ELEMENTS DU NIVEAU STOCKES DANS DONNEESNIVEAU CONCERNANT LE NIVEAU 1
+			DonneesNiveau.niveau1.ResetNiveau();
 
 						//Les cases message
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.message1Niveau1);
@@ -48,6 +49,8 @@ namespace FearTheDungeon
 		{
 			//Nombre d'éléments : 14
 			//ON AJOUTE LES ELEMENTS DU NIVEAU STOCKES DANS DONNEESNIVEAU CONCERNANT LE NIVEAU 2
+
+			DonneesNiveau.niveau2.ResetNiveau();
 
 			//La case Bloc
 			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.blocNiveau2);
@@ -136,10 +139,10 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
-		/// Permet de charger le niveau suivant lorsque que le joueur a fini un niveau
+		/// Permet de charger le niveau suivant lorsque que le joueur a fini un niveau ou de charger le niveau en cours quand il appuie sur 5
 		/// </summary>
 		/// <param name="niveau"></param>
-		public static void InitialisationNiveauSuivant(Niveau niveau)
+		public static void InitialisationNiveau(Niveau niveau)
 		{
 			switch (niveau.Numero)
 			{

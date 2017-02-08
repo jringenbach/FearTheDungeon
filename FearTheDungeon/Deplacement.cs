@@ -121,6 +121,8 @@ namespace FearTheDungeon
 
 					//Si le joueur appuie sur valider
 					case 5:
+						Initialisations.InitialisationNiveau(niveau);
+						Affichage.AffichageNiveau(niveau);
 						break;
 
 					//Sinon

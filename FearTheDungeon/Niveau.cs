@@ -189,5 +189,10 @@ namespace FearTheDungeon
 			}
 
 		}
+
+		public void ResetNiveau()
+		{
+			Array.Resize(ref this.elementsDuNiveau, 1);
+		}
 	}
 }
