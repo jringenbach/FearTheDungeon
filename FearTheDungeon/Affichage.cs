@@ -284,39 +284,6 @@ namespace FearTheDungeon
 			}
 		}
 
-		static private void AffichageMessage(Niveau niveau)
-		{
-			//Permet de savoir les messages de quel niveau on va charger
-			switch (niveau.Numero)
-			{
-				case 1:
-					break;
-
-				case 2:
-					break;
-
-				case 3:
-					break;
-
-				case 4:
-					break;
-
-				case 5:
-					break;
-
-				case 6:
-					break;
-
-				default:
-					break;
-			}
-		}
-
-		static private void RechercheTableauMessage(Niveau niveau, int numeroDuNiveau)
-		{
-
-		}
-
 		// *****************************************************
 		//					AFFICHAGE MENU
 		// *****************************************************
