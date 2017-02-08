@@ -83,7 +83,17 @@ namespace FearTheDungeon
 		//				NIVEAU 3             ****************************************************************************************
 		//***********************************
 
-		private static Map carteNiveau3 = new Map(5, 5);
+		private static Map carteNiveau3 = new Map(6, 6);
+
+		//Case Bloc
+		public static Bloc blocNiveau3 = new Bloc(1, 2);
+
+		//Les cases message
+		public static MessageElement message1Niveau3 = new MessageElement(0, 5, "Pour reset le niveau. Appuyez sur 5.");
+		public static MessageElement message2Niveau3 = new MessageElement(4, 1, "Vous avez bloqué la sortie, n'est-ce pas ?");
+
+		//Les cases mur
+
 
 		public static Niveau niveau3 = new Niveau(carteNiveau3, "On dirait un tutoriel", 3, "HDE841", false);
 		#endregion

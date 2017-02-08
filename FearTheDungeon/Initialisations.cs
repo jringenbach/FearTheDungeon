@@ -46,7 +46,7 @@ namespace FearTheDungeon
 		/// </summary>
 		public static void InitialisationNiveau2()
 		{
-			//Nombre d'éléments : 
+			//Nombre d'éléments : 14
 			//ON AJOUTE LES ELEMENTS DU NIVEAU STOCKES DANS DONNEESNIVEAU CONCERNANT LE NIVEAU 2
 
 			//La case Bloc
@@ -82,7 +82,17 @@ namespace FearTheDungeon
 		/// </summary>
 		public static void InitialisationNiveau3()
 		{
+			//La case Bloc
+			DonneesNiveau.niveau3.AjoutMapElement(DonneesNiveau.blocNiveau3);
 
+			//Les cases message
+			DonneesNiveau.niveau3.AjoutMapElement(DonneesNiveau.message1Niveau3);
+			DonneesNiveau.niveau3.AjoutMapElement(DonneesNiveau.message2Niveau3);
+
+			//On définit la position du personnage principal au début du niveau
+			DonneesNiveau.personnagePrincipal.PositionElement[0] = 0; //En X
+			DonneesNiveau.personnagePrincipal.PositionElement[1] = 3; //En Y
+			DonneesNiveau.niveau3.AjoutMapElement(DonneesNiveau.personnagePrincipal);
 		}
 
 		/// <summary>
