@@ -10,6 +10,276 @@ namespace FearTheDungeon
 {
 	abstract class Affichage
 	{
+		// *****************************************************
+		//					OUTILS D'AFFICHAGE
+		// ****************************************************
+
+		/// <summary>
+		/// Affichage d'un texte entouré d'un tableau
+		/// </summary>
+		/// <param name="nomDuNiveau"></param>
+		static public void AffichageTexte(string nomDuNiveau)
+		{
+			//Les contours du tableau du nom du niveau sont affichés en jaune
+			//Le nom du niveau est affiché en rouge
+
+			Console.ForegroundColor = ConsoleColor.Yellow;
+			NombreTiretsAdaptable(nomDuNiveau);
+			Console.Write("\t\t\t| ");
+			Console.ForegroundColor = ConsoleColor.Red;
+			Console.Write(nomDuNiveau);
+			Console.ForegroundColor = ConsoleColor.Yellow;
+			Console.WriteLine(" |");
+			NombreTiretsAdaptable(nomDuNiveau);
+			Console.ResetColor();
+		}
+
+		/// <summary>
+		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
+		/// </summary>
+		/// <param name="menu"></param>
+		static private void NombreTiretsAdaptable(Menu menu)
+		{
+			int longueurChaineMax = menu.LongueurChaineMax();
+			Console.Write("\t\t\t ");
+			for (int i = 0; i < longueurChaineMax + 5; i++)
+			{
+				Console.Write("-");
+			}
+			Console.WriteLine();
+		}
+
+		/// <summary>
+		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
+		/// </summary>
+		/// <param name="menu"></param>
+		static private void NombreTiretsAdaptable(Niveau niveau)
+		{
+			Console.Write("\t\t\t ");
+			for (int i = 0; i < niveau.CarteDuNiveau.NombreColonnes + 14; i++)
+			{
+				Console.Write("-");
+			}
+			Console.WriteLine();
+		}
+
+		/// <summary>
+		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
+		/// </summary>
+		/// <param name="chaine"></param>
+		static public void NombreTiretsAdaptable(string chaine)
+		{
+			Console.Write("\t\t\t");
+			Console.Write(" ");
+
+			for (int i = 1; i < chaine.Length + 3; i++)
+			{
+				Console.Write("-");
+			}
+			Console.WriteLine();
+		}
+
+		/// <summary>
+		/// Permet d'adapter la position de la console à la taille de l'écran
+		/// </summary>
+		static public void PositionConsole()
+		{
+			int largeur, hauteur;
+			largeur = Screen.PrimaryScreen.Bounds.Width;
+			largeur /= 3;
+			hauteur = Screen.PrimaryScreen.Bounds.Height;
+			hauteur /= 3;
+
+		}
+
+		// *****************************************************
+		//					AFFICHAGE NIVEAU
+		// *****************************************************
+
+		/// <summary>
+		/// Affiche le titre du niveau et sa carte contenant tous ses éléments
+		/// </summary>
+		/// <param name="niveau"></param>
+		static public void AffichageNiveau(Niveau niveau)
+		{
+			int[] positionSortie = new int[2];
+			bool leJoueurEstSurLaCaseDeLaSortie = false;
+
+			RecherchePositionSortie(niveau, positionSortie);
+
+			//La boucle du niveau continue tant que le joueur n'est pas sur la case de la sortie
+			do
+			{
+				Console.Clear();
+
+				//On affiche le nom du niveau tout en haut de l'écran
+				AffichageTexte(niveau.Nom);
+
+				//On affiche la carte du niveau
+				MapDuNiveau(niveau);
+
+				//Si le joueur est sur une case message, on lui affiche un message en dessous de la carte du niveau
+				for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
+				{
+					//On regarde si la position du joueur est égal à la position d'une case Message
+					if (niveau.ElementsDuNiveau[i].Symbole == 'M' &&
+					   DonneesNiveau.personnagePrincipal.PositionElement[0] == niveau.ElementsDuNiveau[i].PositionElement[0] &&
+					   DonneesNiveau.personnagePrincipal.PositionElement[1] == niveau.ElementsDuNiveau[i].PositionElement[1])
+					{
+						//AffichageTexte(); //Affiche le message contenu dans la case message
+					}
+				}
+
+				//Le joueur choisit son déplacement
+				Deplacement.MouvementJoueur(niveau);
+
+				//Si le joueur est sur la case de la sortie alors on quitte la boucle
+				if (DonneesNiveau.personnagePrincipal.PositionElement[0] == positionSortie[0] &&
+					DonneesNiveau.personnagePrincipal.PositionElement[1] == positionSortie[1])
+					leJoueurEstSurLaCaseDeLaSortie = true;
+
+			} while (!leJoueurEstSurLaCaseDeLaSortie);
+
+			//On charge les paramètres du niveau suivant et on indique dans données publiques que le niveau suivant est débloqué
+			Initialisations.InitialisationNiveauSuivant(niveau);
+			DonneesPubliques.niveauDebloque++;
+
+			AfficherLeNiveauSuivant(niveau);
+
+
+		}
+
+		/// <summary>
+		/// Affiche la carte du niveau
+		/// </summary>
+		/// <param name="niveau"></param>
+		static private void MapDuNiveau(Niveau niveau)
+		{
+
+			bool symbolePresent;
+			int positionSymbole = 0;
+
+			//Début de l'affichage du tableau
+			for (int i = 0; i < niveau.CarteDuNiveau.NombreLignes; i++) //Boucle des lignes
+			{
+				NombreTiretsAdaptable(niveau);
+
+				//Bord gauche de la première case tout à gauche
+				Console.Write("\t\t\t|");
+				for (int j = 0; j < niveau.CarteDuNiveau.NombreColonnes; j++) //Boucle des colonnes
+				{
+					symbolePresent = false;
+					//On parcourt la boucle des éléments du niveau
+					//On la parcourt à Length-1 car on a ajouté une case vide en ajoutant le dernier élément
+					for (int k = 0; k < niveau.ElementsDuNiveau.Length - 1; k++)
+					{
+						//Si dans le tableau des éléments, un élément a la même position que celle sur laquelle on est en construisant
+						//le tableau, on passe symbolePresent à true
+						if (niveau.ElementsDuNiveau[k].PositionElement[0] == i && //PositionElement[0] : position de l'élément en X
+							niveau.ElementsDuNiveau[k].PositionElement[1] == j)   //PositionElement[1] : position de l'élément en Y
+						{
+							symbolePresent = true;
+							positionSymbole = k;
+							break;
+						}
+					}
+
+					AffichageElement(symbolePresent, niveau, positionSymbole);
+
+					//Bord droit de la dernière colonne d'une ligne
+					Console.Write("|");
+				}
+				Console.WriteLine();
+			}
+			NombreTiretsAdaptable(niveau); //Tirets tout en bas du tableau
+		}
+
+		/// <summary>
+		/// Permet de mettre en forme un élément (couleur rouge si le joueur est présent sur cette case)
+		/// </summary>
+		static public void AffichageElement(bool symbolePresent, Niveau niveau, int positionTableauElements)
+		{
+			//Si un symbole est présent sur la case en train d'être dessinée, on le dessine
+			if (symbolePresent == true)
+			{
+				//Si l'élément est sur la même case que le personnage, on l'affiche en rouge
+				if (niveau.ElementsDuNiveau[positionTableauElements].PositionElement[0] == DonneesNiveau.personnagePrincipal.PositionElement[0] &&
+				   niveau.ElementsDuNiveau[positionTableauElements].PositionElement[1] == DonneesNiveau.personnagePrincipal.PositionElement[1])
+				{
+					Console.ForegroundColor = ConsoleColor.Red;
+
+				}
+
+				Console.Write(" " + niveau.elementsDuNiveau[positionTableauElements].Symbole + " ");
+				Console.ResetColor();
+			}
+
+			//Sinon on affiche des espaces
+			else
+			{
+				Console.Write("   ");
+			}
+		}
+
+		/// <summary>
+		/// Permet d'afficher le niveau suivant celui dans lequel le joueur se trouve
+		/// </summary>
+		/// <param name="niveau"></param>
+		static public void AfficherLeNiveauSuivant(Niveau niveau)
+		{
+			int i = 0;
+			//On regarde dans quel niveau le joueur se trouve
+			for (i = 0; i < DonneesNiveau.tableauNiveaux.Length; i++)
+			{
+				if (i == niveau.Numero - 1) break;
+			}
+
+			//Pour ensuite afficher le niveau suivant
+			AffichageNiveau(DonneesNiveau.tableauNiveaux[i + 1]);
+
+		}
+
+		/// <summary>
+		/// Cette fonction permet de stocker la position de la sortie afin d'éviter de reparcourir le tableau plusieurs fois
+		/// </summary>
+		/// <param name="niveau"></param>
+		/// <param name="positionSortie"></param>
+		static private void RecherchePositionSortie(Niveau niveau, int[] positionSortie)
+		{
+			for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
+			{
+				if (niveau.ElementsDuNiveau[i].Symbole == 'S')
+				{
+					positionSortie[0] = niveau.ElementsDuNiveau[i].PositionElement[0];
+					positionSortie[1] = niveau.ElementsDuNiveau[i].PositionElement[1];
+					break;
+				}
+			}
+		}
+
+		// *****************************************************
+		//					AFFICHAGE MENU
+		// *****************************************************
+
+		/// <summary>
+		/// Permet d'afficher le titre du jeu
+		/// </summary>
+		static private void TitreDuJeu()
+		{
+			Console.ForegroundColor = ConsoleColor.Yellow;
+			Console.WriteLine("\t\t\t ------ ----- ---------");
+			Console.Write("\t\t\t|");
+
+			Console.ForegroundColor = ConsoleColor.Red;
+			Console.Write("-FEAR---THE---DUNGEON-");
+
+			Console.ForegroundColor = ConsoleColor.Yellow;
+			Console.WriteLine("|");
+			Console.WriteLine("\t\t\t ------ ----- ---------\n");
+
+			Console.ResetColor();
+
+		}
 
 		/// <summary>
 		/// Permet d'afficher proprement un objet de la classe Menu
@@ -100,79 +370,6 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
-		/// Affichage d'un texte entouré d'un tableau
-		/// </summary>
-		/// <param name="nomDuNiveau"></param>
-		static public void AffichageTexte(string nomDuNiveau)
-		{
-			//Les contours du tableau du nom du niveau sont affichés en jaune
-			//Le nom du niveau est affiché en rouge
-
-			Console.ForegroundColor = ConsoleColor.Yellow;
-			NombreTiretsAdaptable(nomDuNiveau);
-			Console.Write("\t\t\t| ");
-			Console.ForegroundColor = ConsoleColor.Red;
-			Console.Write(nomDuNiveau);
-			Console.ForegroundColor = ConsoleColor.Yellow;
-			Console.WriteLine(" |");
-			NombreTiretsAdaptable(nomDuNiveau);
-			Console.ResetColor();
-		}
-
-		/// <summary>
-		/// Affiche le titre du niveau et sa carte contenant tous ses éléments
-		/// </summary>
-		/// <param name="niveau"></param>
-		static public void AffichageNiveau(Niveau niveau)
-		{
-			int [] positionSortie = new int[2];
-			bool leJoueurEstSurLaCaseDeLaSortie = false;
-
-			RecherchePositionSortie(niveau, positionSortie);
-
-			//La boucle du niveau continue tant que le joueur n'est pas sur la case de la sortie
-			do
-			{
-				Console.Clear();
-
-				//On affiche le nom du niveau tout en haut de l'écran
-				AffichageTexte(niveau.Nom);
-
-				//On affiche la carte du niveau
-				MapDuNiveau(niveau);
-
-				//Si le joueur est sur une case message, on lui affiche un message en dessous de la carte du niveau
-				for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
-				{
-					//On regarde si la position du joueur est égal à la position d'une case Message
-					if (niveau.ElementsDuNiveau[i].Symbole == 'M' &&
-					   DonneesNiveau.personnagePrincipal.PositionElement[0] == niveau.ElementsDuNiveau[i].PositionElement[0] &&
-					   DonneesNiveau.personnagePrincipal.PositionElement[1] == niveau.ElementsDuNiveau[i].PositionElement[1])
-					{
-						//AffichageTexte(); //Affiche le message contenu dans la case message
-					}
-				}
-
-				//Le joueur choisit son déplacement
-				Deplacement.MouvementJoueur(niveau);
-
-				//Si le joueur est sur la case de la sortie alors on quitte la boucle
-				if (DonneesNiveau.personnagePrincipal.PositionElement[0] == positionSortie[0] &&
-					DonneesNiveau.personnagePrincipal.PositionElement[1] == positionSortie[1])
-					leJoueurEstSurLaCaseDeLaSortie = true;
-
-			}while (!leJoueurEstSurLaCaseDeLaSortie);
-
-			//On charge les paramètres du niveau suivant et on indique dans données publiques que le niveau suivant est débloqué
-			Initialisations.InitialisationNiveauSuivant(niveau);
-			DonneesPubliques.niveauDebloque++;
-
-			AfficherLeNiveauSuivant(niveau);
-
-
-		}
-
-		/// <summary>
 		/// Affiche à l'utilisateur comment le menu fonctionne
 		/// </summary>
 		static private void FonctionnementMenu(int consigneChoisie)
@@ -215,191 +412,8 @@ namespace FearTheDungeon
 
 		}
 
-		/// <summary>
-		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
-		/// </summary>
-		/// <param name="menu"></param>
-		static private void NombreTiretsAdaptable(Menu menu)
-		{
-			int longueurChaineMax = menu.LongueurChaineMax();
-			Console.Write("\t\t\t ");
-			for (int i = 0; i < longueurChaineMax + 5; i++)
-			{
-				Console.Write("-");
-			}
-			Console.WriteLine();
-		}
 
-		/// <summary>
-		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
-		/// </summary>
-		/// <param name="menu"></param>
-		static private void NombreTiretsAdaptable(Niveau niveau)
-		{
-			Console.Write("\t\t\t ");
-			for (int i = 0; i < niveau.CarteDuNiveau.NombreColonnes + 14; i++)
-			{
-				Console.Write("-");
-			}
-			Console.WriteLine();
-		}
 
-		/// <summary>
-		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
-		/// </summary>
-		/// <param name="chaine"></param>
-		static public void NombreTiretsAdaptable(string chaine)
-		{
-			Console.Write("\t\t\t");
-			Console.Write(" ");
-
-			for(int i = 1; i < chaine.Length+3; i++)
-			{
-				Console.Write("-");
-			}
-			Console.WriteLine();
-		}
-
-		/// <summary>
-		/// Permet d'adapter la position de la console à la taille de l'écran
-		/// </summary>
-		static public void PositionConsole()
-		{
-			int largeur, hauteur;
-			largeur = Screen.PrimaryScreen.Bounds.Width;
-			largeur /= 3;
-			hauteur = Screen.PrimaryScreen.Bounds.Height;
-			hauteur /= 3;
-
-		}
-
-		/// <summary>
-		/// Permet d'afficher le titre du jeu
-		/// </summary>
-		static private void TitreDuJeu()
-		{
-			Console.ForegroundColor = ConsoleColor.Yellow;
-			Console.WriteLine("\t\t\t ------ ----- ---------");
-			Console.Write("\t\t\t|");
-
-			Console.ForegroundColor = ConsoleColor.Red;
-			Console.Write("-FEAR---THE---DUNGEON-");
-
-			Console.ForegroundColor = ConsoleColor.Yellow;
-			Console.WriteLine("|");
-			Console.WriteLine("\t\t\t ------ ----- ---------\n");
-
-			Console.ResetColor();
-
-		}
-		
-		/// <summary>
-		/// Affiche la carte du niveau
-		/// </summary>
-		/// <param name="niveau"></param>
-		static private void MapDuNiveau(Niveau niveau)
-		{
-
-			bool symbolePresent;
-			int positionSymbole = 0;
-
-			//Début de l'affichage du tableau
-			for (int i = 0; i < niveau.CarteDuNiveau.NombreLignes; i++) //Boucle des lignes
-			{
-				NombreTiretsAdaptable(niveau);
-
-				//Bord gauche de la première case tout à gauche
-				Console.Write("\t\t\t|");
-				for (int j = 0; j < niveau.CarteDuNiveau.NombreColonnes; j++) //Boucle des colonnes
-				{
-					symbolePresent = false;
-					//On parcourt la boucle des éléments du niveau
-					//On la parcourt à Length-1 car on a ajouté une case vide en ajoutant le dernier élément
-					for (int k = 0; k < niveau.ElementsDuNiveau.Length - 1; k++)
-					{
-						//Si dans le tableau des éléments, un élément a la même position que celle sur laquelle on est en construisant
-						//le tableau, on passe symbolePresent à true
-						if (niveau.ElementsDuNiveau[k].PositionElement[0] == i && //PositionElement[0] : position de l'élément en X
-						    niveau.ElementsDuNiveau[k].PositionElement[1] == j)   //PositionElement[1] : position de l'élément en Y
-						{
-							symbolePresent = true;
-							positionSymbole = k;
-							break;
-						}
-					}
-
-					AffichageElement(symbolePresent, niveau, positionSymbole);
-
-					//Bord droit de la dernière colonne d'une ligne
-					Console.Write("|");
-				}
-				Console.WriteLine();
-			}
-			NombreTiretsAdaptable(niveau); //Tirets tout en bas du tableau
-		}
-
-		/// <summary>
-		/// Permet de mettre en forme un élément (couleur rouge si le joueur est présent sur cette case)
-		/// </summary>
-		static public void AffichageElement(bool symbolePresent, Niveau niveau, int positionTableauElements)
-		{
-			//Si un symbole est présent sur la case en train d'être dessinée, on le dessine
-			if (symbolePresent == true)
-			{
-				//Si l'élément est sur la même case que le personnage, on l'affiche en rouge
-				if(niveau.ElementsDuNiveau[positionTableauElements].PositionElement[0] == DonneesNiveau.personnagePrincipal.PositionElement[0] &&
-				   niveau.ElementsDuNiveau[positionTableauElements].PositionElement[1] == DonneesNiveau.personnagePrincipal.PositionElement[1])
-				{
-					Console.ForegroundColor = ConsoleColor.Red;
-
-				}
-
-				Console.Write(" " + niveau.elementsDuNiveau[positionTableauElements].Symbole + " ");
-				Console.ResetColor();
-			}
-
-			//Sinon on affiche des espaces
-			else
-			{
-				Console.Write("   ");
-			}
-		}
-
-		/// <summary>
-		/// Permet d'afficher le niveau suivant celui dans lequel le joueur se trouve
-		/// </summary>
-		/// <param name="niveau"></param>
-		static public void AfficherLeNiveauSuivant(Niveau niveau)
-		{
-			int i = 0;
-			//On regarde dans quel niveau le joueur se trouve
-			for(i=0; i<DonneesNiveau.tableauNiveaux.Length; i++)
-			{
-				if (i == niveau.Numero-1) break;
-			}
-
-			//Pour ensuite afficher le niveau suivant
-			AffichageNiveau(DonneesNiveau.tableauNiveaux[i + 1]);
-
-		}
-
-		/// <summary>
-		/// Cette fonction permet de stocker la position de la sortie afin d'éviter de reparcourir le tableau plusieurs fois
-		/// </summary>
-		/// <param name="niveau"></param>
-		/// <param name="positionSortie"></param>
-		static private void RecherchePositionSortie(Niveau niveau, int[] positionSortie)
-		{
-			for(int i=0; i<niveau.ElementsDuNiveau.Length-1; i++)
-			{
-				if(niveau.ElementsDuNiveau[i].Symbole == 'S')
-				{
-					positionSortie[0] = niveau.ElementsDuNiveau[i].PositionElement[0];
-					positionSortie[1] = niveau.ElementsDuNiveau[i].PositionElement[1];
-					break;
-				}
-			}
-		}
 		
 	}
 }
