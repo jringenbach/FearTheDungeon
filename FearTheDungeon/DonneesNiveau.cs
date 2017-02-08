@@ -86,13 +86,39 @@ namespace FearTheDungeon
 		private static Map carteNiveau3 = new Map(6, 6);
 
 		//Case Bloc
-		public static Bloc blocNiveau3 = new Bloc(1, 2);
+		public static Bloc blocNiveau3 = new Bloc(1, 3);
 
 		//Les cases message
 		public static MessageElement message1Niveau3 = new MessageElement(0, 5, "Pour reset le niveau. Appuyez sur 5.");
 		public static MessageElement message2Niveau3 = new MessageElement(4, 1, "Vous avez bloqué la sortie, n'est-ce pas ?");
 
 		//Les cases mur
+		public static Mur murligne1colonne0niveau3 = new Mur(1, 0);
+		public static Mur murligne1colonne1niveau3 = new Mur(1, 1);
+		public static Mur murligne1colonne2niveau3 = new Mur(1, 2);
+		public static Mur murligne1colonne4niveau3 = new Mur(1, 4);
+		public static Mur murligne1colonne5niveau3 = new Mur(1, 5);
+
+		public static Mur murligne2colonne0niveau3 = new Mur(2, 0);
+		public static Mur murligne2colonne2niveau3 = new Mur(2, 2);
+		public static Mur murligne2colonne5niveau3 = new Mur(2, 5);
+
+		public static Mur murligne3colonne1niveau3 = new Mur(3, 0);
+		public static Mur murligne3colonne5niveau3 = new Mur(3, 5);
+
+		public static Mur murligne4colonne0niveau3 = new Mur(4, 0);
+		public static Mur murligne4colonne2niveau3 = new Mur(4, 2);
+		public static Mur murligne4colonne4niveau3 = new Mur(4, 4);
+		public static Mur murligne4colonne5niveau3 = new Mur(4, 5);
+
+		public static Mur murligne5colonne0niveau3 = new Mur(5, 0);
+		public static Mur murligne5colonne1niveau3 = new Mur(5, 1);
+		public static Mur murligne5colonne2niveau3 = new Mur(5, 2);
+		public static Mur murligne5colonne4niveau3 = new Mur(5, 4);
+		public static Mur murligne5colonne5niveau3 = new Mur(5, 5);
+
+		//La case Sortie
+		public static SortieElement sortieNiveau3 = new SortieElement(5,3);
 
 
 		public static Niveau niveau3 = new Niveau(carteNiveau3, "On dirait un tutoriel", 3, "HDE841", false);
