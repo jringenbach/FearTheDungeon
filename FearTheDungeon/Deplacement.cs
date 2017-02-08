@@ -171,8 +171,8 @@ namespace FearTheDungeon
 			for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
 			{
 				//Si il existe un élément à la position de la case sur laquelle veut aller le joueur
-				if (niveau.ElementsDuNiveau[i].PositionElement[0] == DonneesNiveau.personnagePrincipal.PositionElement[0] + 1 &&
-					niveau.ElementsDuNiveau[i].PositionElement[1] == DonneesNiveau.personnagePrincipal.PositionElement[1] + 1)
+				if (niveau.ElementsDuNiveau[i].PositionElement[0] == positionX &&
+					niveau.ElementsDuNiveau[i].PositionElement[1] == positionY)
 				{
 					//Si cet élément est un mur
 					if (niveau.ElementsDuNiveau[i].Symbole == 'X')

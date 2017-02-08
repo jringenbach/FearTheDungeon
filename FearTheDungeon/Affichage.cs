@@ -125,7 +125,6 @@ namespace FearTheDungeon
 		/// <param name="niveau"></param>
 		static public void AffichageNiveau(Niveau niveau)
 		{
-			bool symbolePresent = false;
 			bool leJoueurEstSurLaCaseDeLaSortie = false;
 
 
@@ -287,7 +286,11 @@ namespace FearTheDungeon
 
 		}
 		
-		static void MapDuNiveau(Niveau niveau)
+		/// <summary>
+		/// Affiche la carte du niveau
+		/// </summary>
+		/// <param name="niveau"></param>
+		static private void MapDuNiveau(Niveau niveau)
 		{
 
 			bool symbolePresent;
@@ -307,7 +310,7 @@ namespace FearTheDungeon
 					//On la parcourt à Length-1 car on a ajouté une case vide en ajoutant le dernier élément
 					for (int k = 0; k < niveau.ElementsDuNiveau.Length - 1; k++)
 					{
-						//Si dans le tableau des éléments, un élément à la même position que celle sur laquelle on est en construisant
+						//Si dans le tableau des éléments, un élément a la même position que celle sur laquelle on est en construisant
 						//le tableau, on passe symbolePresent à true
 						if (niveau.ElementsDuNiveau[k].PositionElement[0] == i && //PositionElement[0] : position de l'élément en X
 						    niveau.ElementsDuNiveau[k].PositionElement[1] == j)   //PositionElement[1] : position de l'élément en Y
@@ -316,24 +319,11 @@ namespace FearTheDungeon
 							positionSymbole = k;
 							break;
 						}
-
-						else
-						{
-
-						}
 					}
 
-					//Si un symbole est présent sur la case en train d'être dessinée, on le dessine
-					if (symbolePresent == true)
-					{
-						Console.Write(" " + niveau.elementsDuNiveau[positionSymbole].Symbole + " ");
-					}
+					AffichageElement(symbolePresent, niveau, positionSymbole);
 
-					//Sinon on affiche des espaces
-					else
-					{
-						Console.Write("   ");
-					}
+					//Bord droit de la dernière colonne d'une ligne
 					Console.Write("|");
 				}
 				Console.WriteLine();
@@ -341,5 +331,31 @@ namespace FearTheDungeon
 			NombreTiretsAdaptable(niveau); //Tirets tout en bas du tableau
 		}
 
+		/// <summary>
+		/// Permet de mettre en forme un élément (couleur rouge si le joueur est présent sur cette case)
+		/// </summary>
+		static public void AffichageElement(bool symbolePresent, Niveau niveau, int positionTableauElements)
+		{
+			//Si un symbole est présent sur la case en train d'être dessinée, on le dessine
+			if (symbolePresent == true)
+			{
+				//Si l'élément est sur la même case que le personnage, on l'affiche en rouge
+				if(niveau.ElementsDuNiveau[positionTableauElements].PositionElement[0] == DonneesNiveau.personnagePrincipal.PositionElement[0] &&
+				   niveau.ElementsDuNiveau[positionTableauElements].PositionElement[1] == DonneesNiveau.personnagePrincipal.PositionElement[1])
+				{
+					Console.ForegroundColor = ConsoleColor.Red;
+
+				}
+
+				Console.Write(" " + niveau.elementsDuNiveau[positionTableauElements].Symbole + " ");
+				Console.ResetColor();
+			}
+
+			//Sinon on affiche des espaces
+			else
+			{
+				Console.Write("   ");
+			}
+		}
 	}
 }
