@@ -161,6 +161,8 @@ namespace FearTheDungeon
 
 			}while (!leJoueurEstSurLaCaseDeLaSortie);
 
+			Initialisations.InitialisationNiveauSuivant(niveau);
+
 			//TO DO : charger le niveau suivant
 
 		}

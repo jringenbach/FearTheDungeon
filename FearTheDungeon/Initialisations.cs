@@ -21,15 +21,15 @@ namespace FearTheDungeon
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.message2Niveau1);
 
 						//Les murs
-			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne1colonne0);
-			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne1colonne1);
-			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne1colonne2);
-			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne1colonne3);
-			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne1colonne3);
-			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne3colonne1);
-			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne3colonne3);
-			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne3colonne4);
-			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne4colonne1);
+			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne1colonne0niveau1);
+			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne1colonne1niveau1);
+			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne1colonne2niveau1);
+			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne1colonne3niveau1);
+			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne1colonne3niveau1);
+			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne3colonne1niveau1);
+			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne3colonne3niveau1);
+			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne3colonne4niveau1);
+			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.murligne4colonne1niveau1);
 
 						//La sortie du niveau
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.sortieNiveau1);
@@ -45,6 +45,34 @@ namespace FearTheDungeon
 		/// </summary>
 		public static void InitialisationNiveau2()
 		{
+			//Nombre d'éléments : 
+			//ON AJOUTE LES ELEMENTS DU NIVEAU STOCKES DANS DONNEESNIVEAU CONCERNANT LE NIVEAU 2
+
+			//La case Bloc
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.blocNiveau2);
+
+			//Les cases message
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.message1Niveau2);
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.message2Niveau2);
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.message3Niveau2);
+
+			//Les murs
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.murligne0colonne1niveau2);
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.murligne2colonne1niveau2);
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.murligne3colonne1niveau2);
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.murligne4colonne1niveau2);
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.murligne0colonne3niveau2);
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.murligne1colonne3niveau2);
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.murligne2colonne3niveau2);
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.murligne3colonne3niveau2);
+
+			//La sortie du niveau
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.sortieNiveau2);
+
+			//On définit la position du personnage principal au début du niveau
+			DonneesNiveau.personnagePrincipal.PositionElement[0] = 0; //En X
+			DonneesNiveau.personnagePrincipal.PositionElement[1] = 4; //En Y
+			DonneesNiveau.niveau2.AjoutMapElement(DonneesNiveau.personnagePrincipal);
 
 		}
 
@@ -54,6 +82,52 @@ namespace FearTheDungeon
 		public static void InitialisationNiveau3()
 		{
 
+		}
+
+		/// <summary>
+		/// Initialise les données du niveau 4
+		/// </summary>
+		public static void InitialisationNiveau4()
+		{
+
+		}
+
+		/// <summary>
+		/// Initialise les données du niveau 5
+		/// </summary>
+		public static void InitialisationNiveau5()
+		{
+
+		}
+
+		/// <summary>
+		/// Permet de charger le niveau suivant lorsque que le joueur a fini un niveau
+		/// </summary>
+		/// <param name="niveau"></param>
+		public static void InitialisationNiveauSuivant(Niveau niveau)
+		{
+			switch (niveau.Numero)
+			{
+				//Si on est au niveau 1 on charge le niveau 2 etc...
+				case 1:
+					InitialisationNiveau2();
+					break;
+
+				case 2:
+					InitialisationNiveau3();
+					break;
+
+				case 3:
+					InitialisationNiveau4();
+					break;
+
+				case 4:
+					InitialisationNiveau5();
+					break;
+
+				default:
+					break;
+			}
 		}
 	}
 }
