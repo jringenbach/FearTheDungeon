@@ -179,6 +179,22 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
+		/// Initialise les données du niveau 6
+		/// </summary>
+		public static void InitialisationNiveau6()
+		{
+			DonneesNiveau.niveau6.ResetNiveau();
+		}
+
+		/// <summary>
+		/// Initialise les données du niveau 7
+		/// </summary>
+		public static void InitialisationNiveau7()
+		{
+			DonneesNiveau.niveau7.ResetNiveau();
+		}
+
+		/// <summary>
 		/// Permet de charger le niveau suivant lorsque que le joueur a fini un niveau
 		/// </summary>
 		/// <param name="niveau"></param>

@@ -172,13 +172,32 @@ namespace FearTheDungeon
 		public static Niveau niveau5 = new Niveau(carteNiveau5, "Nuit d'ivresse", 5, "ODT48E", false);
 		#endregion
 
+		#region niveau6
+		//***********************************
+		//				NIVEAU 6             ****************************************************************************************
+		//***********************************
+
+		private static Map carteNiveau6 = new Map(6, 6);
+
+		public static Niveau niveau6 = new Niveau(carteNiveau6, "Une salle sale", 6, "784UIO", false);
+		#endregion
+
+		#region niveau7
+		//***********************************
+		//				NIVEAU 7             ****************************************************************************************
+		//***********************************
+
+		private static Map carteNiveau7 = new Map(6, 6);
+
+		public static Niveau niveau7 = new Niveau(carteNiveau7, "On s'habitue vite", 7, "202JKA", false);
+		#endregion
 
 		//***************************************************************************************************************************
 
 		/// <summary>
 		/// Contient tous les niveaux du jeu
 		/// </summary>
-		public static Niveau[] tableauNiveaux = { niveau1, niveau2, niveau3, niveau4, niveau5};
+		public static Niveau[] tableauNiveaux = { niveau1, niveau2, niveau3, niveau4, niveau5, niveau6, niveau7};
 
 		//***********************************
 		//				METHODES

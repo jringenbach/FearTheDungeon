@@ -96,6 +96,7 @@ namespace FearTheDungeon
 			//Si le niveau que le joueur a choisi a bien été débloqué
 			if(DonneesNiveau.tableauNiveaux[niveauChoisie-1].Debloque == true)
 			{
+				Initialisations.InitialisationNiveau(DonneesNiveau.tableauNiveaux[niveauChoisie - 1]);
 				Affichage.AffichageNiveau(DonneesNiveau.tableauNiveaux[niveauChoisie - 1]);
 			}
 
@@ -343,7 +344,7 @@ namespace FearTheDungeon
 			{
 				DonneesNiveau.tableauNiveaux[i].Debloque = true;
 			}
-			DonneesPubliques.niveauDebloque = niveauDebloque;
+			DonneesPubliques.niveauDebloque = niveauDebloque-1;
 		}
 
         /// <summary>
