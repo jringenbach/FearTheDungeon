@@ -202,11 +202,12 @@ namespace FearTheDungeon
 		{
 			switch (niveau.Numero)
 			{
-				//Si on est au niveau 1 on charge le niveau 2 etc...
+				//Si on est au niveau 1 on charge le niveau 2
 				case 1:
 					InitialisationNiveau2();
 					break;
 
+				//Si on est au niveau 2 on charge le niveau 3 etc...
 				case 2:
 					InitialisationNiveau3();
 					break;
@@ -217,6 +218,14 @@ namespace FearTheDungeon
 
 				case 4:
 					InitialisationNiveau5();
+					break;
+
+				case 5:
+					InitialisationNiveau6();
+					break;
+
+				case 6:
+					InitialisationNiveau7();
 					break;
 
 				default:
