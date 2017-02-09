@@ -219,7 +219,37 @@ namespace FearTheDungeon
 		//				NIVEAU 6             ****************************************************************************************
 		//***********************************
 
-		private static Map carteNiveau6 = new Map(6, 6);
+		private static Map carteNiveau6 = new Map(8, 9);
+
+		//La case Porte
+		public static Porte porteNiveau6 = new Porte(6, 7, false);
+
+		//Case Bloc
+		public static Bloc blocNiveau6 = new Bloc(5, 5);
+
+		//Case Bouton
+		public static Bouton boutonNiveau6 = new Bouton(7, 2, porteNiveau6);
+
+		//Les cases mur
+		public static Mur murligne0colonne4niveau5 = new Mur(0, 1);
+		public static Mur murligne0colonne5niveau5 = new Mur(1, 1);
+		public static Mur murligne0colonne6niveau5 = new Mur(3, 1);
+		public static Mur murligne0colonne7niveau5 = new Mur(4, 1);
+		public static Mur murligne5colonne1niveau5 = new Mur(5, 1);
+		public static Mur murligne6colonne1niveau5 = new Mur(6, 1);
+
+		public static Mur murligne1colonne3niveau5 = new Mur(1, 3);
+		public static Mur murligne3colonne3niveau5 = new Mur(3, 3);
+		public static Mur murligne4colonne3niveau5 = new Mur(4, 3);
+		public static Mur murligne5colonne3niveau5 = new Mur(5, 3);
+		public static Mur murligne6colonne3niveau5 = new Mur(6, 3);
+		public static Mur murligne8colonne3niveau5 = new Mur(8, 3);
+
+		public static Mur murligne6colonne4niveau5 = new Mur(6, 4);
+		public static Mur murligne8colonne4niveau5 = new Mur(8, 4);
+
+		//La case Sortie
+		public static SortieElement sortieNiveau6 = new SortieElement(7, 8);
 
 		public static Niveau niveau6 = new Niveau(carteNiveau6, "Une salle sale", 6, "784UIO", false);
 		#endregion
