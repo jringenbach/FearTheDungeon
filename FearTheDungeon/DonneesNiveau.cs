@@ -134,11 +134,14 @@ namespace FearTheDungeon
 
 		private static Map carteNiveau4 = new Map(8, 5);
 
+		//La case Porte
+		public static Porte porteNiveau4 = new Porte(6, 2, false, "PorteNiveau4");
+
 		//Case Bloc
 		public static Bloc blocNiveau4 = new Bloc(1, 2);
 
 		//Case Bouton
-		public static Bouton boutonNiveau4 = new Bouton(2,0);
+		public static Bouton boutonNiveau4 = new Bouton(2,0, porteNiveau4);
 
 		//Les cases message
 		public static MessageElement message1Niveau4 = new MessageElement(0, 3, "Les cases P sont des portes");
@@ -160,9 +163,6 @@ namespace FearTheDungeon
 
 		public static Mur murligne1colonne3niveau4 = new Mur(1, 3);
 		public static Mur murligne3colonne3niveau4 = new Mur(3, 3);
-
-		//La case porte
-		public static Porte porteNiveau4 = new Porte(6,2);
 
 		//La case Sortie
 		public static SortieElement sortieNiveau4 = new SortieElement(7, 0);

@@ -156,6 +156,8 @@ namespace FearTheDungeon
 			bool leBlocPeutBouger = true;
 			bool leBlocSortDeLaMap = false;
 			bool laCaseEstDejaPrise = false;
+			Porte porteTemp;
+			Bouton boutonTemp;
 
 			//Position en X du bloc si son déplacement est validé
 			int positionBlocX = bloc.PositionElement[0];
@@ -202,16 +204,35 @@ namespace FearTheDungeon
 				if(niveau.elementsDuNiveau[i].PositionElement[0] == positionBlocX &&
 				   niveau.elementsDuNiveau[i].PositionElement[1] == positionBlocY)		
 				{
-					//Si il y'a un mur, une porte ou la sortie
-					if (niveau.ElementsDuNiveau[i].Symbole == 'X' || niveau.ElementsDuNiveau[i].Symbole == 'S' || niveau.ElementsDuNiveau[i].Symbole == 'P')
+					//Si c'est une porte
+					if (niveau.ElementsDuNiveau[i].Symbole == 'P')
 					{
-						laCaseEstDejaPrise = true;
+						porteTemp = (Porte)niveau.ElementsDuNiveau[i];
+						//Si la porte est fermée, le bloc ne peut pas être placé sur sa case
+						if (porteTemp.Ouverte == false) laCaseEstDejaPrise = true;
 					}
+
+					//Si il y'a un mur ou la sortie
+					else if (niveau.ElementsDuNiveau[i].Symbole == 'X' || niveau.ElementsDuNiveau[i].Symbole == 'S') laCaseEstDejaPrise = true;
+
 
 					//Si on le pousse sur un bouton
 					else if (niveau.ElementsDuNiveau[i].Symbole == 'b')
 					{
+						boutonTemp = (Bouton)niveau.ElementsDuNiveau[i];
+						
+						//On parcourt les éléments du niveau pour trouver la porte qu'il ouvre
+						for(int j =0; j<niveau.ElementsDuNiveau.Length-1; j++)
+						{
 
+								//if (boutonTemp.PorteQueJouvre == niveau.ElementsDuNiveau[j])
+								//{
+								//	porteTemp = (Porte)niveau.ElementsDuNiveau[i];
+								//	porteTemp.Ouverte = true; //On ouvre la porte
+								//	porteTemp.Symbole = ' ';
+								//}
+
+						}
 					}
 
 				}
@@ -254,6 +275,7 @@ namespace FearTheDungeon
 		{
 			bool objetInfranchissable = false;
 			bool leBlocPeutBouger = true;
+			Porte porteTemp;
 
 			//On parcourt le tableau des éléments pour voir si il y'en a pas déjà un sur la case sur laquelle on veut aller
 			//et que celui-ci n'autorise pas qu'on le survole
@@ -264,9 +286,13 @@ namespace FearTheDungeon
 					niveau.ElementsDuNiveau[i].PositionElement[1] == positionY)
 				{
 					//Si cet élément est un mur
-					if (niveau.ElementsDuNiveau[i].Symbole == 'X' || niveau.ElementsDuNiveau[i].Symbole == 'P')
+					if (niveau.ElementsDuNiveau[i].Symbole == 'X') objetInfranchissable = true;
+
+					//Si cet élément est une porte
+					if(niveau.ElementsDuNiveau[i].Symbole == 'P')
 					{
-						objetInfranchissable = true;
+						porteTemp = (Porte)niveau.ElementsDuNiveau[i];
+						if(porteTemp.Ouverte == false) objetInfranchissable = true;
 					}
 
 					//Si cet élément est un bloc

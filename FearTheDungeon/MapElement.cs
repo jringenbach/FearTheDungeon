@@ -27,6 +27,11 @@ namespace FearTheDungeon
 		/// </summary>
 		private char _symbole;
 
+		/// <summary>
+		/// Nom de l'élément
+		/// </summary>
+		private string _nom;
+
 		// *******************************
 		//          CONSTRUCTEURS
 		// *******************************
@@ -113,5 +118,20 @@ namespace FearTheDungeon
 			}
 		}
 
+		/// <summary>
+		/// Nom de l'élément de la map
+		/// </summary>
+		public string Nom
+		{
+			get
+			{
+				return _nom;
+			}
+
+			set
+			{
+				_nom = value;
+			}
+		}
 	}
 }
