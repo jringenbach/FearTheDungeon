@@ -317,6 +317,18 @@ namespace FearTheDungeon
 					InitialisationNiveau4();
 					break;
 
+				case 5:
+					InitialisationNiveau5();
+					break;
+
+				case 6:
+					InitialisationNiveau6();
+					break;
+
+				case 7:
+					InitialisationNiveau7();
+					break;
+
 				default:
 					break;
 			}

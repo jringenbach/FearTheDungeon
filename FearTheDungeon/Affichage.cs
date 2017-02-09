@@ -184,6 +184,7 @@ namespace FearTheDungeon
 		{
 
 			bool symbolePresent;
+			//Position de l'objet que l'on veut afficher
 			int positionSymbole = 0;
 
 			//Début de l'affichage du tableau
@@ -227,6 +228,8 @@ namespace FearTheDungeon
 		/// </summary>
 		static public void AffichageElement(bool symbolePresent, Niveau niveau, int positionTableauElements)
 		{
+			Porte porteTemp;
+
 			//Si un symbole est présent sur la case en train d'être dessinée, on le dessine
 			if (symbolePresent == true)
 			{
@@ -236,11 +239,27 @@ namespace FearTheDungeon
 				{
 					Console.ForegroundColor = ConsoleColor.Red;
 
+					//Si cet élément est une porte
+					if (niveau.ElementsDuNiveau[positionTableauElements].Nom == "Porte")
+					{
+						porteTemp = (Porte)niveau.ElementsDuNiveau[positionTableauElements];
+						//Si la porte est ouverte on affiche le symbole du personnage
+						if (porteTemp.Ouverte == true) Console.Write(" " + DonneesNiveau.personnagePrincipal.Symbole + " ");
+
+					}//Fin du "si cet élément est une porte"
+
+					//Sinon
+					else Console.Write(" " + niveau.elementsDuNiveau[positionTableauElements].Symbole + " ");
+
+					Console.ResetColor();
 				}
 
-				Console.Write(" " + niveau.elementsDuNiveau[positionTableauElements].Symbole + " ");
-				Console.ResetColor();
-			}
+				else
+				{
+					Console.Write(" " + niveau.elementsDuNiveau[positionTableauElements].Symbole + " ");
+				}
+
+			} //Fin du "si un symbole est présent"
 
 			//Sinon on affiche des espaces
 			else
