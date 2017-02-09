@@ -391,6 +391,8 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[2].Nom = "It looks like a tutorial";
 			DonneesNiveau.tableauNiveaux[3].Nom = "Defeat the Unbeaten";
 			DonneesNiveau.tableauNiveaux[4].Nom = "Drunk night";
+			DonneesNiveau.tableauNiveaux[5].Nom = "A Dirty Room";
+			DonneesNiveau.tableauNiveaux[6].Nom = "We get used to it pretty quickly";
 
 			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "M squares give you information";
@@ -408,8 +410,11 @@ namespace FearTheDungeon
 			DonneesNiveau.message3Niveau4.Message = "Are you ready for what's coming Next ?";
 			DonneesNiveau.message4Niveau4.Message = "Insert a joke here";
 
+			DonneesNiveau.message1Niveau5.Message = "Push that block my little sunshine !";
+			DonneesNiveau.message2Niveau5.Message = "Think before Acting !";
 
-		}
+
+	}
 
         /// <summary>
         /// Fonction qui permet de passer le jeu en français
@@ -455,6 +460,8 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[2].Nom = "On dirait un tutoriel";
 			DonneesNiveau.tableauNiveaux[3].Nom = "Vaincre l'invaincu";
 			DonneesNiveau.tableauNiveaux[4].Nom = "Nuit d'ivresse";
+			DonneesNiveau.tableauNiveaux[5].Nom = "Une salle sale";
+			DonneesNiveau.tableauNiveaux[6].Nom = "On s'habitue vite";
 
 			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "Les cases M vous donnent une information";
@@ -471,6 +478,9 @@ namespace FearTheDungeon
 			DonneesNiveau.message2Niveau4.Message = "Poussez le bloc B sur le bouton b";
 			DonneesNiveau.message3Niveau4.Message = "Vous êtes à bloc pour la suite ?";
 			DonneesNiveau.message4Niveau4.Message = "Insérez une blague ici";
+
+			DonneesNiveau.message1Niveau5.Message = "Pousse ce bloc ma kikoune !";
+			DonneesNiveau.message2Niveau5.Message = "Réfléchissez avant d'agir !";
 
 
 		}

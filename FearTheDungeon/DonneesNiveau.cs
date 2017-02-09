@@ -187,8 +187,8 @@ namespace FearTheDungeon
 		public static Bouton boutonNiveau5 = new Bouton(3, 4, porteNiveau5);
 
 		//Les cases message
-		public static MessageElement message1Niveau5 = new MessageElement(0, 0, "");
-		public static MessageElement message2Niveau5 = new MessageElement(7, 1, "");
+		public static MessageElement message1Niveau5 = new MessageElement(0, 0, "Pousse ce bloc ma kikoune !");
+		public static MessageElement message2Niveau5 = new MessageElement(7, 1, "Réfléchissez avant d'agir !");
 
 		//Les cases mur
 		public static Mur murligne0colonne1niveau5 = new Mur(0, 1);

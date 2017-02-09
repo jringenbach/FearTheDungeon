@@ -295,6 +295,7 @@ namespace FearTheDungeon
 		{
 			for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
 			{
+				//Si le symbole de l'élément du niveau sur lequel on est dans le tableau est un S, c'est qu'on est sur un élément Sortie
 				if (niveau.ElementsDuNiveau[i].Symbole == 'S')
 				{
 					positionSortie[0] = niveau.ElementsDuNiveau[i].PositionElement[0];
