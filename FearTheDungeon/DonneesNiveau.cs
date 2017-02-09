@@ -231,22 +231,22 @@ namespace FearTheDungeon
 		public static Bouton boutonNiveau6 = new Bouton(7, 2, porteNiveau6);
 
 		//Les cases mur
-		public static Mur murligne0colonne4niveau5 = new Mur(0, 1);
-		public static Mur murligne0colonne5niveau5 = new Mur(1, 1);
-		public static Mur murligne0colonne6niveau5 = new Mur(3, 1);
-		public static Mur murligne0colonne7niveau5 = new Mur(4, 1);
-		public static Mur murligne5colonne1niveau5 = new Mur(5, 1);
-		public static Mur murligne6colonne1niveau5 = new Mur(6, 1);
+		//public static Mur murligne0colonne4niveau5 = new Mur(0, 1);
+		//public static Mur murligne0colonne5niveau5 = new Mur(1, 1);
+		//public static Mur murligne0colonne6niveau5 = new Mur(3, 1);
+		//public static Mur murligne0colonne7niveau5 = new Mur(4, 1);
+		//public static Mur murligne5colonne1niveau5 = new Mur(5, 1);
+		//public static Mur murligne6colonne1niveau5 = new Mur(6, 1);
 
-		public static Mur murligne1colonne3niveau5 = new Mur(1, 3);
-		public static Mur murligne3colonne3niveau5 = new Mur(3, 3);
-		public static Mur murligne4colonne3niveau5 = new Mur(4, 3);
-		public static Mur murligne5colonne3niveau5 = new Mur(5, 3);
-		public static Mur murligne6colonne3niveau5 = new Mur(6, 3);
-		public static Mur murligne8colonne3niveau5 = new Mur(8, 3);
+		//public static Mur murligne1colonne3niveau5 = new Mur(1, 3);
+		//public static Mur murligne3colonne3niveau5 = new Mur(3, 3);
+		//public static Mur murligne4colonne3niveau5 = new Mur(4, 3);
+		//public static Mur murligne5colonne3niveau5 = new Mur(5, 3);
+		//public static Mur murligne6colonne3niveau5 = new Mur(6, 3);
+		//public static Mur murligne8colonne3niveau5 = new Mur(8, 3);
 
-		public static Mur murligne6colonne4niveau5 = new Mur(6, 4);
-		public static Mur murligne8colonne4niveau5 = new Mur(8, 4);
+		//public static Mur murligne6colonne4niveau5 = new Mur(6, 4);
+		//public static Mur murligne8colonne4niveau5 = new Mur(8, 4);
 
 		//La case Sortie
 		public static SortieElement sortieNiveau6 = new SortieElement(7, 8);
