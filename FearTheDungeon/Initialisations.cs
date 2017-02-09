@@ -141,6 +141,9 @@ namespace FearTheDungeon
 			//La case Bloc
 			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.blocNiveau4);
 
+			//La case bouton
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.boutonNiveau4);
+
 			//Les cases message
 			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.message1Niveau4);
 			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.message2Niveau4);
@@ -163,6 +166,9 @@ namespace FearTheDungeon
 
 			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne1colonne3niveau4);
 			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne3colonne3niveau4);
+
+			//La case porte
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.porteNiveau4);
 
 			//La case sortie
 			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.sortieNiveau4);

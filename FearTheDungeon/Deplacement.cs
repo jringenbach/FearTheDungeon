@@ -192,13 +192,13 @@ namespace FearTheDungeon
 				leBlocSortDeLaMap = true;
 			}
 
-			//On consulte le tableau d'éléments du niveau pour voir si on pousse pas le bloc sur un mur
+			//On consulte le tableau d'éléments du niveau pour voir si on pousse pas le bloc sur un objet infranchissable
 			for(int i=0; i<niveau.elementsDuNiveau.Length-1; i++)
 			{
-				//Si il y'a un mur
+				//Si il y'a un mur, une porte ou la sortie
 				if(niveau.elementsDuNiveau[i].PositionElement[0] == positionBlocX &&
 				   niveau.elementsDuNiveau[i].PositionElement[1] == positionBlocY &&
-				   niveau.ElementsDuNiveau[i].Symbole=='X')
+				   (niveau.ElementsDuNiveau[i].Symbole=='X' || niveau.ElementsDuNiveau[i].Symbole == 'S' || niveau.ElementsDuNiveau[i].Symbole == 'P'))
 				{
 					laCaseEstDejaPrise = true;
 				}
@@ -251,7 +251,7 @@ namespace FearTheDungeon
 					niveau.ElementsDuNiveau[i].PositionElement[1] == positionY)
 				{
 					//Si cet élément est un mur
-					if (niveau.ElementsDuNiveau[i].Symbole == 'X')
+					if (niveau.ElementsDuNiveau[i].Symbole == 'X' || niveau.ElementsDuNiveau[i].Symbole == 'P')
 					{
 						objetInfranchissable = true;
 					}

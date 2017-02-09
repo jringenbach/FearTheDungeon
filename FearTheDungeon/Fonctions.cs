@@ -392,7 +392,7 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[3].Nom = "Defeat the Unbeaten";
 			DonneesNiveau.tableauNiveaux[4].Nom = "Drunk night";
 
-			//Message des niveaux
+			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "M squares give you information";
 			DonneesNiveau.message2Niveau1.Message = "S squares show you the exit";
 
@@ -456,7 +456,7 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[3].Nom = "Vaincre l'invaincu";
 			DonneesNiveau.tableauNiveaux[4].Nom = "Nuit d'ivresse";
 
-			//Message des niveaux
+			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "Les cases M vous donnent une information";
 			DonneesNiveau.message2Niveau1.Message = "Les cases S indiquent la sortie";
 
