@@ -440,8 +440,5 @@ namespace FearTheDungeon
 
 		}
 
-
-
-		
 	}
 }

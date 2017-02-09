@@ -220,20 +220,22 @@ namespace FearTheDungeon
 					else if (niveau.ElementsDuNiveau[i].Symbole == 'b')
 					{
 						boutonTemp = (Bouton)niveau.ElementsDuNiveau[i];
-						
-						//On parcourt les éléments du niveau pour trouver la porte qu'il ouvre
-						for(int j =0; j<niveau.ElementsDuNiveau.Length-1; j++)
+
+						//Si le niveau contient des portes
+						if(niveau.TableauDePortes != null)
 						{
-
-								//if (boutonTemp.PorteQueJouvre == niveau.ElementsDuNiveau[j])
-								//{
-								//	porteTemp = (Porte)niveau.ElementsDuNiveau[i];
-								//	porteTemp.Ouverte = true; //On ouvre la porte
-								//	porteTemp.Symbole = ' ';
-								//}
-
+							//On parcourt les éléments du niveau pour trouver la porte qu'il ouvre
+							for (int j = 0; j < niveau.TableauDePortes.Length; j++)
+							{
+								//Si la porte que le bouton ouvre est la porte sur laquelle on est dans le tableau de portes
+								if (boutonTemp.PorteQueJouvre == niveau.TableauDePortes[j])
+								{
+									niveau.TableauDePortes[j].Ouverte = true;
+									niveau.TableauDePortes[j].Symbole = ' ';
+								}
+							}
 						}
-					}
+					} //Fin du else quand on pousse le bouton
 
 				}
 			}

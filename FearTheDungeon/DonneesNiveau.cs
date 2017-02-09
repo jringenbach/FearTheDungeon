@@ -135,7 +135,7 @@ namespace FearTheDungeon
 		private static Map carteNiveau4 = new Map(8, 5);
 
 		//La case Porte
-		public static Porte porteNiveau4 = new Porte(6, 2, false, "PorteNiveau4");
+		public static Porte porteNiveau4 = new Porte(6, 2, false);
 
 		//Case Bloc
 		public static Bloc blocNiveau4 = new Bloc(1, 2);
@@ -177,7 +177,7 @@ namespace FearTheDungeon
 
 		private static Map carteNiveau5 = new Map(6, 6);
 
-		public static Niveau niveau5 = new Niveau(carteNiveau5, "Nuit d'ivresse", 5, "ODT48E", false);
+		public static Niveau niveau5 = new Niveau(carteNiveau5, "Nuit d'ivresse", 5, "VRP666", false);
 		#endregion
 
 		#region niveau6

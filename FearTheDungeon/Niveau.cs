@@ -39,6 +39,11 @@ namespace FearTheDungeon
 		private string _password;
 
 		/// <summary>
+		/// Tableau contenant toutes les portes du niveau
+		/// </summary>
+		private Porte[] tableauDePortes;
+
+		/// <summary>
 		/// Stocke tous les éléments présents dans le niveau
 		/// </summary>
 		public MapElement[] elementsDuNiveau;
@@ -64,6 +69,7 @@ namespace FearTheDungeon
 			this._password = password;
 			this._debloque = debloque;
 			elementsDuNiveau = new MapElement[1];
+			TableauDePortes = new Porte[1];
 
 		}
 
@@ -167,6 +173,22 @@ namespace FearTheDungeon
 			}
 		}
 
+		/// <summary>
+		/// Tableau contenant toutes les portes du niveau
+		/// </summary>
+		public Porte[] TableauDePortes
+		{
+			get
+			{
+				return tableauDePortes;
+			}
+
+			set
+			{
+				tableauDePortes = value;
+			}
+		}
+
 		// ***************************************
 		//				METHODES
 		// ***************************************
@@ -191,11 +213,36 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
-		/// Vide le tableau des éléments du niveau
+		/// Permet d'ajouter des éléments "Porte" dans le tableau de portes
+		/// </summary>
+		/// <param name="porte"></param>
+		public void AjoutPorte(Porte porte)
+		{
+			if (TableauDePortes.Length == 1)
+			{
+				tableauDePortes[0] = porte;
+				Array.Resize(ref this.tableauDePortes, this.tableauDePortes.Length + 1);
+			}
+
+			else
+			{
+				this.elementsDuNiveau[this.tableauDePortes.Length - 1] = porte;
+				Array.Resize(ref this.tableauDePortes, this.tableauDePortes.Length + 1);
+			}
+		}
+
+		/// <summary>
+		/// Vide le tableau des éléments du niveau et le tableau de portes
 		/// </summary>
 		public void ResetNiveau()
 		{
 			Array.Resize(ref this.elementsDuNiveau, 1);
+
+			//Si on a au moins une porte, on la reset
+			if(this.TableauDePortes != null)
+			{
+				Array.Resize(ref this.tableauDePortes, 1);
+			}
 		}
 	}
 }

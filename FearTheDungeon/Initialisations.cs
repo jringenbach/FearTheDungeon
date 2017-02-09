@@ -169,6 +169,7 @@ namespace FearTheDungeon
 
 			//La case porte
 			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.porteNiveau4);
+			DonneesNiveau.niveau4.AjoutPorte(DonneesNiveau.porteNiveau4);
 
 			//La case sortie
 			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.sortieNiveau4);
@@ -177,6 +178,9 @@ namespace FearTheDungeon
 			DonneesNiveau.personnagePrincipal.PositionElement[0] = 0; //En X
 			DonneesNiveau.personnagePrincipal.PositionElement[1] = 2; //En Y
 			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.personnagePrincipal);
+
+			InitialisationDesBlocs(DonneesNiveau.niveau4);
+			InitialisationDesPortes(DonneesNiveau.niveau4);
 		}
 
 		/// <summary>
@@ -290,6 +294,18 @@ namespace FearTheDungeon
 					blocTemp.PositionElement[1] = blocTemp.PositionInitiale[1];
 					niveau.ElementsDuNiveau[i] = blocTemp;
 				}
+			}
+		}
+
+		/// <summary>
+		/// Lors de la réinitilisation, cette fonction permet de remettre les portes à leur état initial
+		/// </summary>
+		/// <param name="niveau"></param>
+		public static void InitialisationDesPortes(Niveau niveau)
+		{
+			for (int i = 0; i < niveau.TableauDePortes.Length-1; i++)
+			{
+				niveau.TableauDePortes[i].EtatInitial();
 			}
 		}
 	}
