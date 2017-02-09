@@ -175,7 +175,41 @@ namespace FearTheDungeon
 		//				NIVEAU 5             ****************************************************************************************
 		//***********************************
 
-		private static Map carteNiveau5 = new Map(6, 6);
+		private static Map carteNiveau5 = new Map(9, 5);
+
+		//La case Porte
+		public static Porte porteNiveau5 = new Porte(7, 3, false);
+
+		//Case Bloc
+		public static Bloc blocNiveau5 = new Bloc(2, 3);
+
+		//Case Bouton
+		public static Bouton boutonNiveau5 = new Bouton(3, 4, porteNiveau5);
+
+		//Les cases message
+		public static MessageElement message1Niveau5 = new MessageElement(0, 0, "");
+		public static MessageElement message2Niveau5 = new MessageElement(7, 1, "");
+
+		//Les cases mur
+		public static Mur murligne0colonne1niveau5 = new Mur(0, 1);
+		public static Mur murligne1colonne1niveau5 = new Mur(1, 1);
+		public static Mur murligne3colonne1niveau5 = new Mur(3, 1);
+		public static Mur murligne4colonne1niveau5 = new Mur(4, 1);
+		public static Mur murligne5colonne1niveau5 = new Mur(5, 1);
+		public static Mur murligne6colonne1niveau5 = new Mur(6, 1);
+
+		public static Mur murligne1colonne3niveau5 = new Mur(1, 3);
+		public static Mur murligne3colonne3niveau5 = new Mur(3, 3);
+		public static Mur murligne4colonne3niveau5 = new Mur(4, 3);
+		public static Mur murligne5colonne3niveau5 = new Mur(5, 3);
+		public static Mur murligne6colonne3niveau5 = new Mur(6, 3);
+		public static Mur murligne8colonne3niveau5 = new Mur(8, 3);
+
+		public static Mur murligne6colonne4niveau5 = new Mur(6, 4);
+		public static Mur murligne8colonne4niveau5 = new Mur(8, 4);
+
+		//La case Sortie
+		public static SortieElement sortieNiveau5 = new SortieElement(7, 4);
 
 		public static Niveau niveau5 = new Niveau(carteNiveau5, "Nuit d'ivresse", 5, "VRP666", false);
 		#endregion

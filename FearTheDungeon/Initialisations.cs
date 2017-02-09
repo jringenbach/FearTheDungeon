@@ -189,6 +189,50 @@ namespace FearTheDungeon
 		public static void InitialisationNiveau5()
 		{
 			DonneesNiveau.niveau5.ResetNiveau();
+
+			//La case Bloc
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.blocNiveau5);
+
+			//La case bouton
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.boutonNiveau5);
+
+			//Les cases message
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.message1Niveau5);
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.message2Niveau5);
+
+
+			//Les cases Mur
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne0colonne1niveau5);
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne1colonne1niveau5);
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne3colonne1niveau5);
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne4colonne1niveau5);
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne5colonne1niveau5);
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne6colonne1niveau5);
+
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne1colonne3niveau5);
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne3colonne3niveau5);
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne4colonne3niveau5);
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne5colonne3niveau5);
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne6colonne3niveau5);
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne8colonne3niveau5);
+
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne6colonne4niveau5);
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.murligne8colonne4niveau5);
+
+			//La case porte
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.porteNiveau5);
+			DonneesNiveau.niveau5.AjoutPorte(DonneesNiveau.porteNiveau5);
+
+			//La case sortie
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.sortieNiveau5);
+
+			//On définit la position du personnage principal au début du niveau
+			DonneesNiveau.personnagePrincipal.PositionElement[0] = 5; //En X
+			DonneesNiveau.personnagePrincipal.PositionElement[1] = 4; //En Y
+			DonneesNiveau.niveau5.AjoutMapElement(DonneesNiveau.personnagePrincipal);
+
+			InitialisationDesBlocs(DonneesNiveau.niveau5);
+			InitialisationDesPortes(DonneesNiveau.niveau5);
 		}
 
 		/// <summary>
