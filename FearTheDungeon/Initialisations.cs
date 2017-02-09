@@ -134,6 +134,40 @@ namespace FearTheDungeon
 		public static void InitialisationNiveau4()
 		{
 			DonneesNiveau.niveau4.ResetNiveau();
+
+			//La case Bloc
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.blocNiveau4);
+
+			//Les cases message
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.message1Niveau4);
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.message2Niveau4);
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.message3Niveau4);
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.message4Niveau4);
+
+			//Les cases Mur
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne0colonne0niveau4);
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne0colonne1niveau4);
+
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne1colonne0niveau4);
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne1colonne1niveau4);
+
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne3colonne0niveau4);
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne3colonne1niveau4);
+
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne4colonne2niveau4);
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne5colonne2niveau4);
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne7colonne2niveau4);
+
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne1colonne3niveau4);
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.murligne3colonne3niveau4);
+
+			//La case sortie
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.sortieNiveau4);
+
+			//On définit la position du personnage principal au début du niveau
+			DonneesNiveau.personnagePrincipal.PositionElement[0] = 0; //En X
+			DonneesNiveau.personnagePrincipal.PositionElement[1] = 2; //En Y
+			DonneesNiveau.niveau4.AjoutMapElement(DonneesNiveau.personnagePrincipal);
 		}
 
 		/// <summary>

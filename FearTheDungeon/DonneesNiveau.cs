@@ -129,7 +129,35 @@ namespace FearTheDungeon
 		//				NIVEAU 4             ****************************************************************************************
 		//***********************************
 
-		private static Map carteNiveau4 = new Map(6, 6);
+		private static Map carteNiveau4 = new Map(8, 5);
+
+		//Case Bloc
+		public static Bloc blocNiveau4 = new Bloc(1, 2);
+
+		//Les cases message
+		public static MessageElement message1Niveau4 = new MessageElement(0, 3, "Les cases P sont des portes");
+		public static MessageElement message2Niveau4 = new MessageElement(2, 4, "Poussez le bloc B sur le bouton b");
+		public static MessageElement message3Niveau4 = new MessageElement(4, 1, "Vous êtes à bloc pour la suite ?");
+		public static MessageElement message4Niveau4 = new MessageElement(4, 0, "Insérez une blague ici");
+
+		//Les cases mur
+		public static Mur murligne0colonne0niveau4 = new Mur(0, 0);
+		public static Mur murligne0colonne1niveau4 = new Mur(0, 1);
+		public static Mur murligne1colonne0niveau4 = new Mur(1, 0);
+		public static Mur murligne1colonne1niveau4 = new Mur(1, 1);
+		public static Mur murligne3colonne0niveau4 = new Mur(3, 0);
+		public static Mur murligne3colonne1niveau4 = new Mur(3, 1);
+
+		public static Mur murligne4colonne2niveau4 = new Mur(4, 2);
+		public static Mur murligne5colonne2niveau4 = new Mur(5, 2);
+		public static Mur murligne7colonne2niveau4 = new Mur(7, 2);
+
+		public static Mur murligne1colonne3niveau4 = new Mur(1, 3);
+		public static Mur murligne3colonne3niveau4 = new Mur(3, 3);
+
+
+		//La case Sortie
+		public static SortieElement sortieNiveau4 = new SortieElement(7, 0);
 
 		public static Niveau niveau4 = new Niveau(carteNiveau4, "Vaincre l'invaincu", 4, "ODT48E", false);
 		#endregion
