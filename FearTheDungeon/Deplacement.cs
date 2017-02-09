@@ -151,13 +151,16 @@ namespace FearTheDungeon
 		/// <param name="niveau"></param>
 		/// <param name="Bloc"></param>
 		/// <returns></returns>
-		static bool TestValiditeDuMouvementBloc(int mouvement, Niveau niveau, MapElement Bloc)
+		static bool TestValiditeDuMouvementBloc(int mouvement, Niveau niveau, MapElement bloc)
 		{
 			bool leBlocPeutBouger = true;
 			bool leBlocSortDeLaMap = false;
 			bool laCaseEstDejaPrise = false;
-			int positionBlocX = Bloc.PositionElement[0];
-			int positionBlocY = Bloc.PositionElement[1];
+
+			//Position en X du bloc si son déplacement est validé
+			int positionBlocX = bloc.PositionElement[0];
+			//Position en Y du bloc si son déplacement est validé
+			int positionBlocY = bloc.PositionElement[1];
 
 			switch (mouvement)
 			{
@@ -195,12 +198,22 @@ namespace FearTheDungeon
 			//On consulte le tableau d'éléments du niveau pour voir si on pousse pas le bloc sur un objet infranchissable
 			for(int i=0; i<niveau.elementsDuNiveau.Length-1; i++)
 			{
-				//Si il y'a un mur, une porte ou la sortie
+				//Si un autre élément du niveau a la même position que la case sur laquelle va être poussé le bloc
 				if(niveau.elementsDuNiveau[i].PositionElement[0] == positionBlocX &&
-				   niveau.elementsDuNiveau[i].PositionElement[1] == positionBlocY &&
-				   (niveau.ElementsDuNiveau[i].Symbole=='X' || niveau.ElementsDuNiveau[i].Symbole == 'S' || niveau.ElementsDuNiveau[i].Symbole == 'P'))
+				   niveau.elementsDuNiveau[i].PositionElement[1] == positionBlocY)		
 				{
-					laCaseEstDejaPrise = true;
+					//Si il y'a un mur, une porte ou la sortie
+					if (niveau.ElementsDuNiveau[i].Symbole == 'X' || niveau.ElementsDuNiveau[i].Symbole == 'S' || niveau.ElementsDuNiveau[i].Symbole == 'P')
+					{
+						laCaseEstDejaPrise = true;
+					}
+
+					//Si on le pousse sur un bouton
+					else if (niveau.ElementsDuNiveau[i].Symbole == 'b')
+					{
+
+					}
+
 				}
 			}
 
