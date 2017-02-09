@@ -388,8 +388,28 @@ namespace FearTheDungeon
 			//Nom des niveaux
 			DonneesNiveau.tableauNiveaux[0].Nom = "Greatness from small beginnings";
 			DonneesNiveau.tableauNiveaux[1].Nom = "No pain, no gain";
+			DonneesNiveau.tableauNiveaux[2].Nom = "It looks like a tutorial";
+			DonneesNiveau.tableauNiveaux[3].Nom = "Defeat the Unbeaten";
+			DonneesNiveau.tableauNiveaux[4].Nom = "Drunk night";
 
-        }
+			//Message des niveaux
+			DonneesNiveau.message1Niveau1.Message = "M squares give you information";
+			DonneesNiveau.message2Niveau1.Message = "S squares show you the exit";
+
+			DonneesNiveau.message1Niveau2.Message = "B squares are blocks";
+			DonneesNiveau.message2Niveau2.Message = "You can push Blocks B";
+			DonneesNiveau.message3Niveau2.Message = "These rooms are narrow, aren't they?";
+
+			DonneesNiveau.message1Niveau3.Message = "If you want to reset the level, press 5";
+			DonneesNiveau.message2Niveau3.Message = "You can't go out now, can you?";
+
+			DonneesNiveau.message1Niveau4.Message = "P squares are doors";
+			DonneesNiveau.message2Niveau4.Message = "Push the block B on the button b";
+			DonneesNiveau.message3Niveau4.Message = "Are you ready for what's coming Next ?";
+			DonneesNiveau.message4Niveau4.Message = "Insert a joke here";
+
+
+		}
 
         /// <summary>
         /// Fonction qui permet de passer le jeu en français
@@ -432,6 +452,25 @@ namespace FearTheDungeon
 			//Nom des niveaux
 			DonneesNiveau.tableauNiveaux[0].Nom = "La grandeur des petits débuts";
 			DonneesNiveau.tableauNiveaux[1].Nom = "Sans effort, pas de gloire";
+			DonneesNiveau.tableauNiveaux[2].Nom = "On dirait un tutoriel";
+			DonneesNiveau.tableauNiveaux[3].Nom = "Vaincre l'invaincu";
+			DonneesNiveau.tableauNiveaux[4].Nom = "Nuit d'ivresse";
+
+			//Message des niveaux
+			DonneesNiveau.message1Niveau1.Message = "Les cases M vous donnent une information";
+			DonneesNiveau.message2Niveau1.Message = "Les cases S indiquent la sortie";
+
+			DonneesNiveau.message1Niveau2.Message = "Les cases B représentent des blocs";
+			DonneesNiveau.message2Niveau2.Message = "Vous pouvez pousser les blocs B";
+			DonneesNiveau.message3Niveau2.Message = "Ces pièces sont étroites, non ?";
+
+			DonneesNiveau.message1Niveau3.Message = "Pour recharger le niveau. Appuyez sur 5";
+			DonneesNiveau.message2Niveau3.Message = "Vous avez bloqué la sortie, n'est-ce pas ?";
+
+			DonneesNiveau.message1Niveau4.Message = "Les cases P sont des portes";
+			DonneesNiveau.message2Niveau4.Message = "Poussez le bloc B sur le bouton b";
+			DonneesNiveau.message3Niveau4.Message = "Vous êtes à bloc pour la suite ?";
+			DonneesNiveau.message4Niveau4.Message = "Insérez une blague ici";
 
 
 		}

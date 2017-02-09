@@ -28,7 +28,7 @@ namespace FearTheDungeon
 		//CREATION DES ELEMENTS DU NIVEAU 1
 
 		//Les cases message
-		public static MessageElement message1Niveau1 = new MessageElement(3, 2, "Les cases M vous donnent une information.");
+		public static MessageElement message1Niveau1 = new MessageElement(3, 2, "Les cases M vous donnent une information");
 		public static MessageElement message2Niveau1 = new MessageElement(4, 4, "Les cases S indiquent la sortie");
 		public static MessageElement[] messagesNiveau1 = { message1Niveau1, message2Niveau1 };
 
@@ -60,7 +60,7 @@ namespace FearTheDungeon
 		public static Bloc blocNiveau2 = new Bloc(1,2);
 
 		//Les cases message
-		public static MessageElement message1Niveau2 = new MessageElement(3, 4, "Les cases B représentent des blocs.");
+		public static MessageElement message1Niveau2 = new MessageElement(3, 4, "Les cases B représentent des blocs");
 		public static MessageElement message2Niveau2 = new MessageElement(3, 2, "Vous pouvez pousser les blocs B");
 		public static MessageElement message3Niveau2 = new MessageElement(0, 0, "Ces pièces sont étroites, non ?");
 
@@ -92,7 +92,7 @@ namespace FearTheDungeon
 		public static Bloc blocNiveau3 = new Bloc(1, 3);
 
 		//Les cases message
-		public static MessageElement message1Niveau3 = new MessageElement(0, 5, "Pour reset le niveau. Appuyez sur 5.");
+		public static MessageElement message1Niveau3 = new MessageElement(0, 5, "Pour recharger le niveau. Appuyez sur 5");
 		public static MessageElement message2Niveau3 = new MessageElement(4, 1, "Vous avez bloqué la sortie, n'est-ce pas ?");
 
 		//Les cases mur
