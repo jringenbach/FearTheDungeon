@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace FearTheDungeon
 {
+	/// <summary>
+	/// Contient toutes les fonctions d'initialisation des niveaux du programme
+	/// </summary>
 	abstract class Initialisations
 	{
 		/// <summary>

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace FearTheDungeon
 {
+	/// <summary>
+	/// Stocke toutes les données relatives aux niveaux du jeu.
+	/// </summary>
 	abstract class DonneesNiveau
 	{
 

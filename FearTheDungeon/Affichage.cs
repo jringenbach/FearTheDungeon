@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace FearTheDungeon
 {
+	/// <summary>
+	/// Contient toutes les fonctions d'affichage. Elle ne peut être instanciée.
+	/// </summary>
 	abstract class Affichage
 	{
 		// *****************************************************

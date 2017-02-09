@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace FearTheDungeon
 {
+	/// <summary>
+	/// Contient toutes les fonctions relatives aux déplacements du personnage et des éléments de la carte
+	/// </summary>
 	abstract class Deplacement
 	{
 
