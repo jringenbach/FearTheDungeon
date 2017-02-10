@@ -349,8 +349,9 @@ namespace FearTheDungeon
 								for(int j=0; j<DonneesPubliques.phrasesDuMdp879121.Length; j++)
 								{
 									Console.WriteLine(DonneesPubliques.phrasesDuMdp879121[j]+"\n");
-									Console.ReadKey();
+									Console.ReadKey(true);
 								}
+								Console.ResetColor();
 								Environment.Exit(0);
 								
 								break;
