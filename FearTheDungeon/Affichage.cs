@@ -383,13 +383,13 @@ namespace FearTheDungeon
 
 				//Si le niveau est débloqué on l'affiche en blanc, sinon en gris
 				if (i <= DonneesPubliques.niveauDebloque) Console.ForegroundColor = ConsoleColor.White;
-				else Console.ForegroundColor = ConsoleColor.Gray;
+				else Console.ForegroundColor = ConsoleColor.DarkGray;
 				Console.Write("   Niveau " + (i + 1));
 				Console.ResetColor();
 
 				//Bordure droite du tableau
 				if (i < 10) Console.WriteLine("    |");
-				else if (i < 100) Console.WriteLine("  |");
+				else if (i < 100) Console.WriteLine(" |");
 
 			}
 
