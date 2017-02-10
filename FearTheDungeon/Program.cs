@@ -19,6 +19,8 @@ namespace FearTheDungeon
 			//				DEROULEMENT DU PROGRAMME
 			// ***************************************************
 
+			Console.SetBufferSize(80, 55);
+			Console.SetWindowSize(80, 55);
 			Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuPrincipal);
 			
 		}

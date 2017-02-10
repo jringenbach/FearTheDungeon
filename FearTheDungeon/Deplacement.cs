@@ -306,6 +306,12 @@ namespace FearTheDungeon
 						else objetInfranchissable = true;
 
 					}
+
+					else if(niveau.ElementsDuNiveau[i].Symbole == 'D')
+					{
+						Initialisations.InitialisationNiveau(niveau);
+						Affichage.AffichageNiveau(niveau);
+					}
 				}
 			}
 

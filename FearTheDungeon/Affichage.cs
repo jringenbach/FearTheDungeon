@@ -198,6 +198,7 @@ namespace FearTheDungeon
 				{
 					positionSymbole = 0;
 					symbolePresent = false;
+
 					//On parcourt la boucle des éléments du niveau
 					//On la parcourt à Length-1 car on a ajouté une case vide en ajoutant le dernier élément
 					for (int k = 0; k < niveau.ElementsDuNiveau.Length - 1; k++)
