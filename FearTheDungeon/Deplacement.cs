@@ -191,7 +191,7 @@ namespace FearTheDungeon
 			}
 
 			//Si le bloc sort de la carte
-			if(positionBlocX<0 || positionBlocX>=niveau.CarteDuNiveau.NombreLignes ||
+			if(positionBlocX<0 || positionBlocX >= niveau.CarteDuNiveau.NombreLignes ||
 			   positionBlocY<0 || positionBlocY >= niveau.CarteDuNiveau.NombreColonnes)
 			{
 				leBlocSortDeLaMap = true;
@@ -225,7 +225,7 @@ namespace FearTheDungeon
 						if(niveau.TableauDePortes != null)
 						{
 							//On parcourt les éléments du niveau pour trouver la porte qu'il ouvre
-							for (int j = 0; j < niveau.TableauDePortes.Length; j++)
+							for (int j = 0; j < niveau.TableauDePortes.Length-1; j++)
 							{
 								//Si la porte que le bouton ouvre est la porte sur laquelle on est dans le tableau de portes
 								if (boutonTemp.PorteQueJouvre == niveau.TableauDePortes[j])

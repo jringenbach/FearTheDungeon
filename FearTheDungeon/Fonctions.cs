@@ -319,12 +319,49 @@ namespace FearTheDungeon
 		static private int VerificationMotDePasse(string mdpSaisie, Niveau[] niveau)
 		{
 			int niveauDebloque = 0;
+			bool motDePasseTrouve = false;
 
 			//On parcourt les mots de passe de chaque niveau pour voir si y'en a un qui est égal à la saisie du niveau
 			for(int i = 0; i<niveau.Length; i++)
 			{
-				if(mdpSaisie == niveau[i].Password) niveauDebloque = i + 1;
+				if (mdpSaisie == niveau[i].Password)
+				{
+					niveauDebloque = i + 1;
+					motDePasseTrouve = true;
+				}
+				
 			}
+			
+			//Si on a pas trouvé de mot de passe dans les mots de passe de niveau, on regarde si il a pas tapé un mot de passe secret
+			if(motDePasseTrouve == false)
+			{
+				//On parcourt les mots de passe qui ont des fonctionnalités secrètes
+				for (int i = 0; i < DonneesPubliques.motDePasseSecret.Length; i++)
+				{
+					if (mdpSaisie == DonneesPubliques.motDePasseSecret[i])
+					{
+						switch (mdpSaisie)
+						{
+							//Si le joueur a tapé 879121
+							case "879121":
+								Console.Clear();
+								Console.ForegroundColor = ConsoleColor.Red;
+								for(int j=0; j<DonneesPubliques.phrasesDuMdp879121.Length; j++)
+								{
+									Console.WriteLine(DonneesPubliques.phrasesDuMdp879121[j]+"\n");
+									Console.ReadKey();
+								}
+								Environment.Exit(0);
+								
+								break;
+
+							default:
+								break;
+						}
+					}
+				}
+			}
+
 
 			return niveauDebloque;
 		}

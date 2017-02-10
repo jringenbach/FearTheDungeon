@@ -228,10 +228,11 @@ namespace FearTheDungeon
 		public static Bloc blocNiveau6 = new Bloc(5, 5);
 
 		//Case Bouton
-		public static Bouton boutonNiveau6 = new Bouton(7, 2, porteNiveau6);
+		public static Bouton boutonNiveau6 = new Bouton(6, 2, porteNiveau6);
 
 		//Les cases message
 		public static MessageElement message1Niveau6 = new MessageElement(3, 0, "On avance, on avance, on avance !");
+		public static MessageElement message2Niveau6 = new MessageElement(7, 6, "Mot de passe : 879121");
 
 		//Les cases mur
 
@@ -298,7 +299,7 @@ namespace FearTheDungeon
 		public static Mur murligne7colonne8niveau6 = new Mur(7, 8);
 
 		//La case Sortie
-		public static SortieElement sortieNiveau6 = new SortieElement(7, 8);
+		public static SortieElement sortieNiveau6 = new SortieElement(6, 8);
 
 		public static Niveau niveau6 = new Niveau(carteNiveau6, "Une salle sale", 6, "784UIO", false);
 		#endregion

@@ -256,6 +256,61 @@ namespace FearTheDungeon
 
 			//Les cases Mur
 			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne4colonne0niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne5colonne0niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne6colonne0niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne7colonne0niveau6);
+
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne4colonne1niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne5colonne1niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne6colonne1niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne7colonne1niveau6);
+
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne0colonne2niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne7colonne2niveau6);
+
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne0colonne3niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne1colonne3niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne2colonne3niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne4colonne3niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne5colonne3niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne6colonne3niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne7colonne3niveau6);
+
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne0colonne4niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne1colonne4niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne2colonne4niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne6colonne4niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne7colonne4niveau6);
+
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne0colonne5niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne1colonne5niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne2colonne5niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne7colonne5niveau6);
+
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne0colonne6niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne1colonne6niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne2colonne6niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne3colonne6niveau6);
+
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne0colonne7niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne1colonne7niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne2colonne7niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne3colonne7niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne4colonne7niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne5colonne7niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne7colonne7niveau6);
+
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne0colonne8niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne1colonne8niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne2colonne8niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne3colonne8niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne4colonne8niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne5colonne8niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne7colonne8niveau6);
+
+			//La case porte
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.porteNiveau6);
+			DonneesNiveau.niveau6.AjoutPorte(DonneesNiveau.porteNiveau6);
 
 			//On définit la position du personnage principal au début du niveau
 			DonneesNiveau.personnagePrincipal.PositionElement[0] = 0; //En X
