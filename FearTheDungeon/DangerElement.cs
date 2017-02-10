@@ -11,5 +11,18 @@ namespace FearTheDungeon
 	/// </summary>
 	class DangerElement : MapElement
 	{
+
+		public new char Symbole = 'D';
+
+		public DangerElement() : base()
+		{
+			
+		}
+
+		public DangerElement(int positionX, int positionY) : base()
+		{
+			PositionElement[0] = positionX;
+			PositionElement[1] = positionY;
+		}
 	}
 }

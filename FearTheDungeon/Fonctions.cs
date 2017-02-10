@@ -433,26 +433,31 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[6].Nom = "We get used to it pretty quickly";
 
 			//Messages des niveaux
-			DonneesNiveau.message1Niveau1.Message = "M squares give you information";
+			DonneesNiveau.message1Niveau1.Message = "M squares give you information"; //niveau 1
 			DonneesNiveau.message2Niveau1.Message = "S squares show you the exit";
 
-			DonneesNiveau.message1Niveau2.Message = "B squares are blocks";
+			DonneesNiveau.message1Niveau2.Message = "B squares are blocks"; //niveau 2
 			DonneesNiveau.message2Niveau2.Message = "You can push Blocks B";
 			DonneesNiveau.message3Niveau2.Message = "These rooms are narrow, aren't they?";
 
-			DonneesNiveau.message1Niveau3.Message = "If you want to reset the level, press 5";
+			DonneesNiveau.message1Niveau3.Message = "If you want to reset the level, press 5"; //niveau 3
 			DonneesNiveau.message2Niveau3.Message = "You can't go out now, can you?";
 
-			DonneesNiveau.message1Niveau4.Message = "P squares are doors";
+			DonneesNiveau.message1Niveau4.Message = "P squares are doors"; //niveau 4
 			DonneesNiveau.message2Niveau4.Message = "Push the block B on the button b";
 			DonneesNiveau.message3Niveau4.Message = "Are you ready for what's coming Next ?";
 			DonneesNiveau.message4Niveau4.Message = "Insert a joke here";
 
-			DonneesNiveau.message1Niveau5.Message = "Push that block my little sunshine !";
+			DonneesNiveau.message1Niveau5.Message = "Push that block my little sunshine !"; //niveau 5
 			DonneesNiveau.message2Niveau5.Message = "Think before Acting !";
 
-			DonneesNiveau.message1Niveau6.Message = "It goes on, and on, and on...";
+			DonneesNiveau.message1Niveau6.Message = "It goes on, and on, and on..."; //niveau 6
 			DonneesNiveau.message2Niveau6.Message = "Password : 879121";
+
+			DonneesNiveau.message1Niveau7.Message = "D Squares are dangerous"; //niveau 7
+			DonneesNiveau.message2Niveau7.Message = "Walking on a D square will reset the level";
+			DonneesNiveau.message3Niveau7.Message = "You're doing great! Keep going !";
+			DonneesNiveau.message4Niveau7.Message = "Watch your step!";
 
 			//Messages du mot de passe secret 879121
 			DonneesPubliques.phrasesDuMdp879121[0] = "I got a feeling...";
@@ -511,26 +516,31 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[6].Nom = "On s'habitue vite";
 
 			//Messages des niveaux
-			DonneesNiveau.message1Niveau1.Message = "Les cases M vous donnent une information";
+			DonneesNiveau.message1Niveau1.Message = "Les cases M vous donnent une information"; //niveau 1
 			DonneesNiveau.message2Niveau1.Message = "Les cases S indiquent la sortie";
 
-			DonneesNiveau.message1Niveau2.Message = "Les cases B représentent des blocs";
+			DonneesNiveau.message1Niveau2.Message = "Les cases B représentent des blocs"; //niveau 2
 			DonneesNiveau.message2Niveau2.Message = "Vous pouvez pousser les blocs B";
 			DonneesNiveau.message3Niveau2.Message = "Ces pièces sont étroites, non ?";
 
-			DonneesNiveau.message1Niveau3.Message = "Pour recharger le niveau. Appuyez sur 5";
+			DonneesNiveau.message1Niveau3.Message = "Pour recharger le niveau. Appuyez sur 5"; //niveau 3
 			DonneesNiveau.message2Niveau3.Message = "Vous avez bloqué la sortie, n'est-ce pas ?";
 
-			DonneesNiveau.message1Niveau4.Message = "Les cases P sont des portes";
+			DonneesNiveau.message1Niveau4.Message = "Les cases P sont des portes"; //niveau 4
 			DonneesNiveau.message2Niveau4.Message = "Poussez le bloc B sur le bouton b";
 			DonneesNiveau.message3Niveau4.Message = "Vous êtes à bloc pour la suite ?";
 			DonneesNiveau.message4Niveau4.Message = "Insérez une blague ici";
 
-			DonneesNiveau.message1Niveau5.Message = "Pousse ce bloc ma kikoune !";
+			DonneesNiveau.message1Niveau5.Message = "Pousse ce bloc ma kikoune !"; //niveau 5
 			DonneesNiveau.message2Niveau5.Message = "Réfléchissez avant d'agir !";
 
-			DonneesNiveau.message1Niveau6.Message = "On avance, on avance, on avance";
+			DonneesNiveau.message1Niveau6.Message = "On avance, on avance, on avance"; //niveau 6
 			DonneesNiveau.message2Niveau6.Message = "Mot de passe : 879121";
+
+			DonneesNiveau.message1Niveau7.Message = "Les cases D sont des cases \"Danger\""; //niveau 7
+			DonneesNiveau.message2Niveau7.Message = "Marcher sur une case D recharge le niveau";
+			DonneesNiveau.message3Niveau7.Message = "Vous êtes sur la bonne voie";
+			DonneesNiveau.message4Niveau7.Message = "Attention à la marche !";
 
 			//Messages du mot de passe secret 879121
 			DonneesPubliques.phrasesDuMdp879121[0] = "J'ai l'intime sensation...";

@@ -309,7 +309,39 @@ namespace FearTheDungeon
 		//				NIVEAU 7             ****************************************************************************************
 		//***********************************
 
-		private static Map carteNiveau7 = new Map(6, 6);
+		private static Map carteNiveau7 = new Map(12, 3);
+
+		//Les cases Message
+		public static MessageElement message1Niveau7 = new MessageElement(10, 0, "Les cases D sont des cases \"Danger\"");
+		public static MessageElement message2Niveau7 = new MessageElement(9, 1, "Marcher sur une case D recharge le niveau");
+		public static MessageElement message3Niveau7 = new MessageElement(3, 0, "Vous êtes sur la bonne voie");
+		public static MessageElement message4Niveau7 = new MessageElement(7, 6, "Attention à la marche !");
+
+		//Les cases Danger
+
+				//colonne 0
+		public static DangerElement Dangerligne0colonne0niveau7 = new DangerElement(0, 0);
+		public static DangerElement Dangerligne1colonne0niveau7 = new DangerElement(1, 0);
+		public static DangerElement Dangerligne6colonne0niveau7 = new DangerElement(6, 0);
+		public static DangerElement Dangerligne7colonne0niveau7 = new DangerElement(7, 0);
+		public static DangerElement Dangerligne8colonne0niveau7 = new DangerElement(8, 0);
+
+				//colonne 1
+		public static DangerElement Dangerligne1colonne1niveau7 = new DangerElement(1, 1);
+		public static DangerElement Dangerligne3colonne1niveau7 = new DangerElement(3, 1);
+		public static DangerElement Dangerligne5colonne1niveau7 = new DangerElement(5, 1);
+		public static DangerElement Dangerligne11colonne1niveau7 = new DangerElement(11, 1);
+
+				//colonne 2
+		public static DangerElement Dangerligne3colonne2niveau7 = new DangerElement(3, 2);
+		public static DangerElement Dangerligne7colonne2niveau7 = new DangerElement(7, 2);
+		public static DangerElement Dangerligne8colonne2niveau7 = new DangerElement(8, 2);
+		public static DangerElement Dangerligne9colonne2niveau7 = new DangerElement(9, 2);
+		public static DangerElement Dangerligne10colonne2niveau7 = new DangerElement(10, 2);
+		public static DangerElement Dangerligne11colonne2niveau7 = new DangerElement(11, 2);
+
+		//La case Sortie
+		public static SortieElement sortieNiveau7 = new SortieElement(0, 1);
 
 		public static Niveau niveau7 = new Niveau(carteNiveau7, "On s'habitue vite", 7, "202JKA", false);
 		#endregion

@@ -19,7 +19,6 @@ namespace FearTheDungeon
 			//				DEROULEMENT DU PROGRAMME
 			// ***************************************************
 
-			Initialisations.InitialisationNiveau1();
 			Affichage.JoueurChoisitUneOptionDansLeMenu(DonnéesMenu.MenuPrincipal);
 			
 		}

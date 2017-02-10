@@ -330,6 +330,64 @@ namespace FearTheDungeon
 		public static void InitialisationNiveau7()
 		{
 			DonneesNiveau.niveau7.ResetNiveau();
+
+			//Les cases message
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.message1Niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.message2Niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.message3Niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.message4Niveau7);
+
+			//La case sortie
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.sortieNiveau7);
+
+			//Les cases Danger
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne0colonne0niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne1colonne0niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne6colonne0niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne7colonne0niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne8colonne0niveau7);
+
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne1colonne1niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne3colonne1niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne5colonne1niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne11colonne1niveau7);
+
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne3colonne2niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne7colonne2niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne8colonne2niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne9colonne2niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne10colonne2niveau7);
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.Dangerligne11colonne2niveau7);
+
+			//On définit la position du personnage principal au début du niveau
+			DonneesNiveau.personnagePrincipal.PositionElement[0] = 9; //En X
+			DonneesNiveau.personnagePrincipal.PositionElement[1] = 0; //En Y
+			DonneesNiveau.niveau7.AjoutMapElement(DonneesNiveau.personnagePrincipal);
+
+		}
+
+		/// <summary>
+		/// Initialise les données du niveau 8
+		/// </summary>
+		public static void InitialisationNiveau8()
+		{
+
+		}
+
+		/// <summary>
+		/// Initialise les données du niveau 9
+		/// </summary>
+		public static void InitialisationNiveau9()
+		{
+
+		}
+
+		/// <summary>
+		/// Initialise les données du niveau 10
+		/// </summary>
+		public static void InitialisationNiveau10()
+		{
+
 		}
 
 		/// <summary>
@@ -364,6 +422,18 @@ namespace FearTheDungeon
 
 				case 6:
 					InitialisationNiveau7();
+					break;
+
+				case 7:
+					InitialisationNiveau8();
+					break;
+
+				case 8:
+					InitialisationNiveau9();
+					break;
+
+				case 9:
+					InitialisationNiveau10();
 					break;
 
 				default:
@@ -408,6 +478,18 @@ namespace FearTheDungeon
 
 				case 7:
 					InitialisationNiveau7();
+					break;
+
+				case 8:
+					InitialisationNiveau8();
+					break;
+
+				case 9:
+					InitialisationNiveau9();
+					break;
+
+				case 10:
+					InitialisationNiveau10();
 					break;
 
 				default:
