@@ -250,6 +250,7 @@ namespace FearTheDungeon
 		
 			//Les cases message
 			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.message1Niveau6);
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.message2Niveau6);
 
 			//La case sortie
 			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.sortieNiveau6);

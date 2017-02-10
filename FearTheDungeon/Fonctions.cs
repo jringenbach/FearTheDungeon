@@ -451,9 +451,16 @@ namespace FearTheDungeon
 			DonneesNiveau.message2Niveau5.Message = "Think before Acting !";
 
 			DonneesNiveau.message1Niveau6.Message = "It goes on, and on, and on...";
+			DonneesNiveau.message2Niveau6.Message = "Password : 879121";
+
+			//Messages du mot de passe secret 879121
+			DonneesPubliques.phrasesDuMdp879121[0] = "I got a feeling...";
+			DonneesPubliques.phrasesDuMdp879121[1] = "... that the next part...";
+			DonneesPubliques.phrasesDuMdp879121[2] = "... will not please you ...";
+			DonneesPubliques.phrasesDuMdp879121[3] = "... Bye, bye, dude !";
 
 
-	}
+		}
 
         /// <summary>
         /// Fonction qui permet de passer le jeu en français
@@ -522,6 +529,13 @@ namespace FearTheDungeon
 			DonneesNiveau.message2Niveau5.Message = "Réfléchissez avant d'agir !";
 
 			DonneesNiveau.message1Niveau6.Message = "On avance, on avance, on avance";
+			DonneesNiveau.message2Niveau6.Message = "Mot de passe : 879121";
+
+			//Messages du mot de passe secret 879121
+			DonneesPubliques.phrasesDuMdp879121[0] = "J'ai l'intime sensation...";
+			DonneesPubliques.phrasesDuMdp879121[1] = "... que la suite ...";
+			DonneesPubliques.phrasesDuMdp879121[2] = "... ne va pas te plaire ...";
+			DonneesPubliques.phrasesDuMdp879121[3] = "... Aurevoir ! ...";
 
 
 		}
