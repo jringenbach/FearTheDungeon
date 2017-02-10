@@ -230,23 +230,72 @@ namespace FearTheDungeon
 		//Case Bouton
 		public static Bouton boutonNiveau6 = new Bouton(7, 2, porteNiveau6);
 
+		//Les cases message
+		public static MessageElement message1Niveau6 = new MessageElement(3, 0, "On avance, on avance, on avance !");
+
 		//Les cases mur
-		//public static Mur murligne0colonne4niveau5 = new Mur(0, 1);
-		//public static Mur murligne0colonne5niveau5 = new Mur(1, 1);
-		//public static Mur murligne0colonne6niveau5 = new Mur(3, 1);
-		//public static Mur murligne0colonne7niveau5 = new Mur(4, 1);
-		//public static Mur murligne5colonne1niveau5 = new Mur(5, 1);
-		//public static Mur murligne6colonne1niveau5 = new Mur(6, 1);
 
-		//public static Mur murligne1colonne3niveau5 = new Mur(1, 3);
-		//public static Mur murligne3colonne3niveau5 = new Mur(3, 3);
-		//public static Mur murligne4colonne3niveau5 = new Mur(4, 3);
-		//public static Mur murligne5colonne3niveau5 = new Mur(5, 3);
-		//public static Mur murligne6colonne3niveau5 = new Mur(6, 3);
-		//public static Mur murligne8colonne3niveau5 = new Mur(8, 3);
+		//Colonne 0
+		public static Mur murligne4colonne0niveau6 = new Mur(4, 0);
+		public static Mur murligne5colonne0niveau6 = new Mur(5, 0);
+		public static Mur murligne6colonne0niveau6 = new Mur(6, 0);
+		public static Mur murligne7colonne0niveau6 = new Mur(7, 0);
 
-		//public static Mur murligne6colonne4niveau5 = new Mur(6, 4);
-		//public static Mur murligne8colonne4niveau5 = new Mur(8, 4);
+					//Colonne 1
+		public static Mur murligne4colonne1niveau6 = new Mur(4, 1);
+		public static Mur murligne5colonne1niveau6 = new Mur(5, 1);
+		public static Mur murligne6colonne1niveau6 = new Mur(6, 1);
+		public static Mur murligne7colonne1niveau6 = new Mur(7, 1);
+
+					//Colonne 2
+		public static Mur murligne0colonne2niveau6 = new Mur(0, 2);
+		public static Mur murligne7colonne2niveau6 = new Mur(7, 2);
+
+					//Colonne 3
+		public static Mur murligne0colonne3niveau6 = new Mur(0, 3);
+		public static Mur murligne1colonne3niveau6 = new Mur(1, 3);
+		public static Mur murligne2colonne3niveau6 = new Mur(2, 3);
+		public static Mur murligne4colonne3niveau6 = new Mur(4, 3);
+		public static Mur murligne5colonne3niveau6 = new Mur(5, 3);
+		public static Mur murligne6colonne3niveau6 = new Mur(6, 3);
+		public static Mur murligne7colonne3niveau6 = new Mur(7, 3);
+
+					//Colonne 4
+		public static Mur murligne0colonne4niveau6 = new Mur(0, 4);
+		public static Mur murligne1colonne4niveau6 = new Mur(1, 4);
+		public static Mur murligne2colonne4niveau6 = new Mur(2, 4);
+		public static Mur murligne6colonne4niveau6 = new Mur(6, 4);
+		public static Mur murligne7colonne4niveau6 = new Mur(7, 4);
+
+					//Colonne 5
+		public static Mur murligne0colonne5niveau6 = new Mur(0, 5);
+		public static Mur murligne1colonne5niveau6 = new Mur(1, 5);
+		public static Mur murligne2colonne5niveau6 = new Mur(2, 5);
+		public static Mur murligne7colonne5niveau6 = new Mur(7, 5);
+
+					//Colonne 6
+		public static Mur murligne0colonne6niveau6 = new Mur(0, 6);
+		public static Mur murligne1colonne6niveau6 = new Mur(1, 6);
+		public static Mur murligne2colonne6niveau6 = new Mur(2, 6);
+		public static Mur murligne3colonne6niveau6 = new Mur(3, 6);
+
+					//Colonne 7
+		public static Mur murligne0colonne7niveau6 = new Mur(0, 7);
+		public static Mur murligne1colonne7niveau6 = new Mur(1, 7);
+		public static Mur murligne2colonne7niveau6 = new Mur(2, 7);
+		public static Mur murligne3colonne7niveau6 = new Mur(3, 7);
+		public static Mur murligne4colonne7niveau6 = new Mur(4, 7);
+		public static Mur murligne5colonne7niveau6 = new Mur(5, 7);
+		public static Mur murligne7colonne7niveau6 = new Mur(7, 7);
+
+					//Colonne 8
+		public static Mur murligne0colonne8niveau6 = new Mur(0, 8);
+		public static Mur murligne1colonne8niveau6 = new Mur(1, 8);
+		public static Mur murligne2colonne8niveau6 = new Mur(2, 8);
+		public static Mur murligne3colonne8niveau6 = new Mur(3, 8);
+		public static Mur murligne4colonne8niveau6 = new Mur(4, 8);
+		public static Mur murligne5colonne8niveau6 = new Mur(5, 8);
+		public static Mur murligne7colonne8niveau6 = new Mur(7, 8);
 
 		//La case Sortie
 		public static SortieElement sortieNiveau6 = new SortieElement(7, 8);

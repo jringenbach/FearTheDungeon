@@ -413,6 +413,8 @@ namespace FearTheDungeon
 			DonneesNiveau.message1Niveau5.Message = "Push that block my little sunshine !";
 			DonneesNiveau.message2Niveau5.Message = "Think before Acting !";
 
+			DonneesNiveau.message1Niveau6.Message = "It goes on, and on, and on...";
+
 
 	}
 
@@ -481,6 +483,8 @@ namespace FearTheDungeon
 
 			DonneesNiveau.message1Niveau5.Message = "Pousse ce bloc ma kikoune !";
 			DonneesNiveau.message2Niveau5.Message = "Réfléchissez avant d'agir !";
+
+			DonneesNiveau.message1Niveau6.Message = "On avance, on avance, on avance";
 
 
 		}

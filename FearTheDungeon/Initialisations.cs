@@ -241,6 +241,31 @@ namespace FearTheDungeon
 		public static void InitialisationNiveau6()
 		{
 			DonneesNiveau.niveau6.ResetNiveau();
+
+			//La case Bloc
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.blocNiveau6);
+
+			//La case bouton
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.boutonNiveau6);
+		
+			//Les cases message
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.message1Niveau6);
+
+			//La case sortie
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.sortieNiveau6);
+
+			//Les cases Mur
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.murligne4colonne0niveau6);
+
+			//On définit la position du personnage principal au début du niveau
+			DonneesNiveau.personnagePrincipal.PositionElement[0] = 0; //En X
+			DonneesNiveau.personnagePrincipal.PositionElement[1] = 0; //En Y
+			DonneesNiveau.niveau6.AjoutMapElement(DonneesNiveau.personnagePrincipal);
+
+			InitialisationDesBlocs(DonneesNiveau.niveau6);
+			InitialisationDesPortes(DonneesNiveau.niveau6);
+
+
 		}
 
 		/// <summary>
