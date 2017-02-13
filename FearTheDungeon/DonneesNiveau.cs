@@ -351,7 +351,24 @@ namespace FearTheDungeon
 		//				NIVEAU 8             ****************************************************************************************
 		//***********************************
 
-		private static Map carteNiveau8 = new Map(12, 3);
+		private static Map carteNiveau8 = new Map(8, 7);
+
+		//La case Porte
+		public static Porte porteNiveau8 = new Porte(7, 6, false);
+
+		//Case Bloc
+		public static Bloc blocNiveau8 = new Bloc(1, 6);
+
+		//Case Bouton
+		public static Bouton boutonNiveau8 = new Bouton(2, 0, porteNiveau8);
+
+		//Les cases Message
+		public static MessageElement message1Niveau8 = new MessageElement(6, 3, "Mais que sont ces dangers ?");
+		public static MessageElement message2Niveau8 = new MessageElement(4, 1, "Des piques ?");
+		public static MessageElement message3Niveau8 = new MessageElement(1, 3, "De la lave ?");
+		public static MessageElement message4Niveau8 = new MessageElement(7, 6, "Ou des \"D\" volants mangeurs d'hommes ?");
+
+
 
 		public static Niveau niveau8 = new Niveau(carteNiveau8, "On s'habitue vite", 7, "202JKA", false);
 		#endregion

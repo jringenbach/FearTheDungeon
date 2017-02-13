@@ -459,6 +459,11 @@ namespace FearTheDungeon
 			DonneesNiveau.message3Niveau7.Message = "You're doing great! Keep going !";
 			DonneesNiveau.message4Niveau7.Message = "Watch your step!";
 
+			DonneesNiveau.message1Niveau8.Message = "What are the Danger Squares ?"; //Niveau 8
+			DonneesNiveau.message2Niveau8.Message = "Spikes ?";
+			DonneesNiveau.message3Niveau8.Message = "Lava ?";
+			DonneesNiveau.message4Niveau8.Message = "Flying maneater Ds ?";
+
 			//Messages du mot de passe secret 879121
 			DonneesPubliques.phrasesDuMdp879121[0] = "I got a feeling...";
 			DonneesPubliques.phrasesDuMdp879121[1] = "... that the next part...";
@@ -541,6 +546,11 @@ namespace FearTheDungeon
 			DonneesNiveau.message2Niveau7.Message = "Marcher sur une case D recharge le niveau";
 			DonneesNiveau.message3Niveau7.Message = "Vous êtes sur la bonne voie";
 			DonneesNiveau.message4Niveau7.Message = "Attention à la marche !";
+
+			DonneesNiveau.message1Niveau8.Message = "Mais que sont ces dangers ?"; //Niveau 8
+			DonneesNiveau.message2Niveau8.Message = "Des Piques ?";
+			DonneesNiveau.message3Niveau8.Message = "De la lave ?";
+			DonneesNiveau.message4Niveau8.Message = "Ou des \"D\" volants mangeurs d'hommes ?";
 
 			//Messages du mot de passe secret 879121
 			DonneesPubliques.phrasesDuMdp879121[0] = "J'ai l'intime sensation...";
