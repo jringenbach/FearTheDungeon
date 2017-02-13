@@ -257,6 +257,12 @@ namespace FearTheDungeon
 
 					}//Fin du "si cet élément est une porte"
 
+					//Si cet élément est une manivelle
+					if(niveau.ElementsDuNiveau[positionTableauElements].Nom == "manivelle")
+					{
+						Console.Write(" " + DonneesNiveau.personnagePrincipal.Symbole + " ");
+					}
+
 					//Sinon
 					else Console.Write(" " + niveau.elementsDuNiveau[positionTableauElements].Symbole + " ");
 

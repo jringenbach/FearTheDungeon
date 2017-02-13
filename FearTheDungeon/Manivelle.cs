@@ -32,6 +32,7 @@ namespace FearTheDungeon
 		public Manivelle() : base()
 		{
 			Symbole = 'm';
+			Nom = "manivelle";
 			Actionnee = false;
 		}
 
@@ -45,6 +46,7 @@ namespace FearTheDungeon
 			PositionElement[0] = positionX;
 			PositionElement[1] = positionY;
 			Symbole = 'm';
+			Nom = "manivelle";
 			Actionnee = false;
 		}
 
