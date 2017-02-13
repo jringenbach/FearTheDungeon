@@ -80,7 +80,7 @@ namespace FearTheDungeon
 		/// Consignes du fonctionnement des différents menus
  		/// </summary>
 		static private string[] fonctionnementMenu = {"Tapez le numéro correspondant à l'option désirée.",
-													  "Tapez le numéro du niveau désiré.",
+													  "Tapez le numéro du niveau désiré et appuyez sur Entrée",
 													  "Vous n'avez pas débloqué ce niveau !",
 													  "Appuyez sur une touche pour continuer",
 													  "Mot de passe erroné",

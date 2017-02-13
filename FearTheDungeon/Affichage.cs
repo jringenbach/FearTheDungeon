@@ -30,30 +30,30 @@ namespace FearTheDungeon
 			//Si typeDeTexte vaut 2, alors on formate un message issu de MessageElement
 
 			//Si c'est le titre d'un niveau
-			if(typeDeTexte == 1)
+			if (typeDeTexte == 1)
 			{
 				Console.ForegroundColor = ConsoleColor.Yellow;
-				NombreTiretsAdaptable(nomDuNiveau,1);
+				NombreTiretsAdaptable(nomDuNiveau, 1);
 				Console.Write("\t\t\t| ");
 				Console.ForegroundColor = ConsoleColor.Red;
 				Console.Write(nomDuNiveau);
 				Console.ForegroundColor = ConsoleColor.Yellow;
 				Console.WriteLine(" |");
-				NombreTiretsAdaptable(nomDuNiveau,1);
+				NombreTiretsAdaptable(nomDuNiveau, 1);
 				Console.ResetColor();
 			}
 
 			//Si c'est un message
-			else if(typeDeTexte == 2)
+			else if (typeDeTexte == 2)
 			{
 				Console.ForegroundColor = ConsoleColor.Yellow;
-				NombreTiretsAdaptable(nomDuNiveau,2);
+				NombreTiretsAdaptable(nomDuNiveau, 2);
 				Console.Write("\t\t| ");
 				Console.ForegroundColor = ConsoleColor.Red;
 				Console.Write(nomDuNiveau);
 				Console.ForegroundColor = ConsoleColor.Yellow;
 				Console.WriteLine(" |");
-				NombreTiretsAdaptable(nomDuNiveau,2);
+				NombreTiretsAdaptable(nomDuNiveau, 2);
 				Console.ResetColor();
 			}
 
@@ -67,8 +67,8 @@ namespace FearTheDungeon
 		static private void NombreTiretsAdaptable(Menu menu, int typeDeTexte)
 		{
 			int longueurChaineMax = menu.LongueurChaineMax();
-			if(typeDeTexte == 1) Console.Write("\t\t\t ");
-			else if(typeDeTexte == 2) Console.Write("\t\t ");
+			if (typeDeTexte == 1) Console.Write("\t\t\t ");
+			else if (typeDeTexte == 2) Console.Write("\t\t ");
 
 			for (int i = 0; i < longueurChaineMax + 5; i++)
 			{
@@ -86,7 +86,7 @@ namespace FearTheDungeon
 		{
 			if (typeDeTexte == 1) Console.Write("\t\t\t ");
 			else if (typeDeTexte == 2) Console.Write("\t\t ");
-			for (int i = 0; i < niveau.CarteDuNiveau.NombreColonnes*4 -1; i++)
+			for (int i = 0; i < niveau.CarteDuNiveau.NombreColonnes * 4 - 1; i++)
 			{
 				Console.Write("-");
 			}
@@ -149,7 +149,7 @@ namespace FearTheDungeon
 
 				//On affiche la carte du niveau
 				MapDuNiveau(niveau);
-				
+
 				//Si le joueur est sur une case message, on lui affiche un message en dessous de la carte du niveau
 				for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
 				{
@@ -158,7 +158,7 @@ namespace FearTheDungeon
 					   DonneesNiveau.personnagePrincipal.PositionElement[0] == niveau.ElementsDuNiveau[i].PositionElement[0] &&
 					   DonneesNiveau.personnagePrincipal.PositionElement[1] == niveau.ElementsDuNiveau[i].PositionElement[1])
 					{
-						AffichageTexte(((MessageElement)niveau.ElementsDuNiveau[i]).Message, 2); 
+						AffichageTexte(((MessageElement)niveau.ElementsDuNiveau[i]).Message, 2);
 					}
 				}
 
@@ -258,7 +258,7 @@ namespace FearTheDungeon
 					}//Fin du "si cet élément est une porte"
 
 					//Si cet élément est une manivelle
-					else if(niveau.ElementsDuNiveau[positionTableauElements].Nom == "manivelle")
+					else if (niveau.ElementsDuNiveau[positionTableauElements].Nom == "manivelle")
 					{
 						Console.Write(" " + DonneesNiveau.personnagePrincipal.Symbole + " ");
 					}
@@ -377,17 +377,17 @@ namespace FearTheDungeon
 		/// <param name="menu">Menu qui sera affiché par la fonction</param>
 		static private void AffichageMenu(Menu menu)
 		{
-			int longueurMax = menu.LongueurChaineMax(), nombreDEspaces = 0 ;
+			int longueurMax = menu.LongueurChaineMax(), nombreDEspaces = 0;
 
 			Console.ForegroundColor = ConsoleColor.Yellow;
 
-			NombreTiretsAdaptable(menu,1);
+			NombreTiretsAdaptable(menu, 1);
 
-			for(int i=0; i < menu.OptionsDuMenu.Length; i++)
+			for (int i = 0; i < menu.OptionsDuMenu.Length; i++)
 			{
-				Console.Write("\t\t\t| "+(i+1)+". " + menu.OptionsDuMenu[i]);
+				Console.Write("\t\t\t| " + (i + 1) + ". " + menu.OptionsDuMenu[i]);
 				nombreDEspaces = longueurMax - menu.OptionsDuMenu[i].Length;
-				while(nombreDEspaces >= 0)
+				while (nombreDEspaces >= 0)
 				{
 					Console.Write(" ");
 					nombreDEspaces--;
@@ -395,7 +395,7 @@ namespace FearTheDungeon
 				Console.WriteLine("|");
 			}
 
-			NombreTiretsAdaptable(menu,1);
+			NombreTiretsAdaptable(menu, 1);
 
 		}
 
@@ -408,50 +408,58 @@ namespace FearTheDungeon
 			int niveauChoisie;
 			bool choixValide = false;
 
-
-			Console.Clear();
-			Affichage.TitreDuJeu();
-
-			//Boucle qui permet d'afficher les différents niveaux du jeu
-			for (int i=0; i<niveau.Length; i++)
-			{
-
-
-				//Bordure supérieure du tableau
-				Console.WriteLine("\t\t\t     ---------------");
-
-				//Bordure gauche du tableau
-				Console.Write("\t\t\t    |");
-
-				//Si le niveau est débloqué on l'affiche en blanc, sinon en gris
-				if (i <= DonneesPubliques.niveauDebloque) Console.ForegroundColor = ConsoleColor.White;
-				else Console.ForegroundColor = ConsoleColor.DarkGray;
-				Console.Write("   Niveau " + (i + 1));
-				Console.ResetColor();
-
-				//Bordure droite du tableau
-				if (i < 10) Console.WriteLine("    |");
-				else if (i < 100) Console.WriteLine(" |");
-
-			}
-
-			//Bordure inférieure du tableau
-			Console.WriteLine("\t\t\t     ---------------");
-
-			//Case Retour
-			Console.Write("\t\t\t    |");
-			Console.ForegroundColor = ConsoleColor.Yellow;
-			Console.Write("   0. Retour  ");
-			Console.ResetColor();
-			Console.WriteLine(" |");
-			Console.WriteLine("\t\t\t     ---------------");
-
-			FonctionnementMenu(1);
-
 			//Le joueur choisit le niveau qu'il désire
 			do
 			{
-				choixValide = int.TryParse(Convert.ToString(Console.ReadKey(true).KeyChar), out niveauChoisie);
+				Console.Clear();
+				Affichage.TitreDuJeu();
+
+				//Boucle qui permet d'afficher les différents niveaux du jeu
+				for (int i = 0; i < niveau.Length; i++)
+				{
+
+
+					//Bordure supérieure du tableau
+					Console.WriteLine("\t\t\t     ---------------");
+
+					//Bordure gauche du tableau
+					Console.Write("\t\t\t    |");
+
+					//Si le niveau est débloqué on l'affiche en blanc, sinon en gris
+					if (i <= DonneesPubliques.niveauDebloque) Console.ForegroundColor = ConsoleColor.White;
+					else Console.ForegroundColor = ConsoleColor.DarkGray;
+					Console.Write("   Niveau " + (i + 1));
+					Console.ResetColor();
+
+					//Bordure droite du tableau
+					if (i < 9) Console.WriteLine("    |");
+					else if (i < 100) Console.WriteLine("   |");
+
+				}
+
+				//Bordure inférieure du tableau
+				Console.WriteLine("\t\t\t     ---------------");
+
+				//Case Retour
+				Console.Write("\t\t\t    |");
+				Console.ForegroundColor = ConsoleColor.Yellow;
+				Console.Write("   0. Retour  ");
+				Console.ResetColor();
+				Console.WriteLine(" |");
+				Console.WriteLine("\t\t\t     ---------------");
+
+				FonctionnementMenu(1);
+
+
+				choixValide = int.TryParse(Console.ReadLine(), out niveauChoisie);
+				if (!choixValide)
+				{
+					Console.ForegroundColor = ConsoleColor.Red;
+					Console.WriteLine("Veuillez taper un nombre correspondant à un niveau que vous avez débloqué !");
+					Console.WriteLine("Appuyez sur n'importe quelle touche pour continuer");
+					Console.ReadKey(true);
+					Console.ResetColor();
+				} 
 				if (choixValide) choixValide = (niveauChoisie < 0 || niveauChoisie > niveau.Length) ? false : true;
 			} while (!choixValide);
 
@@ -468,11 +476,11 @@ namespace FearTheDungeon
 		{
 			Console.ForegroundColor = ConsoleColor.Red;
 
-            //Gestion des tabulations en fonction de la langue sélectionnée
-            if (DonneesPubliques.langue == "Français") Console.Write("\n\t\t");
-            else if (DonneesPubliques.langue == "Anglais") Console.Write("\n\t");
+			//Gestion des tabulations en fonction de la langue sélectionnée
+			if (DonneesPubliques.langue == "Français") Console.Write("\n\t\t");
+			else if (DonneesPubliques.langue == "Anglais") Console.Write("\n\t");
 
-            Console.WriteLine(DonnéesMenu.FonctionnementMenu[consigneChoisie]+"\n");
+			Console.WriteLine(DonnéesMenu.FonctionnementMenu[consigneChoisie] + "\n");
 			Console.ResetColor();
 		}
 
