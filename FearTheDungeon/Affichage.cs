@@ -324,6 +324,7 @@ namespace FearTheDungeon
 			}
 
 			//Pour ensuite afficher le niveau suivant
+			DonneesNiveau.tableauNiveaux[i + 1].Debloque = true;
 			AffichageNiveau(DonneesNiveau.tableauNiveaux[i + 1]);
 
 		}
@@ -450,8 +451,10 @@ namespace FearTheDungeon
 
 				FonctionnementMenu(1);
 
-
+				//Le joueur choisit le niveau auquel il veut accéder
 				choixValide = int.TryParse(Console.ReadLine(), out niveauChoisie);
+
+				//Si le joueur a entré un caractère ou a appuyé une touche non valide
 				if (!choixValide)
 				{
 					Console.ForegroundColor = ConsoleColor.Red;
@@ -460,7 +463,10 @@ namespace FearTheDungeon
 					Console.ReadKey(true);
 					Console.ResetColor();
 				} 
-				if (choixValide) choixValide = (niveauChoisie < 0 || niveauChoisie > niveau.Length) ? false : true;
+
+				//Si le joueur a appuyé sur une touche valide, on regarde que ce qu'il a entré est bien compris entre 0 et le nombre de niveaux
+				else if (choixValide) choixValide = (niveauChoisie < 0 || niveauChoisie > niveau.Length) ? false : true;
+
 			} while (!choixValide);
 
 			//Si le joueur tape 0, il retourne au menu des options des niveaux

@@ -90,10 +90,15 @@ namespace FearTheDungeon
 			int positionX, positionY;
 
 			//Si le joueur a appuyé sur les bonnes touche de déplacement du pavé numérique
-			if (mouvement == 2 || mouvement == 4 || mouvement == 6 || mouvement == 8 || mouvement == 5)
+			if (mouvement == 2 || mouvement == 4 || mouvement == 6 || mouvement == 8 || mouvement == 5 || mouvement == 0)
 			{
 				switch (mouvement)
 				{
+					//Si le joueur appuie sur 0, il peut retourner au menu de choix des niveaux
+					case 0:
+						Affichage.AffichageMenuDesNiveaux(DonneesNiveau.tableauNiveaux);
+						break;
+
 					//Si le joueur veut descendre
 					case 2:
 						positionX = DonneesNiveau.personnagePrincipal.PositionElement[0] + 1;
