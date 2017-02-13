@@ -393,7 +393,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Permet de charger le niveau suivant lorsque que le joueur a fini un niveau
 		/// </summary>
-		/// <param name="niveau"></param>
+		/// <param name="niveau">Niveau du jeu</param>
 		public static void InitialisationNiveauSuivant(Niveau niveau)
 		{
 			switch (niveau.Numero)
@@ -444,7 +444,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Permet de recharger le niveau lorsque le joueur appuie sur "5"
 		/// </summary>
-		/// <param name="niveau"></param>
+		/// <param name="niveau">Niveau du jeu</param>
 		public static void InitialisationNiveau(Niveau niveau)
 		{
 			switch (niveau.Numero)
@@ -500,7 +500,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Lors de la réinitialisation, cette fonction permet de replacer les blocs à leur position initiale
 		/// </summary>
-		/// <param name="niveau"></param>
+		/// <param name="niveau">Niveau du jeu</param>
 		public static void InitialisationDesBlocs(Niveau niveau)
 		{
 			for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
@@ -519,7 +519,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Lors de la réinitilisation, cette fonction permet de remettre les portes à leur état initial
 		/// </summary>
-		/// <param name="niveau"></param>
+		/// <param name="niveau">Niveau du jeu</param>
 		public static void InitialisationDesPortes(Niveau niveau)
 		{
 			for (int i = 0; i < niveau.TableauDePortes.Length-1; i++)

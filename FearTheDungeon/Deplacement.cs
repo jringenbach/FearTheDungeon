@@ -15,6 +15,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Cette fonction gère le déplacement du joueur
 		/// </summary>
+		/// <param name="niveau">Niveau du jeu que l'on passera ensuite en paramètre dans le test de validité du mouvement</param>
 		static public void MouvementJoueur(Niveau niveau)
 		{
 			char deplacement = '0';
@@ -36,7 +37,8 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Modifie la position d'un élément dans le fichier DonneesNiveau (joueur, bloc...)
 		/// </summary>
-		/// <param name="deplacement"></param>
+		/// <param name="deplacement">Touche de déplacement sur laquelle le joueur a appuyé : 2 - 4 - 6 - 8 ou 5</param>
+		/// <param name="element">Element qui sera déplacé si le joueur le pousse (par exemple : un bloc )</param>
 		static public void ModificationPositionElement(int deplacement, MapElement element)
 		{
 			switch (deplacement)
@@ -79,6 +81,8 @@ namespace FearTheDungeon
 		/// On va regarder si le joueur désire progresser sur une case valide ou non.
 		/// Renvoie true si le mouvement est valide, false sinon.
 		/// </summary>
+		/// <param name="niveau">Niveau du jeu</param>
+		/// <param name="mouvement">Déplacement choisi par le joueur : bas(2) - gauche(4) - droite(6) - haut(6) - resetlevel(5)</param>
 		static bool TestValiditeDuMouvement(int mouvement, Niveau niveau)
 		{
 			bool mouvementValide;
@@ -147,9 +151,9 @@ namespace FearTheDungeon
 		/// <summary>
 		/// On regarde si le bloc peut bien se déplacer dans la direction dans laquelle le joueur le pousse
 		/// </summary>
-		/// <param name="mouvement"></param>
-		/// <param name="niveau"></param>
-		/// <param name="Bloc"></param>
+		/// <param name="mouvement">Déplacement choisi par le joueur : bas(2) - gauche(4) - droite(6) - haut(6) - resetlevel(5)</param>
+		/// <param name="niveau">Niveau du jeu</param>
+		/// <param name="bloc">Le bloc que le joueur vient de pousser.</param>
 		/// <returns></returns>
 		static bool TestValiditeDuMouvementBloc(int mouvement, Niveau niveau, MapElement bloc)
 		{
@@ -248,9 +252,9 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Permet de tester si le joueur sortirait de la map si il effectuait le déplacement qu'il vient de choisir
 		/// </summary>
-		/// <param name="niveau"></param>
-		/// <param name="positionX"></param>
-		/// <param name="positionY"></param>
+		/// <param name="niveau">Niveau du jeu</param>
+		/// <param name="positionX">Position qu'aurait le joueur en X si son déplacement est validé</param>
+		/// <param name="positionY">Position qu'aurait le joueur en Y si son déplacement est validé</param>
 		/// <returns></returns>
 		static bool LeJoueurSortDeLaMap(Niveau niveau, int positionX, int positionY)
 		{
@@ -269,9 +273,10 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Permet de tester si le joueur essaie d'aller sur une case sur laquelle un objet infranchissable est présent
 		/// </summary>
-		/// <param name="niveau"></param>
-		/// <param name="positionX"></param>
-		/// <param name="positionY"></param>
+		/// <param name="niveau">Niveau du jeu</param>
+		/// <param name="positionX">Position qu'aurait le joueur en X si son déplacement est validé</param>
+		/// <param name="positionY">Position qu'aurait le joueur en Y si son déplacement est validé</param>
+		/// <param name="mouvement">Déplacement choisi par le joueur : bas(2) - gauche(4) - droite(6) - haut(6) - resetlevel(5)</param>
 		/// <returns></returns>
 		static bool LaCaseEstPrise(Niveau niveau, int positionX, int positionY, int mouvement)
 		{

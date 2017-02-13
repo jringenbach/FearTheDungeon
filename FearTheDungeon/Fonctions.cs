@@ -20,7 +20,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// On regarde dans quel menu le joueur vient d'effectuer un choix
 		/// </summary>
-		/// <param name="optionChoisie"></param>
+		/// <param name="menu">Menus du jeu</param>
 		static public void AppelOptionChoisie(Menu menu)
 		{
 			bool menuAppelantEstLeMenuPrincipal = false;
@@ -59,7 +59,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// On affiche l'action correspondante au choix du joueur dans le menu principal
 		/// </summary>
-		/// <param name="menu"></param>
+		/// <param name="menu">Menus du jeu</param>
 		static public void AppelOptionChoisieMenuPrincipal(Menu menu)
 		{
 			switch (menu.OptionChoisie)
@@ -88,7 +88,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Affiche le niveau sélectionné dans le menu des niveaux
 		/// </summary>
-		/// <param name="niveauChoisie"></param>
+		/// <param name="niveauChoisie">On re</param>
 		static public void OptionChoisieMenuDesNiveaux(int niveauChoisie)
 		{
 			char appuiTouche;
@@ -121,7 +121,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// On regarde l'option choisie dans le menu des niveaux pour afficher les fonctionnalités qui lui sont associées
 		/// </summary>
-		/// <param name="optionChoisie"></param>
+		/// <param name="menu">Menus du niveau</param>
 		static public void AppelOptionChoisieMenuDesOptionsDesNiveaux(Menu menu)
 		{
 			switch (menu.OptionChoisie)
@@ -182,7 +182,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// On regarde ce que le joueur a choisi dans le menu des options
 		/// </summary>
-		/// <param name="menu"></param>
+		/// <param name="menu">Menus du jeu</param>
 		static public void AppelOptionChoisieMenuDesOptions(Menu menu)
 		{
 			switch (menu.OptionChoisie)
@@ -210,7 +210,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Actions résultants du choix du joueur dans le menu du choix de difficultés
 		/// </summary>
-		/// <param name="menu"></param>
+		/// <param name="menu">Menus du jeu</param>
 		static public void AppelOptionChoisieMenuDifficultes(Menu menu)
 		{
 			switch (menu.OptionChoisie)
@@ -237,7 +237,7 @@ namespace FearTheDungeon
         /// <summary>
         /// Actions résultants du choix du joueur dans le menu des langues.
         /// </summary>
-        /// <param name="menu"></param>
+        /// <param name="menu">Menus du jeu</param>
         static public void AppelOptionChoisieMenuDesLangues(Menu menu)
         {
             switch (menu.OptionChoisie)
@@ -313,8 +313,8 @@ namespace FearTheDungeon
 		/// <summary>
 		/// On vérifie si le mot de passe débloque un niveau ou non
 		/// </summary>
-		/// <param name="mdpSaisie"></param>
-		/// <param name="niveau"></param>
+		/// <param name="mdpSaisie">Mot de passe que l'utilisateur a saisi</param>
+		/// <param name="niveau">Niveau que l'on débloquera suivant le mot de passe</param>
 		/// <returns></returns>
 		static private int VerificationMotDePasse(string mdpSaisie, Niveau[] niveau)
 		{
@@ -375,7 +375,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// On débloque tous les niveaux jusqu'au niveau qui possède le mot de passe entré par le joueur
 		/// </summary>
-		/// <param name="niveauDebloque"></param>
+		/// <param name="niveauDebloque">Variable stockée dans donneesPubliques qui va retenir le niveau max débloqué par le joueur</param>
 		static public void DebloquageDesNiveaux(int niveauDebloque)
 		{
 			for(int i=0; i< niveauDebloque; i++)

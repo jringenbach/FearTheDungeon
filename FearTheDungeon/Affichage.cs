@@ -20,7 +20,8 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Affichage d'un texte entouré d'un tableau
 		/// </summary>
-		/// <param name="nomDuNiveau"></param>
+		/// <param name="nomDuNiveau">Nom du niveau en cours dont on doit afficher le titre</param>
+		/// <param name="typeDeTexte">Si typeDeTexte = 1 : titre du jeu. Si typeDeTexte = 2, message du niveau.</param>
 		static public void AffichageTexte(string nomDuNiveau, int typeDeTexte)
 		{
 			//Les contours du tableau du nom du niveau sont affichés en jaune
@@ -61,7 +62,8 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
 		/// </summary>
-		/// <param name="menu"></param>
+		/// <param name="menu">On récupère la longueur de l'option du menu envoyé la plus longue pour adapter le nombre de tirets.</param>
+		/// <param name="typeDeTexte">Si typeDeTexte = 1 : titre du jeu. Si typeDeTexte = 2, message du niveau.</param>
 		static private void NombreTiretsAdaptable(Menu menu, int typeDeTexte)
 		{
 			int longueurChaineMax = menu.LongueurChaineMax();
@@ -78,7 +80,8 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
 		/// </summary>
-		/// <param name="menu"></param>
+		/// <param name="niveau">On va récupérer le nombre de colonnes de la carte du niveau pour afficher la carte proprement.</param>
+		/// <param name="typeDeTexte">Si typeDeTexte = 1 : titre du jeu. Si typeDeTexte = 2, message du niveau.</param>
 		static private void NombreTiretsAdaptable(Niveau niveau, int typeDeTexte)
 		{
 			if (typeDeTexte == 1) Console.Write("\t\t\t ");
@@ -93,11 +96,13 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Adapte le nombre de tirets dessinant les contours du tableau en fonction de la longueur de la chaîne la plus longue
 		/// </summary>
-		/// <param name="chaine"></param>
+		/// <param name="chaine">Chaine dont on va récupérer la longueur pour adapter le nombre de tirets du tableau qui l'entourera.</param>
+		/// <param name="typeDeTexte">Si typeDeTexte = 1 : titre du jeu. Si typeDeTexte = 2, message du niveau.</param>
 		static public void NombreTiretsAdaptable(string chaine, int typeDeTexte)
 		{
-			if (typeDeTexte == 1) Console.Write("\t\t\t ");
-			else if (typeDeTexte == 2) Console.Write("\t\t ");
+			//Suivant le type de texte (titre du niveau ou message) on adapte le nombre de tabulation.
+			if (typeDeTexte == 1) Console.Write("\t\t\t "); //Pour le titre du jeu ou le titre de niveau
+			else if (typeDeTexte == 2) Console.Write("\t\t "); //Pour les messages à afficher
 
 			for (int i = 1; i < chaine.Length + 3; i++)
 			{
@@ -126,7 +131,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Affiche le titre du niveau et sa carte contenant tous ses éléments
 		/// </summary>
-		/// <param name="niveau"></param>
+		/// <param name="niveau">Niveau du jeu</param>
 		static public void AffichageNiveau(Niveau niveau)
 		{
 			int[] positionSortie = new int[2];
@@ -179,7 +184,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Affiche la carte du niveau
 		/// </summary>
-		/// <param name="niveau"></param>
+		/// <param name="niveau">Niveau du jeu</param>
 		static private void MapDuNiveau(Niveau niveau)
 		{
 
@@ -227,6 +232,9 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Permet de mettre en forme un élément (couleur rouge si le joueur est présent sur cette case)
 		/// </summary>
+		/// <param name="symbolePresent">Booléen qui permet de savoir si il y'a un élément sur la carte. Il vaut true si un élément est présent sur la case.</param>
+		/// <param name="niveau">Niveau du jeu</param>
+		/// <param name="positionTableauElements">Position de l'élément dans le tableau d'éléments du niveau</param>
 		static public void AffichageElement(bool symbolePresent, Niveau niveau, int positionTableauElements)
 		{
 			Porte porteTemp;
@@ -272,7 +280,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Permet d'afficher le niveau suivant celui dans lequel le joueur se trouve
 		/// </summary>
-		/// <param name="niveau"></param>
+		/// <param name="niveau">Niveau du jeu</param>
 		static public void AfficherLeNiveauSuivant(Niveau niveau)
 		{
 			int i = 0;
@@ -290,8 +298,8 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Cette fonction permet de stocker la position de la sortie afin d'éviter de reparcourir le tableau plusieurs fois
 		/// </summary>
-		/// <param name="niveau"></param>
-		/// <param name="positionSortie"></param>
+		/// <param name="niveau">Niveau du jeu dans lequel on ira chercher la position de la sortie</param>
+		/// <param name="positionSortie">Indique la position en abscisse et en ordonnée de la sortie du jeu</param>
 		static private void RecherchePositionSortie(Niveau niveau, int[] positionSortie)
 		{
 			for (int i = 0; i < niveau.ElementsDuNiveau.Length - 1; i++)
@@ -333,7 +341,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Permet d'afficher proprement un objet de la classe Menu
 		/// </summary>
-		/// <param name="menu"></param>
+		/// <param name="menu">Menu qui sera affiché par la fonction</param>
 		static private void AffichageMenu(Menu menu)
 		{
 			int longueurMax = menu.LongueurChaineMax(), nombreDEspaces = 0 ;
@@ -361,6 +369,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Permet d'afficher tous les niveaux du jeu
 		/// </summary>
+		/// <param name="niveau">Niveau du jeu</param>
 		static public void AffichageMenuDesNiveaux(Niveau[] niveau)
 		{
 			int niveauChoisie;
@@ -421,6 +430,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Affiche à l'utilisateur comment le menu fonctionne
 		/// </summary>
+		///<param name="consigneChoisie">Instruction à afficher pour expliquer au joueur comment fonctionne le menu</param>
 		static private void FonctionnementMenu(int consigneChoisie)
 		{
 			Console.ForegroundColor = ConsoleColor.Red;
@@ -436,7 +446,7 @@ namespace FearTheDungeon
 		/// <summary>
 		/// Affiche le menu complet avec le titre du jeu. L'utilisateur devra choisir une option dans ce menu
 		/// </summary>
-		/// <param name="menu"></param>
+		/// <param name="menu">Paramètre dans lequel on va récupérer les options du menu</param>
 		static public void JoueurChoisitUneOptionDansLeMenu(Menu menu)
 		{
 			int optionChoisie;

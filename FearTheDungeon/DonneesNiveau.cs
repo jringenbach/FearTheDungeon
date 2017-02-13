@@ -390,8 +390,8 @@ namespace FearTheDungeon
 		/// <summary>
 		/// On ajout un élément dans le niveau
 		/// </summary>
-		/// <param name="niveau"></param>
-		/// <param name="element"></param>
+		/// <param name="niveau">Niveau du jeu</param>
+		/// <param name="element">Element contenu dans donneesNiveau qui sera ajouté au tableau d'élément du niveau envoyé en paramètre de la fonction</param>
 		public void AjouterElement(Niveau niveau, MapElement element)
 		{
 			Array.Resize(ref niveau.elementsDuNiveau, niveau.elementsDuNiveau.Length + 1);
