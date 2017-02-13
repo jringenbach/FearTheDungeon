@@ -256,9 +256,25 @@ namespace FearTheDungeon
 		//				NIVEAU 10            ****************************************************************************************
 		//***********************************
 
-		private static Map carteNiveau10 = new Map(12, 3);
+		private static Map carteNiveau10 = new Map(9, 11);
 
-		public static Niveau niveau10 = new Niveau(carteNiveau10, "On s'habitue vite", 10, "45AEZB", false);
+		//La case Manivelle
+		public static Manivelle manivelle1Niveau10 = new Manivelle(4, 4);
+		public static Manivelle manivelle2Niveau10 = new Manivelle(8, 9);
+
+		//Les cases Message
+		public static MessageElement message1Niveau10 = new MessageElement(5, 0, "On prend les mêmes et on recommence !");
+		public static MessageElement message2Niveau10 = new MessageElement(8, 4, "Où sont passés les murs classiques ?");
+		public static MessageElement message3Niveau10 = new MessageElement(4, 8, "Silence ! Ca tourne !");
+
+		public static MessageElement message4Niveau10 = new MessageElement(5, 0, "Mot de passe : 987654");
+		public static MessageElement message5Niveau10 = new MessageElement(8, 4, "J'aimerais bien t'aider...");
+		public static MessageElement message6Niveau10 = new MessageElement(4, 8, "J'aimerais bien te sortir de là...");
+
+		//La case Sortie
+		public static SortieElement sortieNiveau10 = new SortieElement(4, 0);
+
+		public static Niveau niveau10 = new Niveau(carteNiveau10, "L'oeil du cyclope... euh cyclone", 10, "45AEZB", false);
 		#endregion
 
 		//***************************************************************************************************************************

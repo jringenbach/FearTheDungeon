@@ -468,6 +468,13 @@ namespace FearTheDungeon
 
 			DonneesNiveau.message1Niveau9.Message = "m ? What is it ?"; //Niveau 9
 
+			DonneesNiveau.message1Niveau10.Message = "It's alway the same... things..."; //Niveau 10
+			DonneesNiveau.message2Niveau10.Message = "Where are the walls ?";
+			DonneesNiveau.message3Niveau10.Message = "Do a barrel roll !";
+			DonneesNiveau.message4Niveau10.Message = "Password : 987654";
+			DonneesNiveau.message5Niveau10.Message = "I wish I could help you...";
+			DonneesNiveau.message6Niveau10.Message = "I wish I could get you outta here...";
+
 			//Messages du mot de passe secret 879121
 			DonneesPubliques.phrasesDuMdp879121[0] = "I got a feeling...";
 			DonneesPubliques.phrasesDuMdp879121[1] = "... that the next part...";
@@ -559,6 +566,13 @@ namespace FearTheDungeon
 			DonneesNiveau.message4Niveau8.Message = "Ou des \"D\" volants mangeurs d'hommes ?";
 
 			DonneesNiveau.message1Niveau9.Message = "m ? Mais qu'est-ce que c'est ?"; //Niveau 9
+
+			DonneesNiveau.message1Niveau10.Message = "On prend les mêmes et on recommence !"; //Niveau 10
+			DonneesNiveau.message2Niveau10.Message = "Où sont passés les murs classiques ?";
+			DonneesNiveau.message3Niveau10.Message = "Silence ! Ca tourne !";
+			DonneesNiveau.message4Niveau10.Message = "Mot de passe : 987654";
+			DonneesNiveau.message5Niveau10.Message = "J'aimerais bien t'aider...";
+			DonneesNiveau.message6Niveau10.Message = "J'aimerais bien te sortir de là...";
 
 			//Messages du mot de passe secret 879121
 			DonneesPubliques.phrasesDuMdp879121[0] = "J'ai l'intime sensation...";
