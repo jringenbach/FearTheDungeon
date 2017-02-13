@@ -431,6 +431,7 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[4].Nom = "Drunk night";
 			DonneesNiveau.tableauNiveaux[5].Nom = "A Dirty Room";
 			DonneesNiveau.tableauNiveaux[6].Nom = "We get used to it pretty quickly";
+			DonneesNiveau.tableauNiveaux[7].Nom = "Unknow dangers";
 
 			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "M squares give you information"; //niveau 1
@@ -519,6 +520,7 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[4].Nom = "Nuit d'ivresse";
 			DonneesNiveau.tableauNiveaux[5].Nom = "Une salle sale";
 			DonneesNiveau.tableauNiveaux[6].Nom = "On s'habitue vite";
+			DonneesNiveau.tableauNiveaux[7].Nom = "Des dangers inconnus";
 
 			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "Les cases M vous donnent une information"; //niveau 1

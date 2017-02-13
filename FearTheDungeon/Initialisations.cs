@@ -371,7 +371,75 @@ namespace FearTheDungeon
 		/// </summary>
 		public static void InitialisationNiveau8()
 		{
+			DonneesNiveau.niveau8.ResetNiveau();
 
+			//La case Bloc
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.blocNiveau8);
+
+			//La case bouton
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.boutonNiveau8);
+
+			//Les cases message
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.message1Niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.message2Niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.message3Niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.message4Niveau8);
+
+			//Les cases Danger
+			//colonne 0
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne3colonne0niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne7colonne0niveau8);
+
+			//colonne 1
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne2colonne1niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne3colonne1niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne5colonne1niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne7colonne1niveau8);
+
+			//colonne 2
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne0colonne2niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne5colonne2niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne7colonne2niveau8);
+
+			//colonne 3
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne0colonne3niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne2colonne3niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne3colonne3niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne5colonne3niveau8);
+
+			//colonne 4
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne2colonne4niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne3colonne4niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne5colonne4niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne6colonne4niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne7colonne4niveau8);
+
+			//colonne 5
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne2colonne5niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne3colonne5niveau8);
+
+			//colonne 6
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne2colonne6niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne3colonne6niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne4colonne6niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne5colonne6niveau8);
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.Dangerligne6colonne6niveau8);
+
+
+			//La case sortie
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.sortieNiveau8);
+
+			//La case porte
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.porteNiveau8);
+			DonneesNiveau.niveau8.AjoutPorte(DonneesNiveau.porteNiveau8);
+
+			//On définit la position du personnage principal au début du niveau
+			DonneesNiveau.personnagePrincipal.PositionElement[0] = 7; //En X
+			DonneesNiveau.personnagePrincipal.PositionElement[1] = 3; //En Y
+			DonneesNiveau.niveau8.AjoutMapElement(DonneesNiveau.personnagePrincipal);
+
+			InitialisationDesBlocs(DonneesNiveau.niveau8);
+			InitialisationDesPortes(DonneesNiveau.niveau8);
 		}
 
 		/// <summary>
