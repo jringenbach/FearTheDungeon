@@ -542,7 +542,191 @@ namespace FearTheDungeon
 		/// </summary>
 		public static void InitialisationNiveau10()
 		{
+			DonneesNiveau.niveau10.ResetNiveau();
 
+			//Les cases manivelle
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.manivelle1Niveau10);
+
+			//La case sortie
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.sortieNiveau10);
+
+			//Les cases message
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.message1Niveau10);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.message2Niveau10);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.message3Niveau10);
+
+			//Les cases Danger
+			//colonne 1
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[0, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[2, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[4, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[6, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 1]);
+
+			//colonne 2
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 2]);
+
+			//colonne 3
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 3]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[2, 3]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 3]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[4, 3]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 3]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 3]);
+
+			//colonne 4
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 4]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 4]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 4]);
+
+			//colonne 5
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 5]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 5]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[4, 5]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 5]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 5]);
+
+			//colonne 6
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 6]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 6]);
+
+			//colonne 7
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 7]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[2, 7]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 7]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[4, 7]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 7]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[6, 7]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 7]);
+
+			//colonne 9
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[0, 9]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 9]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[2, 9]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 9]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[4, 9]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 9]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[6, 9]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 9]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[8, 9]);
+
+			//colonne 10
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[0, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[2, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[6, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[8, 10]);
+
+			//On définit la position du personnage principal au début du niveau
+			DonneesNiveau.personnagePrincipal.PositionElement[0] = 0; //En X
+			DonneesNiveau.personnagePrincipal.PositionElement[1] = 0; //En Y
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.personnagePrincipal);
+
+			InitialisationDesManivelles(DonneesNiveau.niveau10);
+
+		}
+
+		/// <summary>
+		/// Initialise la nouvelle configuration du niveau 10 une fois que le joueur a actionné la manivelle
+		/// </summary>
+		public static void InitialisationNouvelleConfigurationDuNiveau10()
+		{
+
+			DonneesNiveau.niveau10.ResetNiveau();
+
+
+			//La case Bouton
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.boutonNiveau10);
+
+			//La case Bloc
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.blocNiveau10);
+
+			//Les cases Porte
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.porteNiveau10);
+			DonneesNiveau.niveau10.AjoutPorte(DonneesNiveau.porteNiveau10);
+
+			//Les cases Danger
+			//colonne 0
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 0]);
+
+			//colonne 1
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[0, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[4, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[6, 1]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 1]);
+
+			//colonne 2
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[0, 2]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 2]);
+
+			//colonne 3
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[0, 3]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[2, 3]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 3]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[4, 3]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 3]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 3]);
+
+			//colonne 4
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[0, 4]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 4]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 4]);
+
+			//colonne 5
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[0, 5]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 5]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[2, 5]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 5]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[4, 5]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 5]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 5]);
+
+			//colonne 7
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 7]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 7]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[4, 7]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 7]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 7]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[8, 7]);
+
+			//colonne 9
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 9]);
+
+			//colonne 10
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[0, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[2, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[6, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 10]);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.tableauDeDangers[8, 10]);
+
+			//La case sortie
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.sortieNiveau10);
+
+			//Les cases message
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.message4Niveau10);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.message5Niveau10);
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.message6Niveau10);
+
+			//On définit la position du personnage principal au début du niveau
+			DonneesNiveau.personnagePrincipal.PositionElement[0] = 4; //En X
+			DonneesNiveau.personnagePrincipal.PositionElement[1] = 4; //En Y
+			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.personnagePrincipal);
+
+			InitialisationDesManivelles(DonneesNiveau.niveau10);
+			InitialisationDesBlocs(DonneesNiveau.niveau10);
+			InitialisationDesPortes(DonneesNiveau.niveau10);
 		}
 
 		/// <summary>
@@ -712,6 +896,10 @@ namespace FearTheDungeon
 
 				case 9:
 					InitialisationNouvelleConfigurationDuNiveau9();
+					break;
+
+				case 10:
+					InitialisationNouvelleConfigurationDuNiveau10();
 					break;
 
 				default:

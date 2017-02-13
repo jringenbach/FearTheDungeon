@@ -260,7 +260,15 @@ namespace FearTheDungeon
 
 		//La case Manivelle
 		public static Manivelle manivelle1Niveau10 = new Manivelle(4, 4);
-		public static Manivelle manivelle2Niveau10 = new Manivelle(8, 9);
+
+		//Les cases Porte
+		public static Porte porteNiveau10 = new Porte(4,9, false);
+
+		//La case Bloc
+		public static Bloc blocNiveau10 = new Bloc(1, 8);
+
+		//La case Bouton
+		public static Bouton boutonNiveau10 = new Bouton(4,2, porteNiveau10);
 
 		//Les cases Message
 		public static MessageElement message1Niveau10 = new MessageElement(5, 0, "On prend les mêmes et on recommence !");
@@ -272,7 +280,7 @@ namespace FearTheDungeon
 		public static MessageElement message6Niveau10 = new MessageElement(4, 8, "J'aimerais bien te sortir de là...");
 
 		//La case Sortie
-		public static SortieElement sortieNiveau10 = new SortieElement(4, 0);
+		public static SortieElement sortieNiveau10 = new SortieElement(4, 10);
 
 		public static Niveau niveau10 = new Niveau(carteNiveau10, "L'oeil du cyclope... euh cyclone", 10, "45AEZB", false);
 		#endregion

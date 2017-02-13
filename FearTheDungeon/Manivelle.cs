@@ -103,6 +103,10 @@ namespace FearTheDungeon
 					Initialisations.InitialisationNouvelleConfigurationDuNiveau9();
 					break;
 
+				case 10:
+					Initialisations.InitialisationNouvelleConfigurationDuNiveau10();
+					break;
+
 				default:
 					break;
 			}
