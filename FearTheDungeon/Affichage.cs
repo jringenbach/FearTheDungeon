@@ -267,11 +267,12 @@ namespace FearTheDungeon
 					else Console.Write(" " + niveau.elementsDuNiveau[positionTableauElements].Symbole + " ");
 
 					Console.ResetColor();
-				}
+				} //FIn du "si un symbole est présent sur la même case que le personnage"
 
+				//Si il n'est pas sur la même case que le personnage
 				else
 				{
-					Console.Write(" " + niveau.elementsDuNiveau[positionTableauElements].Symbole + " ");
+					CouleurDuSymbole(niveau.ElementsDuNiveau[positionTableauElements]);
 				}
 
 			} //Fin du "si un symbole est présent"
@@ -281,6 +282,32 @@ namespace FearTheDungeon
 			{
 				Console.Write("   ");
 			}
+		}
+
+		/// <summary>
+		/// On affiche l'élément avec une couleur prédéfinie dans cette fonction
+		/// </summary>
+		/// <param name="element"></param>
+		static private void CouleurDuSymbole(MapElement element)
+		{
+			//Si c'est un message
+			if (element.Symbole == 'M') Console.ForegroundColor = ConsoleColor.Green;
+
+			//Si c'est un bloc ou un bouton
+			else if (element.Symbole == 'B' || element.Symbole == 'b') Console.ForegroundColor = ConsoleColor.Cyan;
+
+			//Si c'est un mur
+			else if (element.Symbole == 'X') Console.ForegroundColor = ConsoleColor.DarkRed;
+
+			//Si c'est un danger
+			else if (element.Symbole == 'D') Console.ForegroundColor = ConsoleColor.Magenta;
+
+			//Si c'est la sortie
+			else if (element.Symbole == 'S') Console.ForegroundColor = ConsoleColor.Yellow;
+
+			Console.Write(" " + element.Symbole + " ");
+			Console.ResetColor();
+
 		}
 
 		/// <summary>

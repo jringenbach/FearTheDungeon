@@ -433,6 +433,8 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[6].Nom = "We get used to it pretty quickly";
 			DonneesNiveau.tableauNiveaux[7].Nom = "Unknow dangers";
 			DonneesNiveau.tableauNiveaux[8].Nom = "This tutorial never ends";
+			DonneesNiveau.tableauNiveaux[9].Nom = "The eye of the tiger... huh of the cyclone";
+			DonneesNiveau.tableauNiveaux[10].Nom = "Viva la vida";
 
 			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "M squares give you information"; //niveau 1
@@ -532,6 +534,8 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[6].Nom = "On s'habitue vite";
 			DonneesNiveau.tableauNiveaux[7].Nom = "Des dangers inconnus";
 			DonneesNiveau.tableauNiveaux[8].Nom = "Ce tutoriel n'en finit pas";
+			DonneesNiveau.tableauNiveaux[9].Nom = "L'oeil du cyclope... euh cyclone";
+			DonneesNiveau.tableauNiveaux[10].Nom = "Viva la vida";
 
 			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "Les cases M vous donnent une information"; //niveau 1

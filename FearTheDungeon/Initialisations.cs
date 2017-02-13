@@ -730,6 +730,14 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
+		/// Initialise les données du niveau 11
+		/// </summary>
+		public static void InitialisationNiveau11()
+		{
+
+		}
+
+		/// <summary>
 		/// Permet de charger le niveau suivant lorsque que le joueur a fini un niveau
 		/// </summary>
 		/// <param name="niveau">Niveau du jeu</param>
@@ -773,6 +781,10 @@ namespace FearTheDungeon
 
 				case 9:
 					InitialisationNiveau10();
+					break;
+
+				case 10:
+					InitialisationNiveau11();
 					break;
 
 				default:
@@ -829,6 +841,10 @@ namespace FearTheDungeon
 
 				case 10:
 					InitialisationNiveau10();
+					break;
+
+				case 11:
+					InitialisationNiveau11();
 					break;
 
 				default:

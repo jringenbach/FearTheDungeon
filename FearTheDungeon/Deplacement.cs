@@ -216,8 +216,8 @@ namespace FearTheDungeon
 						if (porteTemp.Ouverte == false) laCaseEstDejaPrise = true;
 					}
 
-					//Si il y'a un mur ou la sortie
-					else if (niveau.ElementsDuNiveau[i].Symbole == 'X' || niveau.ElementsDuNiveau[i].Symbole == 'S') laCaseEstDejaPrise = true;
+					//Si il y'a un mur, la sortie ou une case Danger
+					else if (niveau.ElementsDuNiveau[i].Symbole == 'X' || niveau.ElementsDuNiveau[i].Symbole == 'S' || niveau.ElementsDuNiveau[i].Symbole == 'D') laCaseEstDejaPrise = true;
 
 
 					//Si on le pousse sur un bouton
