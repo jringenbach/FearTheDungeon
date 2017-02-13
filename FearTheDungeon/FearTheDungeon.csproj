@@ -56,6 +56,7 @@
     <Compile Include="DonnéesMenu.cs" />
     <Compile Include="Fonctions.cs" />
     <Compile Include="Initialisations.cs" />
+    <Compile Include="Manivelle.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapElement.cs" />
     <Compile Include="Menu.cs" />

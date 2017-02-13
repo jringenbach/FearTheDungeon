@@ -57,5 +57,15 @@ namespace FearTheDungeon
 			Symbole = 'X';
 
 		}
+
+		// *******************************
+		//			METHODES
+		// *******************************
+
+		public void InitialisationElement(int positionX, int positionY)
+		{
+			this.PositionElement[0] = positionX;
+			this.PositionElement[1] = positionY;
+		}
 	}
 }

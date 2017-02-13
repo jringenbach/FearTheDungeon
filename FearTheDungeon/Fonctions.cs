@@ -432,6 +432,7 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[5].Nom = "A Dirty Room";
 			DonneesNiveau.tableauNiveaux[6].Nom = "We get used to it pretty quickly";
 			DonneesNiveau.tableauNiveaux[7].Nom = "Unknow dangers";
+			DonneesNiveau.tableauNiveaux[8].Nom = "This tutorial never ends";
 
 			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "M squares give you information"; //niveau 1
@@ -464,6 +465,8 @@ namespace FearTheDungeon
 			DonneesNiveau.message2Niveau8.Message = "Spikes ?";
 			DonneesNiveau.message3Niveau8.Message = "Lava ?";
 			DonneesNiveau.message4Niveau8.Message = "Flying maneater Ds ?";
+
+			DonneesNiveau.message1Niveau9.Message = "m ? What is it ?"; //Niveau 9
 
 			//Messages du mot de passe secret 879121
 			DonneesPubliques.phrasesDuMdp879121[0] = "I got a feeling...";
@@ -521,6 +524,7 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[5].Nom = "Une salle sale";
 			DonneesNiveau.tableauNiveaux[6].Nom = "On s'habitue vite";
 			DonneesNiveau.tableauNiveaux[7].Nom = "Des dangers inconnus";
+			DonneesNiveau.tableauNiveaux[8].Nom = "Ce tutoriel n'en finit pas";
 
 			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "Les cases M vous donnent une information"; //niveau 1
@@ -553,6 +557,8 @@ namespace FearTheDungeon
 			DonneesNiveau.message2Niveau8.Message = "Des Piques ?";
 			DonneesNiveau.message3Niveau8.Message = "De la lave ?";
 			DonneesNiveau.message4Niveau8.Message = "Ou des \"D\" volants mangeurs d'hommes ?";
+
+			DonneesNiveau.message1Niveau9.Message = "m ? Mais qu'est-ce que c'est ?"; //Niveau 9
 
 			//Messages du mot de passe secret 879121
 			DonneesPubliques.phrasesDuMdp879121[0] = "J'ai l'intime sensation...";

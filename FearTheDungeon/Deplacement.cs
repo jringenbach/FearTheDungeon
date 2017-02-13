@@ -283,6 +283,7 @@ namespace FearTheDungeon
 			bool objetInfranchissable = false;
 			bool leBlocPeutBouger = true;
 			Porte porteTemp;
+			Manivelle manivelleTemp;
 
 			//On parcourt le tableau des éléments pour voir si il y'en a pas déjà un sur la case sur laquelle on veut aller
 			//et que celui-ci n'autorise pas qu'on le survole
@@ -312,10 +313,23 @@ namespace FearTheDungeon
 
 					}
 
+					//Si cet élément est un danger
 					else if(niveau.ElementsDuNiveau[i].Symbole == 'D')
 					{
 						Initialisations.InitialisationNiveau(niveau);
 						Affichage.AffichageNiveau(niveau);
+					}
+
+					//Si cet élément est une manivelle
+					else if(niveau.ElementsDuNiveau[i].Symbole == 'm')
+					{
+						manivelleTemp = (Manivelle)niveau.ElementsDuNiveau[i];
+						if (manivelleTemp.Actionnee == false)
+						{
+							manivelleTemp.ChangementInherentALActivationDeLaManivelle(niveau);
+							manivelleTemp.Actionnee = true;
+						}
+
 					}
 				}
 			}

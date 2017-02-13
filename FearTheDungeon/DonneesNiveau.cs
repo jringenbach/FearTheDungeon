@@ -14,6 +14,27 @@ namespace FearTheDungeon
 
 		public static MapElement personnagePrincipal = new MapElement(true, '*');
 
+		/// <summary>
+		/// Définit le nombre de murs créés que l'on pourra aller charger dans un niveau
+		/// </summary>
+		private static int nombreDeMurs = 20;
+
+		/// <summary>
+		/// Définit le nombre de dangers créés que l'on pourra charger dans un niveau
+		/// </summary>
+		private static int nombreDeDangers = 20;
+
+		/// <summary>
+		/// Stocke tous les murs. Leur position dans ce tableau est équivalente à leur position sur la map du niveau lorsqu'ils seront chargés
+		/// </summary>
+		public static Mur[,] tableauDeMurs = new Mur[nombreDeMurs,nombreDeMurs];
+
+		/// <summary>
+		/// Stocke tous les dangers. Leur position dans ce tableau est équivalente à leur position sur la map du niveau lorsqu'ils seront chargés
+		/// </summary>
+		public static DangerElement[,] tableauDeDangers = new DangerElement[nombreDeDangers, nombreDeDangers];
+
+
 		//*************************************************
 		//					LES NIVEAUX
 		//*************************************************
@@ -31,16 +52,6 @@ namespace FearTheDungeon
 		public static MessageElement message1Niveau1 = new MessageElement(3, 2, "Les cases M vous donnent une information");
 		public static MessageElement message2Niveau1 = new MessageElement(4, 4, "Les cases S indiquent la sortie");
 		public static MessageElement[] messagesNiveau1 = { message1Niveau1, message2Niveau1 };
-
-		//Les cases mur
-		public static Mur murligne1colonne0niveau1 = new Mur(1, 0);
-		public static Mur murligne1colonne1niveau1 = new Mur(1, 1);
-		public static Mur murligne1colonne2niveau1 = new Mur(1, 2);
-		public static Mur murligne1colonne3niveau1 = new Mur(1, 3);
-		public static Mur murligne3colonne1niveau1 = new Mur(3, 1);
-		public static Mur murligne4colonne1niveau1 = new Mur(4, 1);
-		public static Mur murligne3colonne3niveau1 = new Mur(3, 3);
-		public static Mur murligne3colonne4niveau1 = new Mur(4, 3);
 
 		//Case sortie niveau 1
 		public static SortieElement sortieNiveau1 = new SortieElement(0, 0);
@@ -64,16 +75,6 @@ namespace FearTheDungeon
 		public static MessageElement message2Niveau2 = new MessageElement(3, 2, "Vous pouvez pousser les blocs B");
 		public static MessageElement message3Niveau2 = new MessageElement(0, 0, "Ces pièces sont étroites, non ?");
 
-		//Les cases mur
-		public static Mur murligne0colonne1niveau2 = new Mur(0, 1);
-		public static Mur murligne2colonne1niveau2 = new Mur(2, 1);
-		public static Mur murligne3colonne1niveau2 = new Mur(3, 1);
-		public static Mur murligne4colonne1niveau2 = new Mur(4, 1);
-		public static Mur murligne0colonne3niveau2 = new Mur(0, 3);
-		public static Mur murligne1colonne3niveau2 = new Mur(1, 3);
-		public static Mur murligne2colonne3niveau2 = new Mur(2, 3);
-		public static Mur murligne3colonne3niveau2 = new Mur(3, 3);
-
 		//Case sortie niveau 2
 		public static SortieElement sortieNiveau2 = new SortieElement(4, 0);
 
@@ -94,31 +95,6 @@ namespace FearTheDungeon
 		//Les cases message
 		public static MessageElement message1Niveau3 = new MessageElement(0, 5, "Pour recharger le niveau. Appuyez sur 5");
 		public static MessageElement message2Niveau3 = new MessageElement(4, 1, "Vous avez bloqué la sortie, n'est-ce pas ?");
-
-		//Les cases mur
-		public static Mur murligne1colonne0niveau3 = new Mur(1, 0);
-		public static Mur murligne1colonne1niveau3 = new Mur(1, 1);
-		public static Mur murligne1colonne2niveau3 = new Mur(1, 2);
-		public static Mur murligne1colonne4niveau3 = new Mur(1, 4);
-		public static Mur murligne1colonne5niveau3 = new Mur(1, 5);
-
-		public static Mur murligne2colonne0niveau3 = new Mur(2, 0);
-		public static Mur murligne2colonne2niveau3 = new Mur(2, 2);
-		public static Mur murligne2colonne5niveau3 = new Mur(2, 5);
-
-		public static Mur murligne3colonne1niveau3 = new Mur(3, 0);
-		public static Mur murligne3colonne5niveau3 = new Mur(3, 5);
-
-		public static Mur murligne4colonne0niveau3 = new Mur(4, 0);
-		public static Mur murligne4colonne2niveau3 = new Mur(4, 2);
-		public static Mur murligne4colonne4niveau3 = new Mur(4, 4);
-		public static Mur murligne4colonne5niveau3 = new Mur(4, 5);
-
-		public static Mur murligne5colonne0niveau3 = new Mur(5, 0);
-		public static Mur murligne5colonne1niveau3 = new Mur(5, 1);
-		public static Mur murligne5colonne2niveau3 = new Mur(5, 2);
-		public static Mur murligne5colonne4niveau3 = new Mur(5, 4);
-		public static Mur murligne5colonne5niveau3 = new Mur(5, 5);
 
 		//La case Sortie
 		public static SortieElement sortieNiveau3 = new SortieElement(5,3);
@@ -149,21 +125,6 @@ namespace FearTheDungeon
 		public static MessageElement message3Niveau4 = new MessageElement(4, 1, "Vous êtes à bloc pour la suite ?");
 		public static MessageElement message4Niveau4 = new MessageElement(4, 0, "Insérez une blague ici");
 
-		//Les cases mur
-		public static Mur murligne0colonne0niveau4 = new Mur(0, 0);
-		public static Mur murligne0colonne1niveau4 = new Mur(0, 1);
-		public static Mur murligne1colonne0niveau4 = new Mur(1, 0);
-		public static Mur murligne1colonne1niveau4 = new Mur(1, 1);
-		public static Mur murligne3colonne0niveau4 = new Mur(3, 0);
-		public static Mur murligne3colonne1niveau4 = new Mur(3, 1);
-
-		public static Mur murligne4colonne2niveau4 = new Mur(4, 2);
-		public static Mur murligne5colonne2niveau4 = new Mur(5, 2);
-		public static Mur murligne7colonne2niveau4 = new Mur(7, 2);
-
-		public static Mur murligne1colonne3niveau4 = new Mur(1, 3);
-		public static Mur murligne3colonne3niveau4 = new Mur(3, 3);
-
 		//La case Sortie
 		public static SortieElement sortieNiveau4 = new SortieElement(7, 0);
 
@@ -189,24 +150,6 @@ namespace FearTheDungeon
 		//Les cases message
 		public static MessageElement message1Niveau5 = new MessageElement(0, 0, "Pousse ce bloc ma kikoune !");
 		public static MessageElement message2Niveau5 = new MessageElement(7, 1, "Réfléchissez avant d'agir !");
-
-		//Les cases mur
-		public static Mur murligne0colonne1niveau5 = new Mur(0, 1);
-		public static Mur murligne1colonne1niveau5 = new Mur(1, 1);
-		public static Mur murligne3colonne1niveau5 = new Mur(3, 1);
-		public static Mur murligne4colonne1niveau5 = new Mur(4, 1);
-		public static Mur murligne5colonne1niveau5 = new Mur(5, 1);
-		public static Mur murligne6colonne1niveau5 = new Mur(6, 1);
-
-		public static Mur murligne1colonne3niveau5 = new Mur(1, 3);
-		public static Mur murligne3colonne3niveau5 = new Mur(3, 3);
-		public static Mur murligne4colonne3niveau5 = new Mur(4, 3);
-		public static Mur murligne5colonne3niveau5 = new Mur(5, 3);
-		public static Mur murligne6colonne3niveau5 = new Mur(6, 3);
-		public static Mur murligne8colonne3niveau5 = new Mur(8, 3);
-
-		public static Mur murligne6colonne4niveau5 = new Mur(6, 4);
-		public static Mur murligne8colonne4niveau5 = new Mur(8, 4);
 
 		//La case Sortie
 		public static SortieElement sortieNiveau5 = new SortieElement(7, 4);
@@ -234,70 +177,6 @@ namespace FearTheDungeon
 		public static MessageElement message1Niveau6 = new MessageElement(3, 0, "On avance, on avance, on avance !");
 		public static MessageElement message2Niveau6 = new MessageElement(7, 6, "Mot de passe : 879121");
 
-		//Les cases mur
-
-		//Colonne 0
-		public static Mur murligne4colonne0niveau6 = new Mur(4, 0);
-		public static Mur murligne5colonne0niveau6 = new Mur(5, 0);
-		public static Mur murligne6colonne0niveau6 = new Mur(6, 0);
-		public static Mur murligne7colonne0niveau6 = new Mur(7, 0);
-
-					//Colonne 1
-		public static Mur murligne4colonne1niveau6 = new Mur(4, 1);
-		public static Mur murligne5colonne1niveau6 = new Mur(5, 1);
-		public static Mur murligne6colonne1niveau6 = new Mur(6, 1);
-		public static Mur murligne7colonne1niveau6 = new Mur(7, 1);
-
-					//Colonne 2
-		public static Mur murligne0colonne2niveau6 = new Mur(0, 2);
-		public static Mur murligne7colonne2niveau6 = new Mur(7, 2);
-
-					//Colonne 3
-		public static Mur murligne0colonne3niveau6 = new Mur(0, 3);
-		public static Mur murligne1colonne3niveau6 = new Mur(1, 3);
-		public static Mur murligne2colonne3niveau6 = new Mur(2, 3);
-		public static Mur murligne4colonne3niveau6 = new Mur(4, 3);
-		public static Mur murligne5colonne3niveau6 = new Mur(5, 3);
-		public static Mur murligne6colonne3niveau6 = new Mur(6, 3);
-		public static Mur murligne7colonne3niveau6 = new Mur(7, 3);
-
-					//Colonne 4
-		public static Mur murligne0colonne4niveau6 = new Mur(0, 4);
-		public static Mur murligne1colonne4niveau6 = new Mur(1, 4);
-		public static Mur murligne2colonne4niveau6 = new Mur(2, 4);
-		public static Mur murligne6colonne4niveau6 = new Mur(6, 4);
-		public static Mur murligne7colonne4niveau6 = new Mur(7, 4);
-
-					//Colonne 5
-		public static Mur murligne0colonne5niveau6 = new Mur(0, 5);
-		public static Mur murligne1colonne5niveau6 = new Mur(1, 5);
-		public static Mur murligne2colonne5niveau6 = new Mur(2, 5);
-		public static Mur murligne7colonne5niveau6 = new Mur(7, 5);
-
-					//Colonne 6
-		public static Mur murligne0colonne6niveau6 = new Mur(0, 6);
-		public static Mur murligne1colonne6niveau6 = new Mur(1, 6);
-		public static Mur murligne2colonne6niveau6 = new Mur(2, 6);
-		public static Mur murligne3colonne6niveau6 = new Mur(3, 6);
-
-					//Colonne 7
-		public static Mur murligne0colonne7niveau6 = new Mur(0, 7);
-		public static Mur murligne1colonne7niveau6 = new Mur(1, 7);
-		public static Mur murligne2colonne7niveau6 = new Mur(2, 7);
-		public static Mur murligne3colonne7niveau6 = new Mur(3, 7);
-		public static Mur murligne4colonne7niveau6 = new Mur(4, 7);
-		public static Mur murligne5colonne7niveau6 = new Mur(5, 7);
-		public static Mur murligne7colonne7niveau6 = new Mur(7, 7);
-
-					//Colonne 8
-		public static Mur murligne0colonne8niveau6 = new Mur(0, 8);
-		public static Mur murligne1colonne8niveau6 = new Mur(1, 8);
-		public static Mur murligne2colonne8niveau6 = new Mur(2, 8);
-		public static Mur murligne3colonne8niveau6 = new Mur(3, 8);
-		public static Mur murligne4colonne8niveau6 = new Mur(4, 8);
-		public static Mur murligne5colonne8niveau6 = new Mur(5, 8);
-		public static Mur murligne7colonne8niveau6 = new Mur(7, 8);
-
 		//La case Sortie
 		public static SortieElement sortieNiveau6 = new SortieElement(6, 8);
 
@@ -316,29 +195,6 @@ namespace FearTheDungeon
 		public static MessageElement message2Niveau7 = new MessageElement(9, 1, "Marcher sur une case D recharge le niveau");
 		public static MessageElement message3Niveau7 = new MessageElement(3, 0, "Vous êtes sur la bonne voie");
 		public static MessageElement message4Niveau7 = new MessageElement(7, 6, "Attention à la marche !");
-
-		//Les cases Danger
-
-				//colonne 0
-		public static DangerElement Dangerligne0colonne0niveau7 = new DangerElement(0, 0);
-		public static DangerElement Dangerligne1colonne0niveau7 = new DangerElement(1, 0);
-		public static DangerElement Dangerligne6colonne0niveau7 = new DangerElement(6, 0);
-		public static DangerElement Dangerligne7colonne0niveau7 = new DangerElement(7, 0);
-		public static DangerElement Dangerligne8colonne0niveau7 = new DangerElement(8, 0);
-
-				//colonne 1
-		public static DangerElement Dangerligne1colonne1niveau7 = new DangerElement(1, 1);
-		public static DangerElement Dangerligne3colonne1niveau7 = new DangerElement(3, 1);
-		public static DangerElement Dangerligne5colonne1niveau7 = new DangerElement(5, 1);
-		public static DangerElement Dangerligne11colonne1niveau7 = new DangerElement(11, 1);
-
-				//colonne 2
-		public static DangerElement Dangerligne3colonne2niveau7 = new DangerElement(3, 2);
-		public static DangerElement Dangerligne7colonne2niveau7 = new DangerElement(7, 2);
-		public static DangerElement Dangerligne8colonne2niveau7 = new DangerElement(8, 2);
-		public static DangerElement Dangerligne9colonne2niveau7 = new DangerElement(9, 2);
-		public static DangerElement Dangerligne10colonne2niveau7 = new DangerElement(10, 2);
-		public static DangerElement Dangerligne11colonne2niveau7 = new DangerElement(11, 2);
 
 		//La case Sortie
 		public static SortieElement sortieNiveau7 = new SortieElement(0, 1);
@@ -368,47 +224,6 @@ namespace FearTheDungeon
 		public static MessageElement message3Niveau8 = new MessageElement(1, 3, "De la lave ?");
 		public static MessageElement message4Niveau8 = new MessageElement(7, 5, "Ou des \"D\" volants mangeurs d'hommes ?");
 
-		//Les cases Danger
-
-		//colonne 0
-		public static DangerElement Dangerligne3colonne0niveau8 = new DangerElement(3, 0);
-		public static DangerElement Dangerligne7colonne0niveau8 = new DangerElement(7, 0);
-
-		//colonne 1
-		public static DangerElement Dangerligne2colonne1niveau8 = new DangerElement(2, 1);
-		public static DangerElement Dangerligne3colonne1niveau8 = new DangerElement(3, 1);
-		public static DangerElement Dangerligne5colonne1niveau8 = new DangerElement(5, 1);
-		public static DangerElement Dangerligne7colonne1niveau8 = new DangerElement(7, 1);
-
-		//colonne 2
-		public static DangerElement Dangerligne0colonne2niveau8 = new DangerElement(0, 2);
-		public static DangerElement Dangerligne5colonne2niveau8 = new DangerElement(5, 2);
-		public static DangerElement Dangerligne7colonne2niveau8 = new DangerElement(7, 2);
-
-		//colonne 3
-		public static DangerElement Dangerligne0colonne3niveau8 = new DangerElement(0, 3);
-		public static DangerElement Dangerligne2colonne3niveau8 = new DangerElement(2, 3);
-		public static DangerElement Dangerligne3colonne3niveau8 = new DangerElement(3, 3);
-		public static DangerElement Dangerligne5colonne3niveau8 = new DangerElement(5, 3);
-
-		//colonne 4
-		public static DangerElement Dangerligne2colonne4niveau8 = new DangerElement(2, 4);
-		public static DangerElement Dangerligne3colonne4niveau8 = new DangerElement(3, 4);
-		public static DangerElement Dangerligne5colonne4niveau8 = new DangerElement(5, 4);
-		public static DangerElement Dangerligne6colonne4niveau8 = new DangerElement(6, 4);
-		public static DangerElement Dangerligne7colonne4niveau8 = new DangerElement(7, 4);
-
-		//colonne 5
-		public static DangerElement Dangerligne2colonne5niveau8 = new DangerElement(2, 5);
-		public static DangerElement Dangerligne3colonne5niveau8 = new DangerElement(3, 5);
-
-		//colonne 6
-		public static DangerElement Dangerligne2colonne6niveau8 = new DangerElement(2, 6);
-		public static DangerElement Dangerligne3colonne6niveau8 = new DangerElement(3, 6);
-		public static DangerElement Dangerligne4colonne6niveau8 = new DangerElement(4, 6);
-		public static DangerElement Dangerligne5colonne6niveau8 = new DangerElement(5, 6);
-		public static DangerElement Dangerligne6colonne6niveau8 = new DangerElement(6, 6);
-
 		//La case Sortie
 		public static SortieElement sortieNiveau8 = new SortieElement(7, 6);
 
@@ -421,9 +236,19 @@ namespace FearTheDungeon
 		//				NIVEAU 9             ****************************************************************************************
 		//***********************************
 
-		private static Map carteNiveau9 = new Map(12, 3);
+		private static Map carteNiveau9 = new Map(5, 7);
 
-		public static Niveau niveau9 = new Niveau(carteNiveau9, "On s'habitue vite", 9, "VIP007", false);
+		//La case Manivelle
+		public static Manivelle manivelleNiveau9 = new Manivelle(0,6);
+
+		//Les cases Message
+		public static MessageElement message1Niveau9 = new MessageElement(2, 1, "m ? Mais qu'est-ce que c'est ?");
+		public static MessageElement message2Niveau9 = new MessageElement(2, 1, "m est une manivelle ! ");
+
+		//La case Sortie
+		public static SortieElement sortieNiveau9 = new SortieElement(4, 0);
+
+		public static Niveau niveau9 = new Niveau(carteNiveau9, "Ce tutoriel n'en finit pas", 9, "VIP007", false);
 		#endregion
 
 		#region niveau10
@@ -456,6 +281,36 @@ namespace FearTheDungeon
 		{
 			Array.Resize(ref niveau.elementsDuNiveau, niveau.elementsDuNiveau.Length + 1);
 			niveau.elementsDuNiveau[niveau.elementsDuNiveau.Length - 1] = element;
+		}
+
+		/// <summary>
+		/// Permet d'initialiser un tableau de murs contenant les murs que l'on viendra charger pour afficher un niveau
+		/// </summary>
+		/// <param name="mur">Tableau de mur que l'on va remplir</param>
+		static public void ChargementDesMurs(Mur[,] mur)
+		{
+			for (int i = 0; i < nombreDeMurs; i++)
+			{
+				for (int j = 0; j < nombreDeMurs; j++)
+				{
+					mur[i, j] = new Mur(i, j);
+				}
+			}
+		}
+
+		/// <summary>
+		/// Permet d'initialiser un tableau de dangers contenant les dangers que l'on viendra charger pour un niveau
+		/// </summary>
+		/// <param name="danger">Tableau de dangers stocké en mémoire que l'on viendra charger lorsqu'on en aura besoin lors du chargement d'un niveau</param>
+		static public void ChargementDesDangers(DangerElement[,] danger)
+		{
+			for (int i = 0; i < nombreDeDangers; i++)
+			{
+				for (int j = 0; j < nombreDeDangers; j++)
+				{
+					danger[i, j] = new DangerElement(i, j);
+				}
+			}
 		}
 	}
 }
