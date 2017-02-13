@@ -83,7 +83,7 @@ namespace FearTheDungeon
 		/// </summary>
 		/// <param name="niveau">Niveau du jeu</param>
 		/// <param name="mouvement">Déplacement choisi par le joueur : bas(2) - gauche(4) - droite(6) - haut(6) - resetlevel(5)</param>
-		static bool TestValiditeDuMouvement(int mouvement, Niveau niveau)
+		static private bool TestValiditeDuMouvement(int mouvement, Niveau niveau)
 		{
 			bool mouvementValide;
 			bool mauvaiseTouche = false, objetInfranchissable = false, sortDuTableau = false;
@@ -155,7 +155,7 @@ namespace FearTheDungeon
 		/// <param name="niveau">Niveau du jeu</param>
 		/// <param name="bloc">Le bloc que le joueur vient de pousser.</param>
 		/// <returns></returns>
-		static bool TestValiditeDuMouvementBloc(int mouvement, Niveau niveau, MapElement bloc)
+		static private bool TestValiditeDuMouvementBloc(int mouvement, Niveau niveau, MapElement bloc)
 		{
 			bool leBlocPeutBouger = true;
 			bool leBlocSortDeLaMap = false;
@@ -256,7 +256,7 @@ namespace FearTheDungeon
 		/// <param name="positionX">Position qu'aurait le joueur en X si son déplacement est validé</param>
 		/// <param name="positionY">Position qu'aurait le joueur en Y si son déplacement est validé</param>
 		/// <returns></returns>
-		static bool LeJoueurSortDeLaMap(Niveau niveau, int positionX, int positionY)
+		static private bool LeJoueurSortDeLaMap(Niveau niveau, int positionX, int positionY)
 		{
 			bool sortDuTableau = false;
 			//Si cela sort de la carte
@@ -278,7 +278,7 @@ namespace FearTheDungeon
 		/// <param name="positionY">Position qu'aurait le joueur en Y si son déplacement est validé</param>
 		/// <param name="mouvement">Déplacement choisi par le joueur : bas(2) - gauche(4) - droite(6) - haut(6) - resetlevel(5)</param>
 		/// <returns></returns>
-		static bool LaCaseEstPrise(Niveau niveau, int positionX, int positionY, int mouvement)
+		static private bool LaCaseEstPrise(Niveau niveau, int positionX, int positionY, int mouvement)
 		{
 			bool objetInfranchissable = false;
 			bool leBlocPeutBouger = true;
@@ -328,6 +328,7 @@ namespace FearTheDungeon
 						{
 							manivelleTemp.ChangementInherentALActivationDeLaManivelle(niveau);
 							manivelleTemp.Actionnee = true;
+							Affichage.AffichageNiveau(niveau); //On réaffiche la nouvelle configuration du niveau
 						}
 
 					}
