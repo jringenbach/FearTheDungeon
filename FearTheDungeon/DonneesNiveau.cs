@@ -51,7 +51,8 @@ namespace FearTheDungeon
 		//Les cases message
 		public static MessageElement message1Niveau1 = new MessageElement(3, 2, "Les cases M vous donnent une information");
 		public static MessageElement message2Niveau1 = new MessageElement(4, 4, "Les cases S indiquent la sortie");
-		public static MessageElement[] messagesNiveau1 = { message1Niveau1, message2Niveau1 };
+		public static MessageElement message3Niveau1 = new MessageElement(0, 2, "Retournez au menu de choix des niveaux en appuyant sur 0");
+		public static MessageElement[] messagesNiveau1 = { message1Niveau1, message2Niveau1, message3Niveau1 };
 
 		//Case sortie niveau 1
 		public static SortieElement sortieNiveau1 = new SortieElement(0, 0);
@@ -289,7 +290,26 @@ namespace FearTheDungeon
 		//***********************************
 		//				NIVEAU 11            ****************************************************************************************
 		//***********************************
-		private static Map carteNiveau11 = new Map(9, 11);
+		private static Map carteNiveau11 = new Map(5, 9);
+
+		//La case bloc
+		public static Bloc blocNiveau11 = new Bloc(2,7);
+
+		//La case message
+		public static MessageElement message1Niveau11 = new MessageElement(4, 0, "Je ne peux te dire qui je suis, mais je compte bien t'aider.");
+
+		//Les cases Porte
+		public static Porte porte1Niveau11 = new Porte(1, 2, false);
+		public static Porte porte2Niveau11 = new Porte(4, 1, false);
+		public static Porte porte3Niveau11 = new Porte(4, 7, false);
+
+		//Les cases Bouton
+		public static Bouton bouton1Niveau11 = new Bouton(2, 2, porte1Niveau11);
+		public static Bouton bouton2Niveau11 = new Bouton(4, 2, porte1Niveau11);
+		public static Bouton bouton3Niveau11 = new Bouton(4, 5, porte1Niveau11);
+
+		//La case sortie
+		public static SortieElement sortieNiveau11 = new SortieElement(4,8);
 
 		public static Niveau niveau11 = new Niveau(carteNiveau11, "Viva la vida", 11, "POPAUL", false);
 		#endregion

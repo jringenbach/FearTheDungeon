@@ -63,6 +63,9 @@ namespace FearTheDungeon
 			this.Symbole = 'b';
 		}
 
+		/// <summary>
+		/// Porte que le bouton ouvrira quand il sera actionné
+		/// </summary>
 		public Porte PorteQueJouvre
 		{
 			get

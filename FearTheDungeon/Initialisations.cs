@@ -24,9 +24,10 @@ namespace FearTheDungeon
 						//Les cases message
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.message1Niveau1);
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.message2Niveau1);
+			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.message3Niveau1);
 
 
-						//Les murs
+			//Les murs
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.tableauDeMurs[1,0]);
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.tableauDeMurs[1, 1]);
 			DonneesNiveau.niveau1.AjoutMapElement(DonneesNiveau.tableauDeMurs[1, 2]);
@@ -640,7 +641,6 @@ namespace FearTheDungeon
 
 			DonneesNiveau.niveau10.ResetNiveau();
 
-
 			//La case Bouton
 			DonneesNiveau.niveau10.AjoutMapElement(DonneesNiveau.boutonNiveau10);
 
@@ -734,6 +734,62 @@ namespace FearTheDungeon
 		/// </summary>
 		public static void InitialisationNiveau11()
 		{
+			DonneesNiveau.niveau11.ResetNiveau();
+
+			//La case Bloc
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.blocNiveau11);
+
+			//La case bouton
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.bouton1Niveau11);
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.bouton2Niveau11);
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.bouton3Niveau11);
+
+			//La case message
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.message1Niveau11);
+
+			//Les cases porte
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.porte1Niveau11);
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.porte2Niveau11);
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.porte3Niveau11);
+			DonneesNiveau.niveau11.AjoutPorte(DonneesNiveau.porte1Niveau11);
+			DonneesNiveau.niveau11.AjoutPorte(DonneesNiveau.porte2Niveau11);
+			DonneesNiveau.niveau11.AjoutPorte(DonneesNiveau.porte3Niveau11);
+
+			//Les cases Danger
+			//colonne 1
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.tableauDeDangers[1,1]);
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 1]);
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 1]);
+
+			//colonne 3
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 3]);
+
+			//colonne 4
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 4]);
+
+			//colonne 5
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 5]);
+
+			//colonne 6
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 6]);
+
+			//colonne 7
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 7]);
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 7]);
+
+			//colonne 8
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 8]);
+
+			//La case Sortie
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.sortieNiveau11);
+
+			//On définit la position du personnage principal au début du niveau
+			DonneesNiveau.personnagePrincipal.PositionElement[0] = 2; //En X
+			DonneesNiveau.personnagePrincipal.PositionElement[1] = 0; //En Y
+			DonneesNiveau.niveau11.AjoutMapElement(DonneesNiveau.personnagePrincipal);
+
+			InitialisationDesBlocs(DonneesNiveau.niveau11);
+			InitialisationDesPortes(DonneesNiveau.niveau11);
 
 		}
 

@@ -326,6 +326,12 @@ namespace FearTheDungeon
 			{
 				if (mdpSaisie == niveau[i].Password)
 				{
+					for(int j=0; j < i; j++)
+					{
+						if (DonneesNiveau.tableauNiveaux[j].Debloque == false) DonneesNiveau.tableauNiveaux[j].Debloque = true;
+					}
+
+
 					niveauDebloque = i + 1;
 					motDePasseTrouve = true;
 				}
@@ -439,6 +445,7 @@ namespace FearTheDungeon
 			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "M squares give you information"; //niveau 1
 			DonneesNiveau.message2Niveau1.Message = "S squares show you the exit";
+			DonneesNiveau.message3Niveau1.Message = "You can go back to the Levels Selection Menu by pressing 0";
 
 			DonneesNiveau.message1Niveau2.Message = "B squares are blocks"; //niveau 2
 			DonneesNiveau.message2Niveau2.Message = "You can push Blocks B";
@@ -476,6 +483,8 @@ namespace FearTheDungeon
 			DonneesNiveau.message4Niveau10.Message = "Password : 987654";
 			DonneesNiveau.message5Niveau10.Message = "I wish I could help you...";
 			DonneesNiveau.message6Niveau10.Message = "I wish I could get you outta here...";
+
+			DonneesNiveau.message1Niveau11.Message = "I can't tell you who I am but I'll still help you."; //Niveau 11
 
 			//Messages du mot de passe secret 879121
 			DonneesPubliques.phrasesDuMdp879121[0] = "I got a feeling...";
@@ -540,6 +549,7 @@ namespace FearTheDungeon
 			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "Les cases M vous donnent une information"; //niveau 1
 			DonneesNiveau.message2Niveau1.Message = "Les cases S indiquent la sortie";
+			DonneesNiveau.message3Niveau1.Message = "Retournez au menu de choix des niveaux en appuyant sur 0";
 
 			DonneesNiveau.message1Niveau2.Message = "Les cases B représentent des blocs"; //niveau 2
 			DonneesNiveau.message2Niveau2.Message = "Vous pouvez pousser les blocs B";
@@ -577,6 +587,8 @@ namespace FearTheDungeon
 			DonneesNiveau.message4Niveau10.Message = "Mot de passe : 987654";
 			DonneesNiveau.message5Niveau10.Message = "J'aimerais bien t'aider...";
 			DonneesNiveau.message6Niveau10.Message = "J'aimerais bien te sortir de là...";
+
+			DonneesNiveau.message1Niveau11.Message = "Je ne peux te dire qui je suis, mais je compte bien t'aider."; //Niveau 11
 
 			//Messages du mot de passe secret 879121
 			DonneesPubliques.phrasesDuMdp879121[0] = "J'ai l'intime sensation...";
