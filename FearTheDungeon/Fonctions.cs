@@ -441,6 +441,7 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[8].Nom = "This tutorial never ends";
 			DonneesNiveau.tableauNiveaux[9].Nom = "The eye of the tiger... huh of the cyclone";
 			DonneesNiveau.tableauNiveaux[10].Nom = "Viva la vida";
+			DonneesNiveau.tableauNiveaux[11].Nom = "I am lost";
 
 			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "M squares give you information"; //niveau 1
@@ -485,6 +486,14 @@ namespace FearTheDungeon
 			DonneesNiveau.message6Niveau10.Message = "I wish I could get you outta here...";
 
 			DonneesNiveau.message1Niveau11.Message = "I can't tell you who I am but I'll still help you."; //Niveau 11
+
+			DonneesNiveau.message1Niveau12.Message = "I have an old map of this dungeon... somewhere..."; //Niveau 12
+			DonneesNiveau.message1Niveau12.Message = "Where is that fucking map ?";
+			DonneesNiveau.message1Niveau12.Message = "Map ! Map ! Where are you ?";
+			DonneesNiveau.message1Niveau12.Message = "You should have turned left... at some point...";
+			DonneesNiveau.message1Niveau12.Message = "I'm lost ! The map is lost ! Great !";
+			DonneesNiveau.message1Niveau12.Message = "Well... I don't know how I can help you.";
+			DonneesNiveau.message1Niveau12.Message = "Unless...";
 
 			//Messages du mot de passe secret 879121
 			DonneesPubliques.phrasesDuMdp879121[0] = "I got a feeling...";
@@ -545,6 +554,7 @@ namespace FearTheDungeon
 			DonneesNiveau.tableauNiveaux[8].Nom = "Ce tutoriel n'en finit pas";
 			DonneesNiveau.tableauNiveaux[9].Nom = "L'oeil du cyclope... euh cyclone";
 			DonneesNiveau.tableauNiveaux[10].Nom = "Viva la vida";
+			DonneesNiveau.tableauNiveaux[11].Nom = "Je suis perdu";
 
 			//Messages des niveaux
 			DonneesNiveau.message1Niveau1.Message = "Les cases M vous donnent une information"; //niveau 1
@@ -589,6 +599,14 @@ namespace FearTheDungeon
 			DonneesNiveau.message6Niveau10.Message = "J'aimerais bien te sortir de là...";
 
 			DonneesNiveau.message1Niveau11.Message = "Je ne peux te dire qui je suis, mais je compte bien t'aider."; //Niveau 11
+
+			DonneesNiveau.message1Niveau12.Message = "Je possède une vieille carte de ce donjon quelque part."; //Niveau 12
+			DonneesNiveau.message1Niveau12.Message = "Où est cette foutue carte ?";
+			DonneesNiveau.message1Niveau12.Message = "Carte ! Carte ! Où es-tu ?";
+			DonneesNiveau.message1Niveau12.Message = "Il fallait pas prendre à gauche à un moment ?";
+			DonneesNiveau.message1Niveau12.Message = "Je suis perdu. La carte est perdue. C'est super !";
+			DonneesNiveau.message1Niveau12.Message = "Bon... je ne sais pas comment t'aider.";
+			DonneesNiveau.message1Niveau12.Message = "A moins que...";
 
 			//Messages du mot de passe secret 879121
 			DonneesPubliques.phrasesDuMdp879121[0] = "J'ai l'intime sensation...";

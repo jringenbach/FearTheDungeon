@@ -226,7 +226,7 @@ namespace FearTheDungeon
 
 			else
 			{
-				this.elementsDuNiveau[this.tableauDePortes.Length - 1] = porte;
+				this.tableauDePortes[this.tableauDePortes.Length - 1] = porte;
 				Array.Resize(ref this.tableauDePortes, this.tableauDePortes.Length + 1);
 			}
 		}

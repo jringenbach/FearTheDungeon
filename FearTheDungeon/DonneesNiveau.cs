@@ -305,13 +305,73 @@ namespace FearTheDungeon
 
 		//Les cases Bouton
 		public static Bouton bouton1Niveau11 = new Bouton(2, 2, porte1Niveau11);
-		public static Bouton bouton2Niveau11 = new Bouton(4, 2, porte1Niveau11);
-		public static Bouton bouton3Niveau11 = new Bouton(4, 5, porte1Niveau11);
+		public static Bouton bouton2Niveau11 = new Bouton(4, 2, porte2Niveau11);
+		public static Bouton bouton3Niveau11 = new Bouton(4, 5, porte3Niveau11);
 
 		//La case sortie
 		public static SortieElement sortieNiveau11 = new SortieElement(4,8);
 
 		public static Niveau niveau11 = new Niveau(carteNiveau11, "Viva la vida", 11, "POPAUL", false);
+		#endregion
+
+		#region niveau 12
+		//***********************************
+		//				NIVEAU 12            ****************************************************************************************
+		//***********************************
+
+		private static Map carteNiveau12 = new Map(19, 9);
+
+		//Les cases bloc
+		public static Bloc bloc1Niveau12 = new Bloc(3, 6);
+		public static Bloc bloc2Niveau12 = new Bloc(4, 6);
+		public static Bloc bloc3Niveau12 = new Bloc(9, 4);
+		public static Bloc bloc4Niveau12 = new Bloc(14, 2);
+
+		//Les cases Porte
+		public static Porte porte1Niveau12 = new Porte(7, 2, false);
+		public static Porte porte2Niveau12 = new Porte(8, 4, false);
+		public static Porte porte3Niveau12 = new Porte(8, 8, false);
+		public static Porte porte4Niveau12 = new Porte(13, 6, false);
+
+		//Les cases Bouton
+		public static Bouton bouton1Niveau12 = new Bouton(7, 7, porte1Niveau12);
+		public static Bouton bouton2Niveau12 = new Bouton(1, 5, porte2Niveau12);
+		public static Bouton bouton3Niveau12 = new Bouton(9, 6, porte3Niveau12);
+		public static Bouton bouton4Niveau12 = new Bouton(18, 6, porte4Niveau12);
+
+		//Les cases message
+		public static MessageElement message1Niveau12 = new MessageElement(1, 8, "Je possède une vieille carte de ce donjon quelque part.");
+		public static MessageElement message2Niveau12 = new MessageElement(0, 4, "Où est cette foutue carte ?");
+		public static MessageElement message3Niveau12 = new MessageElement(3, 0, "Carte ! Carte ! Où es-tu ?");
+		public static MessageElement message4Niveau12 = new MessageElement(15, 3, "Il fallait pas prendre à gauche à un moment ?");
+		public static MessageElement message5Niveau12 = new MessageElement(12, 8, "Je suis perdu. La carte est perdue. C'est super !");
+		public static MessageElement message6Niveau12 = new MessageElement(14, 8, "Bon... je ne sais pas comment t'aider.");
+		public static MessageElement message7Niveau12 = new MessageElement(16, 8, "A moins que...");
+
+		//La case sortie
+		public static SortieElement sortieNiveau12 = new SortieElement(18, 8);
+
+		public static Niveau niveau12 = new Niveau(carteNiveau12, "Je suis perdu", 12, "OPIUM6", false);
+		#endregion
+
+		#region niveau 13
+		//***********************************
+		//				NIVEAU 13           ****************************************************************************************
+		//***********************************
+
+		private static Map carteNiveau13 = new Map(5, 9);
+
+		public static Niveau niveau13 = new Niveau(carteNiveau13, "Une carte ce serait bien", 13, "BILLET", false);
+		#endregion
+
+		#region niveau 14
+		//***********************************
+		//				NIVEAU 14          ****************************************************************************************
+		//***********************************
+
+		private static Map carteNiveau14 = new Map(5, 9);
+
+		public static Niveau niveau14 = new Niveau(carteNiveau14, "La carte est là", 14, "CHEQUE", false);
 		#endregion
 
 		//***************************************************************************************************************************
@@ -321,7 +381,7 @@ namespace FearTheDungeon
 		/// </summary>
 		public static Niveau[] tableauNiveaux = { niveau1, niveau2, niveau3, niveau4, niveau5,
 												  niveau6, niveau7, niveau8, niveau9, niveau10,
-												  niveau11 };
+												  niveau11, niveau12, niveau13, niveau14 };
 
 		//***********************************
 		//				METHODES

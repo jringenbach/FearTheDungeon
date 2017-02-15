@@ -794,6 +794,143 @@ namespace FearTheDungeon
 		}
 
 		/// <summary>
+		/// Initialise les données du niveau 12
+		/// </summary>
+		public static void InitialisationNiveau12()
+		{
+			DonneesNiveau.niveau12.ResetNiveau();
+
+			//La case Bloc
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.bloc1Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.bloc2Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.bloc3Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.bloc4Niveau12);
+
+			//La case bouton
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.bouton1Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.bouton2Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.bouton3Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.bouton4Niveau12);
+
+			//La case message
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.message1Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.message2Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.message3Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.message4Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.message5Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.message6Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.message7Niveau12);
+
+			//Les cases porte
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.porte1Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.porte2Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.porte3Niveau12);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.porte4Niveau12);
+			DonneesNiveau.niveau12.AjoutPorte(DonneesNiveau.porte1Niveau12);
+			DonneesNiveau.niveau12.AjoutPorte(DonneesNiveau.porte2Niveau12);
+			DonneesNiveau.niveau12.AjoutPorte(DonneesNiveau.porte3Niveau12);
+			DonneesNiveau.niveau12.AjoutPorte(DonneesNiveau.porte4Niveau12);
+
+			//Les cases danger
+			//colonne 0
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[6, 0]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[11, 0]);
+
+			//colonne 1
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 1]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[4, 1]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[6, 1]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[8, 1]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[9, 1]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[11, 1]);
+
+			//colonne 2
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[11, 2]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[15, 2]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[16, 2]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[17, 2]);
+
+			//colonne 3
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[2, 3]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[3, 3]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[4, 3]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[6, 3]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 3]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[8, 3]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[9, 3]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[10, 3]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[11, 3]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[13, 3]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[17, 3]);
+
+			//colonne 4
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[2, 4]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[13, 4]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[15, 4]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[17, 4]);
+
+			//colonne 5
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[0, 5]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[2, 5]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[8, 5]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[10, 5]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[11, 5]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[13, 5]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[15, 5]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[17, 5]);
+
+			//colonne 6
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[0, 6]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[1, 6]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[2, 6]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[5, 6]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[6, 6]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[7, 6]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[8, 6]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[15, 6]);
+
+			//colonne 7
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[8, 7]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[9, 7]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[10, 7]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[11, 7]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[12, 7]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[13, 7]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[14, 7]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[15, 7]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[16, 7]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[17, 7]);
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.tableauDeDangers[18, 7]);
+
+			//La case Sortie
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.sortieNiveau12);
+
+			//On définit la position du personnage principal au début du niveau
+			DonneesNiveau.personnagePrincipal.PositionElement[0] = 0; //En X
+			DonneesNiveau.personnagePrincipal.PositionElement[1] = 8; //En Y
+			DonneesNiveau.niveau12.AjoutMapElement(DonneesNiveau.personnagePrincipal);
+
+			InitialisationDesBlocs(DonneesNiveau.niveau12);
+			InitialisationDesPortes(DonneesNiveau.niveau12);
+		}
+
+		/// <summary>
+		/// Initialise les données du niveau 13
+		/// </summary>
+		public static void InitialisationNiveau13()
+		{
+
+		}
+
+		/// <summary>
+		/// Initialise les données du niveau 14
+		/// </summary>
+		public static void InitialisationNiveau14()
+		{
+
+		}
+
+		/// <summary>
 		/// Permet de charger le niveau suivant lorsque que le joueur a fini un niveau
 		/// </summary>
 		/// <param name="niveau">Niveau du jeu</param>
@@ -841,6 +978,18 @@ namespace FearTheDungeon
 
 				case 10:
 					InitialisationNiveau11();
+					break;
+
+				case 11:
+					InitialisationNiveau12();
+					break;
+
+				case 12:
+					InitialisationNiveau13();
+					break;
+
+				case 13:
+					InitialisationNiveau14();
 					break;
 
 				default:
@@ -901,6 +1050,18 @@ namespace FearTheDungeon
 
 				case 11:
 					InitialisationNiveau11();
+					break;
+
+				case 12:
+					InitialisationNiveau12();
+					break;
+
+				case 13:
+					InitialisationNiveau13();
+					break;
+
+				case 14:
+					InitialisationNiveau14();
 					break;
 
 				default:
